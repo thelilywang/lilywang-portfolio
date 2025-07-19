@@ -48,12 +48,7 @@ export const aboutData = {
       name: 'CPE大學程式能力檢定',
       org: '',
       year: '',
-    },
-    {
-      name: 'TOEIC 605',
-      org: '',
-      year: '',
-    },
+      },
   ],
   interests: [
     { name: '旅行', icon: '✈️' },
@@ -175,7 +170,7 @@ export const projectsData = [
     results: [
       { label: '週活躍增長', value: '+31.43%' },
       { label: '7日留存增長', value: '+2.97%' },
-      { label: '用戶滿意度', value: '4.5/5' },
+      { label: '用戶滿意度', value: '4.6/5' },
     ],
   },
   {
@@ -237,8 +232,8 @@ export const skillsData = {
   ],
   languages: [
     { name: '中文', level: '母語' },
-    { name: '英文', level: 'TOEIC 605' },
-    { name: '台語', level: '精通' },
+    { name: '英文', level: '專業工作能力' },
+//    { name: '台語', level: '精通' },
   ],
 };
 
@@ -272,4 +267,5 @@ export const highlightsData = [
 
 // 聯絡表單說明（僅作展示用）
 export const contactNote = '這是一個示範表單，實際功能需要後端處理';
-export const scheduleNote = 'Whatever is worth doing is worth doing well. 任何值得做的事就值得把它做好！歡迎通過以上聯絡方式與我聯繫: yuting.lily.wang@gmail.com';
+// 使用 personalInfo.email 作為電子郵件來源，確保一致性
+export const scheduleNote = `Whatever is worth doing is worth doing well. 任何值得做的事就值得把它做好！\n歡迎通過以上聯絡方式與我聯繫: <a href="mailto:${personalInfo.email}" style="display: inline-flex; align-items: center; background-color: transparent; padding: 6px 12px; border-radius: 4px; color: #0066cc; text-decoration: none; font-weight: 500; margin: 4px 0;"><span style="margin-right: 8px;">✉️</span>${personalInfo.email}</a>`;
