@@ -1,6 +1,6 @@
 // 個人基本資料
 export const personalInfo = {
-  name: '王鈺婷 (Lily Wang)',
+  name: 'Lily Wang',
   title: '軟體產品經理',
   intro: '樂觀積極 | 邏輯思考 | 設計思維 | 團隊合作 | 溝通協調。擁有財經、內容與電商領域2C軟體產品經驗，專長於產品策略規劃、商業數據分析，並具工程背景與軟體開發經驗。以能做出體驗好的產品為理想，有使用者導向的UI/UX設計思維。',
   email: 'yuting.lily.wang@gmail.com',
@@ -23,12 +23,12 @@ export const aboutData = {
   ],
   education: [
     {
-      degree: '資訊工程學學士',
-      school: '元智大學',
-      period: '2015/9 - 2019/6',
+      degree: '資訊工程學系 B.S. - Computer Science and Engineering',
+      school: '元智大學 Yuan Ze University',
+      period: '',
     },
   ],
-  certifications: [
+    certifications: [
     {
       name: 'Microsoft Certificate DAT208x - Introduction to Python for Data Science',
       org: 'Microsoft',
@@ -40,21 +40,18 @@ export const aboutData = {
       year: '',
     },
     {
-      name: 'Google Analytics 個人認證',
+      name: 'Google Analytics Certification',
       org: 'Google',
       year: '',
     },
-    {
-      name: 'CPE大學程式能力檢定',
-      org: '',
-      year: '',
-      },
   ],
   interests: [
-    { name: '旅行', icon: '✈️' },
-    { name: '水彩速寫', icon: '�' },
-    { name: '影音欣賞', icon: '🎬' },
+      { name: '旅行', icon: '✈️' },
+      { name: '爬山', icon: '🏔️' },
     { name: '瑜珈', icon: '🧘' },
+    { name: '模型組裝', icon: '⛏️' },
+      { name: '水彩速寫', icon: '🎨' },
+    { name: '影音欣賞', icon: '🎬' },
   ],
 };
 
