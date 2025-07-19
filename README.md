@@ -1,6 +1,6 @@
 # Personal Resume Website
 
-A modern, responsive personal resume website built with Next.js, TypeScript and React. This portfolio showcases professional experience, projects, and skills in a clean, user-friendly interface.
+A modern, responsive personal resume website built with Next.js, TypeScript and React. This portfolio showcases professional experience, projects, skills, and was developed through Vibe Coding.
 
 ## Features
 - Responsive design optimized for all devices
