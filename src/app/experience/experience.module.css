@@ -1,0 +1,109 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 42px;
+  margin: 0 0 40px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--gray-alpha-200);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -48px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 4px solid white;
+  box-shadow: 0 0 0 2px var(--gray-alpha-200);
+}
+
+.timelineContent {
+  background-color: var(--gray-alpha-100);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.timelinePeriod {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.company {
+  font-size: 24px;
+  margin: 0 0 4px 0;
+  color: var(--foreground);
+}
+
+.position {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.achievements {
+  padding-left: 20px;
+}
+
+.achievements li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 30px;
+  }
+  
+  .timelineDot {
+    left: -38px;
+  }
+  
+  .timelineContent {
+    padding: 20px;
+  }
+}

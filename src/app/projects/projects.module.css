@@ -1,0 +1,127 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 42px;
+  margin: 0 0 40px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.projectGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.projectCard {
+  display: flex;
+  background-color: var(--gray-alpha-100);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+}
+
+.projectImageContainer {
+  flex: 0 0 300px;
+}
+
+.projectImagePlaceholder {
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  text-align: center;
+  padding: 20px;
+}
+
+.projectContent {
+  flex: 1;
+  padding: 30px;
+}
+
+.projectTitle {
+  font-size: 24px;
+  margin: 0 0 8px 0;
+}
+
+.projectRole {
+  font-size: 14px;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.projectDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.projectTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.projectTech span {
+  background-color: var(--gray-alpha-200);
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.projectResults {
+  display: flex;
+  gap: 20px;
+}
+
+.resultItem {
+  text-align: center;
+}
+
+.resultValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.resultLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    flex-direction: column;
+  }
+  
+  .projectImageContainer {
+    flex: 0 0 200px;
+  }
+  
+  .projectResults {
+    justify-content: space-between;
+  }
+}
