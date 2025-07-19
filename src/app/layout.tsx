@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "王鈺婷 | 軟體產品經理",
-  description: "軟體產品經理王鈺婷的個人履歷網站，展示專業能力、工作經驗和專案作品。",
+  title: "Lily Wang | 軟體產品經理",
+  description: "軟體產品經理Lily的個人履歷網站，展示專業能力、工作經驗和專案作品。",
 };
 
 export default function RootLayout({
