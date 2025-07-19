@@ -49,7 +49,7 @@ export default function Skills() {
       </div>
 
       <div className={styles.skillsSection}>
-        <h2>軟技能</h2>
+        <h2>專業技能</h2>
         <div className={styles.tagCloud}>
           {skillsData.softSkills.map((skill, index) => (
             <span className={styles.tag} key={index}>{skill}</span>
