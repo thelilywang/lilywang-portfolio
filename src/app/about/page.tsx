@@ -1,10 +1,11 @@
 import styles from './about.module.css';
-import { aboutData, personalInfo } from '@/data/resumeData';
+import { aboutData } from '@/data/resumeData';
+import PageHeader from '@/app/components/PageHeader';
 
 export default function About() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>關於我</h1>
+      <PageHeader title="關於我" />
       
       <section className={styles.section}>
         <h2>個人簡介</h2>

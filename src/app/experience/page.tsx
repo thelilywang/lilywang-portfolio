@@ -1,10 +1,11 @@
 import styles from './experience.module.css';
 import { experienceData } from '@/data/resumeData';
+import PageHeader from '@/app/components/PageHeader';
 
 export default function Experience() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>工作經驗</h1>
+      <PageHeader title="工作經驗" />
       
       <div className={styles.timeline}>
         {experienceData.map((exp, index) => (
