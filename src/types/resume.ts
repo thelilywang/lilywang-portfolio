@@ -86,3 +86,19 @@ export interface Highlight {
 }
 
 export type Locale = 'zh-TW' | 'en';
+
+export interface BlogSection {
+  type: 'paragraph' | 'heading' | 'code' | 'list';
+  content: string;
+  items?: string[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  mediumUrl: string;
+  tags: string[];
+  content: BlogSection[];
+}

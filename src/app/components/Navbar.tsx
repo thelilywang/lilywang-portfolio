@@ -23,6 +23,9 @@ export default function Navbar() {
           <Link href="/projects" className={styles.link}>
             專案作品
           </Link>
+          <Link href="/blog" className={styles.link}>
+            文章分享
+          </Link>
           <Link href="/skills" className={styles.link}>
             專業技能
           </Link>
