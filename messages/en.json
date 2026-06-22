@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "blog": "Blog",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "photo_alt": "Profile Photo",
+    "cta_contact": "Contact Me",
+    "cta_portfolio": "View Portfolio",
+    "highlights_heading": "Professional Highlights",
+    "footer_about": "About",
+    "footer_experience": "Experience",
+    "footer_projects": "Projects",
+    "footer_skills": "Skills",
+    "footer_contact": "Contact"
+  },
+  "about": {
+    "page_title": "About Me",
+    "bio_heading": "Biography",
+    "education_heading": "Education",
+    "certifications_heading": "Certifications",
+    "interests_heading": "Interests"
+  },
+  "experience": {
+    "page_title": "Work Experience"
+  },
+  "projects": {
+    "page_title": "Projects"
+  },
+  "skills": {
+    "page_title": "Skills",
+    "product_skills_heading": "Product Management Skills",
+    "methodologies_heading": "Methodologies & Processes",
+    "technical_skills_heading": "Technical Skills",
+    "soft_skills_heading": "Soft Skills",
+    "languages_heading": "Languages"
+  },
+  "contact": {
+    "page_title": "Contact",
+    "basic_info_heading": "Basic Info",
+    "social_heading": "Social Media",
+    "email_label": "Email",
+    "location_label": "Location",
+    "closing_quote": "Whatever is worth doing is worth doing well.",
+    "closing_text": "Feel free to reach out through the above channels:"
+  },
+  "contactForm": {
+    "heading": "Send a Message",
+    "name_label": "Name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email",
+    "email_placeholder": "Enter your email",
+    "subject_label": "Subject",
+    "subject_placeholder": "Enter subject",
+    "message_label": "Message",
+    "message_placeholder": "Enter your message",
+    "submit_button": "Send Message",
+    "form_note": "* Clicking Send will open your email client",
+    "mailto_name_label": "Name",
+    "mailto_email_label": "Email",
+    "mailto_message_label": "Message"
+  },
+  "blog": {
+    "page_title": "Blog",
+    "back_to_list": "← Back to Blog",
+    "read_on_medium": "Read on Medium →",
+    "back_to_list_end": "Back to Blog →",
+    "next_post_prefix": "Next: "
+  },
+  "langSwitcher": {
+    "label": "中文",
+    "aria_label": "Switch language"
+  }
+}

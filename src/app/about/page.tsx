@@ -1,21 +1,28 @@
+'use client';
+
 import styles from './about.module.css';
-import { aboutData } from '@/data/resumeData';
 import PageHeader from '@/app/components/PageHeader';
+import { useTranslations } from 'next-intl';
+import { useLocaleContext } from '@/context/LocaleContext';
 
 export default function About() {
+  const t = useTranslations('about');
+  const { resumeData } = useLocaleContext();
+  const { aboutData } = resumeData;
+
   return (
     <div className={styles.container}>
-      <PageHeader title="關於我" />
-      
+      <PageHeader title={t('page_title')} />
+
       <section className={styles.section}>
-        <h2>個人簡介</h2>
+        <h2>{t('bio_heading')}</h2>
         {aboutData.bio.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
       </section>
 
       <section className={styles.section}>
-        <h2>教育背景</h2>
+        <h2>{t('education_heading')}</h2>
         {aboutData.education.map((edu, index) => (
           <div className={styles.educationItem} key={index}>
             <div className={styles.degree}>{edu.degree}</div>
@@ -26,7 +33,7 @@ export default function About() {
       </section>
 
       <section className={styles.section}>
-        <h2>證照與認證</h2>
+        <h2>{t('certifications_heading')}</h2>
         <ul className={styles.certifications}>
           {aboutData.certifications.map((cert, index) => (
             <li key={index}>
@@ -39,7 +46,7 @@ export default function About() {
       </section>
 
       <section className={styles.section}>
-        <h2>個人興趣</h2>
+        <h2>{t('interests_heading')}</h2>
         <div className={styles.interests}>
           {aboutData.interests.map((interest, index) => (
             <div className={styles.interestItem} key={index}>

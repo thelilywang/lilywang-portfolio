@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我",
+    "experience": "工作經驗",
+    "projects": "專案作品",
+    "blog": "文章分享",
+    "skills": "專業技能",
+    "contact": "聯絡方式"
+  },
+  "home": {
+    "photo_alt": "個人照片",
+    "cta_contact": "聯絡我",
+    "cta_portfolio": "查看作品集",
+    "highlights_heading": "專業亮點",
+    "footer_about": "關於我",
+    "footer_experience": "工作經驗",
+    "footer_projects": "專案作品",
+    "footer_skills": "專業技能",
+    "footer_contact": "聯絡方式"
+  },
+  "about": {
+    "page_title": "關於我",
+    "bio_heading": "個人簡介",
+    "education_heading": "教育背景",
+    "certifications_heading": "證照與認證",
+    "interests_heading": "個人興趣"
+  },
+  "experience": {
+    "page_title": "工作經驗"
+  },
+  "projects": {
+    "page_title": "專案作品"
+  },
+  "skills": {
+    "page_title": "專業技能",
+    "product_skills_heading": "產品管理技能",
+    "methodologies_heading": "方法論與流程",
+    "technical_skills_heading": "技術技能",
+    "soft_skills_heading": "軟實力",
+    "languages_heading": "語言能力"
+  },
+  "contact": {
+    "page_title": "聯絡方式",
+    "basic_info_heading": "基本資訊",
+    "social_heading": "社交媒體",
+    "email_label": "電子郵件",
+    "location_label": "地點",
+    "closing_quote": "Whatever is worth doing is worth doing well. 任何值得做的事就值得把它做好！",
+    "closing_text": "歡迎通過以上聯絡方式與我聯繫："
+  },
+  "contactForm": {
+    "heading": "傳送訊息",
+    "name_label": "姓名",
+    "name_placeholder": "請輸入您的姓名",
+    "email_label": "電子郵件",
+    "email_placeholder": "請輸入您的電子郵件",
+    "subject_label": "主旨",
+    "subject_placeholder": "請輸入主旨",
+    "message_label": "訊息內容",
+    "message_placeholder": "請輸入您的訊息",
+    "submit_button": "發送訊息",
+    "form_note": "* 點擊發送後將開啟您的郵件客戶端",
+    "mailto_name_label": "姓名",
+    "mailto_email_label": "電子郵件",
+    "mailto_message_label": "訊息內容"
+  },
+  "blog": {
+    "page_title": "文章分享",
+    "back_to_list": "← 返回文章列表",
+    "read_on_medium": "前往 Medium 閱讀原文 →",
+    "back_to_list_end": "回到文章列表 →",
+    "next_post_prefix": "看下一篇："
+  },
+  "langSwitcher": {
+    "label": "EN",
+    "aria_label": "切換語言"
+  }
+}

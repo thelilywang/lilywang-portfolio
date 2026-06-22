@@ -9,11 +9,14 @@ import Stack from '@mui/joy/Stack';
 import { blogData } from '@/data/blogData';
 import PageHeader from '@/app/components/PageHeader';
 import styles from './blog.module.css';
+import { useTranslations } from 'next-intl';
 
 export default function Blog() {
+  const t = useTranslations('blog');
+
   return (
     <div className={styles.container}>
-      <PageHeader title="文章分享" />
+      <PageHeader title={t('page_title')} />
 
       <Stack spacing={3}>
         {blogData.map((post) => (

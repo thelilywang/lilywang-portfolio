@@ -11,6 +11,7 @@ import Sheet from '@mui/joy/Sheet';
 import type { BlogPost, BlogSection } from '@/types/resume';
 import { blogData } from '@/data/blogData';
 import styles from './slug.module.css';
+import { useTranslations } from 'next-intl';
 
 function renderSection(section: BlogSection, index: number) {
   switch (section.type) {
@@ -53,6 +54,7 @@ function renderSection(section: BlogSection, index: number) {
 }
 
 export default function BlogPostClient({ post }: { post: BlogPost }) {
+  const t = useTranslations('blog');
   const currentIndex = blogData.findIndex((p) => p.slug === post.slug);
   const nextPost = blogData[currentIndex + 1] ?? null;
 
@@ -60,7 +62,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
     <div className={styles.container}>
       <Box sx={{ mb: 2 }}>
         <Button component={Link} href="/blog" variant="plain" size="sm" sx={{ pl: 0 }}>
-          ← 返回文章列表
+          {t('back_to_list')}
         </Button>
       </Box>
 
@@ -95,7 +97,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
           variant="outlined"
           size="sm"
         >
-          前往 Medium 閱讀原文 →
+          {t('read_on_medium')}
         </Button>
       </Box>
 
@@ -103,15 +105,15 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
 
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
         <Button component={Link} href="/blog" variant="soft" size="sm">
-          ← 返回文章列表
+          {t('back_to_list')}
         </Button>
         {nextPost ? (
           <Button component={Link} href={`/blog/${nextPost.slug}`} variant="solid" size="sm">
-            看下一篇：{nextPost.title.length > 30 ? nextPost.title.slice(0, 30) + '…' : nextPost.title} →
+            {t('next_post_prefix')}{nextPost.title.length > 30 ? nextPost.title.slice(0, 30) + '…' : nextPost.title} →
           </Button>
         ) : (
           <Button component={Link} href="/blog" variant="solid" size="sm">
-            回到文章列表 →
+            {t('back_to_list_end')}
           </Button>
         )}
       </Box>

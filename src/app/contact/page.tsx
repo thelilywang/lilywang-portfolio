@@ -1,33 +1,40 @@
+'use client';
+
 import styles from './contact.module.css';
-import { personalInfo } from '@/data/resumeData';
 import PageHeader from '@/app/components/PageHeader';
 import ContactItem from '@/app/components/ContactItem';
 import ContactForm from '@/app/components/ContactForm';
+import { useTranslations } from 'next-intl';
+import { useLocaleContext } from '@/context/LocaleContext';
 
 export default function Contact() {
+  const t = useTranslations('contact');
+  const { resumeData } = useLocaleContext();
+  const { personalInfo } = resumeData;
+
   return (
     <div className={styles.container}>
-      <PageHeader title="聯絡方式" />
+      <PageHeader title={t('page_title')} />
 
       <div className={styles.contactGrid}>
         <div className={styles.contactInfo}>
           <div className={styles.contactSection}>
-            <h2>基本資訊</h2>
+            <h2>{t('basic_info_heading')}</h2>
             <ContactItem
               icon="📧"
-              label="電子郵件"
+              label={t('email_label')}
               value={personalInfo.email}
               href={`mailto:${personalInfo.email}`}
             />
             <ContactItem
               icon="📍"
-              label="地點"
+              label={t('location_label')}
               value={personalInfo.location}
             />
           </div>
 
           <div className={styles.contactSection}>
-            <h2>社交媒體</h2>
+            <h2>{t('social_heading')}</h2>
             <ContactItem
               icon="🔗"
               label="LinkedIn"
@@ -58,8 +65,8 @@ export default function Contact() {
       <div className={styles.schedule}>
         <h2>✨</h2>
         <p>
-          Whatever is worth doing is worth doing well. 任何值得做的事就值得把它做好！
-          {'\n'}歡迎通過以上聯絡方式與我聯繫：{' '}
+          {t('closing_quote')}
+          {'\n'}{t('closing_text')}{' '}
           <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
         </p>
       </div>
