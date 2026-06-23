@@ -1,14 +1,26 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const t = useTranslations('nav');
   const { resumeData, toggleLocale, locale } = useLocaleContext();
   const { personalInfo } = resumeData;
+  const pathname = usePathname();
+
+  const navLink = (href: string, label: string) => (
+    <Link
+      href={href}
+      className={`${styles.link} ${pathname === href ? styles.linkActive : ''}`}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <nav className={styles.navbar}>
@@ -18,14 +30,14 @@ export default function Navbar() {
         </Link>
 
         <div className={styles.links}>
-          <Link href="/" className={styles.link}>{t('home')}</Link>
-          <Link href="/about" className={styles.link}>{t('about')}</Link>
-          <Link href="/experience" className={styles.link}>{t('experience')}</Link>
-          <Link href="/projects" className={styles.link}>{t('projects')}</Link>
-          <Link href="/side-projects" className={styles.link}>{t('side_projects')}</Link>
-          <Link href="/blog" className={styles.link}>{t('blog')}</Link>
-          <Link href="/skills" className={styles.link}>{t('skills')}</Link>
-          <Link href="/contact" className={styles.link}>{t('contact')}</Link>
+          {navLink('/', t('home'))}
+          {navLink('/about', t('about'))}
+          {navLink('/experience', t('experience'))}
+          {navLink('/projects', t('projects'))}
+          {navLink('/side-projects', t('side_projects'))}
+          {navLink('/blog', t('blog'))}
+          {navLink('/skills', t('skills'))}
+          {navLink('/contact', t('contact'))}
           <button
             onClick={toggleLocale}
             className={styles.langButton}
@@ -33,6 +45,7 @@ export default function Navbar() {
           >
             {locale === 'zh-TW' ? 'EN' : '中文'}
           </button>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
