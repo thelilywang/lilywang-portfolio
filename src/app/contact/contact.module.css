@@ -2,10 +2,6 @@
   composes: pageContainerMedium from '../styles/shared.module.css';
 }
 
-.title {
-  composes: pageTitle from '../styles/shared.module.css';
-}
-
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;

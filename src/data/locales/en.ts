@@ -5,6 +5,7 @@ import type {
   Project,
   SkillsData,
   Highlight,
+  SideProject,
 } from '@/types/resume';
 
 export const personalInfo: PersonalInfo = {
@@ -264,7 +265,7 @@ export const highlightsData: Highlight[] = [
 
 export const contactNote = 'This is a demo form.';
 
-export const sideProjectsData = [
+export const sideProjectsData: SideProject[] = [
   {
     title: 'Coming Soon',
     description: 'Side project details will be added soon. Stay tuned!',

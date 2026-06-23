@@ -2,10 +2,6 @@
   composes: pageContainerWide from '../styles/shared.module.css';
 }
 
-.title {
-  composes: pageTitle from '../styles/shared.module.css';
-}
-
 .projectGrid {
   display: flex;
   flex-direction: column;

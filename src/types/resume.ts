@@ -85,6 +85,12 @@ export interface Highlight {
   description: string;
 }
 
+export interface SideProject {
+  title: string;
+  description: string;
+  href: string;
+}
+
 export type Locale = 'zh-TW' | 'en';
 
 export interface BlogSection {

@@ -5,6 +5,7 @@ import type {
   Project,
   SkillsData,
   Highlight,
+  SideProject,
 } from '@/types/resume';
 
 export const personalInfo: PersonalInfo = {
@@ -264,7 +265,7 @@ export const highlightsData: Highlight[] = [
 
 export const contactNote = '這是一個示範表單，實際功能需要後端處理';
 
-export const sideProjectsData = [
+export const sideProjectsData: SideProject[] = [
   {
     title: 'Coming Soon',
     description: '個人專案內容即將更新，敬請期待！',

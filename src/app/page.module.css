@@ -7,20 +7,6 @@
   padding: 30px 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-    --primary-color: #3291ff;
-    --primary-color-light: #0070f3;
-    --secondary-color: #f2f2f2;
-
-    --button-primary-hover: #0060df;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -265,7 +251,7 @@ a.secondary:hover {
 
 .copyright {
   font-size: 14px;
-  color: #666;
+  color: var(--joy-palette-neutral-500, #666);
 }
 
 /* ── Responsive ── */
@@ -353,8 +339,3 @@ a.secondary:hover {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-}
