@@ -11,7 +11,7 @@ import type {
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
   title: 'Software Product Manager',
-  intro: 'Optimistic · Logical Thinking · Design Thinking · Teamwork · Communication. 2+ years of 2C software product experience across fintech, content, and e-commerce. Specialized in product strategy and business data analysis, with an engineering background and hands-on development experience. Passionate about building user-centered products with strong UI/UX sensibility.',
+  intro: 'Product Manager with 5+ years building B2B/B2C SaaS and mobile products, specializing in AI and machine learning–powered, user-centered solutions that drive product impact and operational efficiency.',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',
   location: 'Taipei, Taiwan',
@@ -25,9 +25,9 @@ export const personalInfo: PersonalInfo = {
 
 export const aboutData: AboutData = {
   bio: [
-    'Hi, I\'m Lily — a Software Product Manager passionate about user experience and product innovation. I have 2C software product experience across fintech, content, and e-commerce, including FamilyMart APP, Money Magazine, Investment School, and Finance Daily News.',
-    'With an engineering background and hands-on app development experience, I bridge the gap between business and engineering teams. I bring Scrum agile development experience and an open-minded, empathetic approach — skilled in cross-functional communication, logical analysis, and motivating teams.',
-    'Passionate for creating meaningful experiences via innovative digital solutions. Good at excavating issues, integrating resources to solve problems.',
+    'Hi, I\'m Lily — a Product Manager with 5+ years of experience building B2B/B2C SaaS and mobile products, specializing in AI and machine learning–powered, user-centered solutions.',
+    'With a Computer Science background and hands-on Android development and QA experience, I bridge business and engineering teams effectively. I\'ve led end-to-end delivery across enterprise SaaS and consumer apps, including launching an AI Chatbot and internal AI Agent at 104 Corporation.',
+    'Passionate about data-driven product decisions and meaningful user experiences. Skilled at identifying root problems, integrating cross-functional resources, and delivering measurable impact.',
   ],
   education: [
     {
@@ -37,6 +37,36 @@ export const aboutData: AboutData = {
     },
   ],
   certifications: [
+    {
+      name: 'AI Product Management Specialization',
+      org: 'Duke University (Coursera)',
+      year: '',
+    },
+    {
+      name: 'Microsoft Certified: AI Product Manager',
+      org: 'Microsoft',
+      year: '',
+    },
+    {
+      name: 'Google AI Essentials',
+      org: 'Google',
+      year: '',
+    },
+    {
+      name: 'iPAS+ AI Application Planner',
+      org: 'iPAS',
+      year: '',
+    },
+    {
+      name: 'Google Cloud Certifications (×6)',
+      org: 'Google Cloud',
+      year: '',
+    },
+    {
+      name: 'Google Analytics Certification',
+      org: 'Google',
+      year: '',
+    },
     {
       name: 'Microsoft Certificate DAT208x - Introduction to Python for Data Science',
       org: 'Microsoft',
@@ -48,8 +78,8 @@ export const aboutData: AboutData = {
       year: '',
     },
     {
-      name: 'Google Analytics Certification',
-      org: 'Google',
+      name: 'TOEIC 775',
+      org: 'ETS',
       year: '',
     },
   ],
@@ -65,11 +95,18 @@ export const aboutData: AboutData = {
 
 export const experienceData: ExperienceItem[] = [
   {
-    period: 'Apr 2023 – Present',
-    company: '104 Job Bank',
+    period: 'Apr 2023 – Jan 2026',
+    company: '104 Corporation',
     position: 'Product Manager',
-    description: 'Product Manager responsible for product strategy planning and development.',
-    achievements: [],
+    description: 'Led end-to-end delivery for a B2B/B2C SaaS platform (99K+ MAU, 105K+ downloads), managing both enterprise and job-seeker products.',
+    achievements: [
+      'Increased Activation Rate from 18.6% to 35.8% (+92%)',
+      'Increased Retention Rate from 12.4% to 21.4% (+73%)',
+      'Delivered 56 app releases and 50+ SaaS features',
+      'Reduced iOS crash rate from 0.17% to 0.05%; improved ratings across all platforms',
+      'Launched AI Chatbot, review reply features, and internal AI Agent',
+      'Led B2B subscription SaaS feature development to improve enterprise user retention and satisfaction',
+    ],
   },
   {
     period: 'Jan 2022 – Mar 2023',
@@ -149,6 +186,19 @@ export const experienceData: ExperienceItem[] = [
 
 export const projectsData: Project[] = [
   {
+    title: '104 Corporation – B2B/B2C SaaS Platform',
+    role: 'Product Manager | 2023/4 - 2026/1',
+    description: 'Led product strategy and delivery for 104\'s B2B enterprise and B2C job-seeker SaaS platform (99K+ MAU, 105K+ downloads). Launched AI Chatbot, review reply features, and an internal AI Agent, significantly improving platform activation and retention.',
+    image: '/104-platform.jpg',
+    imagePlaceholder: '104 Platform Screenshot',
+    tech: ['AI Chatbot', 'LLM', 'B2B SaaS', 'B2C APP', 'Firebase', 'A/B Testing', 'Figma'],
+    results: [
+      { label: 'Activation Rate', value: '+92%' },
+      { label: 'Retention Rate', value: '+73%' },
+      { label: 'App Releases', value: '56' },
+    ],
+  },
+  {
     title: 'FamilyMart APP',
     role: 'Software Product / Project Manager | 2022/1 - 2023/3',
     description: 'FamilyMart APP, one of Taiwan\'s largest convenience store chains, has over 4,000 brick-and-mortar stores and more than 14 million app users. Responsible for digital projects including MAS security testing, app hardening protection, and FamilyPay integration.',
@@ -158,7 +208,7 @@ export const projectsData: Project[] = [
     results: [
       { label: 'Physical Stores', value: '4,000+' },
       { label: 'App Users', value: '14M+' },
-      { label: 'Project Completion', value: '100%' },
+      { label: 'Features Delivered', value: '38' },
     ],
   },
   {
@@ -209,6 +259,8 @@ export const skillsData: SkillsData = {
     { name: 'User Research & Interviews', level: 85 },
     { name: 'UI/UX Design Thinking', level: 90 },
     { name: 'Product Roadmap Planning', level: 85 },
+    { name: 'AI Product Planning (LLM / Generative AI)', level: 85 },
+    { name: 'B2B/B2C SaaS Product Management', level: 90 },
   ],
   methodologies: [
     { name: 'Agile Development (Scrum/Kanban)', level: 95 },
@@ -222,7 +274,8 @@ export const skillsData: SkillsData = {
     { name: 'Data Analytics (Firebase, Google Analytics)', level: 90 },
     { name: 'Data Visualization (Tableau, Power BI)', level: 85 },
     { name: 'Prototyping (Figma, Axure RP)', level: 85 },
-    { name: 'Programming (Kotlin, Python, Java)', level: 80 },
+    { name: 'Prompt Engineering / LLM Applications', level: 80 },
+    { name: 'Programming (Python, SQL, Kotlin, Java)', level: 80 },
     { name: 'Project Management Tools (Jira, Trello, Azure DevOps)', level: 90 },
   ],
   softSkills: [
@@ -238,28 +291,28 @@ export const skillsData: SkillsData = {
 
 export const highlightsData: Highlight[] = [
   {
-    title: 'Software Product Experience',
-    description: '2C software product experience across fintech, content, and e-commerce — including FamilyMart APP, Money Magazine, Investment School, and Finance Daily News.',
+    title: '5+ Years PM Experience',
+    description: 'End-to-end product lifecycle experience across B2B/B2C SaaS and mobile apps — from 0 to 1 and beyond. Delivered 50+ features and 56 app releases.',
   },
   {
-    title: 'Product Strategy & Data Analysis',
-    description: 'Ability to apply analytical thinking and organizational logic to translate product strategy into PRDs, alongside in-depth data analysis and business decision-making.',
+    title: 'AI Product Leadership',
+    description: 'Led the planning and launch of an AI Chatbot, review reply features, and an internal AI Agent. Hands-on experience with Generative AI, LLMs, and Prompt Engineering.',
   },
   {
-    title: 'Agile Project Management',
-    description: 'Hands-on experience introducing Scrum agile workflows from scratch, allocating project resources, and managing development priority queues.',
+    title: 'Measurable Impact',
+    description: 'At 104 Corporation: Activation Rate 18.6% → 35.8% (+92%), Retention Rate 12.4% → 21.4% (+73%), iOS crash rate reduced from 0.17% to 0.05%.',
   },
   {
-    title: 'User-Centered Design Thinking',
-    description: 'UI/UX design thinking rooted in user needs, enabling the design of products that meet real market demands.',
+    title: 'Large-Scale Platform Experience',
+    description: 'Managed a 99K+ MAU, 105K+ download SaaS platform. Previously responsible for digital projects on FamilyMart APP with 14M+ users across Taiwan.',
   },
   {
     title: 'Data-Driven Decision Making',
-    description: 'Skilled at leveraging data to drive decisions — evaluating product performance through key metrics and continuously optimizing.',
+    description: 'Proficient in Firebase, Google Analytics, Tableau, and Power BI. Designs A/B tests and MVPs to validate hypotheses and continuously optimize product performance.',
   },
   {
     title: 'Engineering Background Advantage',
-    description: 'Engineering background with app development experience and internet domain knowledge — enabling effective communication with engineers and smoother project execution.',
+    description: 'B.S. in Computer Science with hands-on Android development and automated testing (Python/Appium) experience — enabling fluent collaboration with engineering teams.',
   },
 ];
 

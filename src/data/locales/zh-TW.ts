@@ -11,7 +11,7 @@ import type {
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
   title: '軟體產品經理',
-  intro: '樂觀積極 | 邏輯思考 | 設計思維 | 團隊合作 | 溝通協調。擁有財經、內容與電商領域2C軟體產品經驗，專長於產品策略規劃、商業數據分析，並具工程背景與軟體開發經驗。以能做出體驗好的產品為理想，有使用者導向的UI/UX設計思維。',
+  intro: '5年以上 B2B/B2C SaaS 及行動應用產品管理經驗，專注於 AI 驅動、以用戶為中心的解決方案。具工程背景，擅長跨部門溝通協調、數據驅動決策，並有完整的從 0 到 1 產品開發及上線經驗。',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',
   location: '台北市, 台灣',
@@ -25,9 +25,9 @@ export const personalInfo: PersonalInfo = {
 
 export const aboutData: AboutData = {
   bio: [
-    '您好！我是Lily，一位熱衷於用戶體驗和產品創新的軟體產品經理。擁有財經、內容與電商領域2C軟體產品經驗，涵蓋"全家APP"、"Money錢雜誌"、"投資小學堂"及"每日財經頭條"。',
-    '具工程背景，有APP開發經驗及互聯網領域專業知識，與工程師溝通有共通語言，達成有效溝通，增加專案運行順暢度。擁有Scrum敏捷開發經驗，以Open-minded、富同理心的態度，擅於溝通協調、邏輯分析和激勵他人。',
-    'Passionate for creating meaningful experiences via innovative digital solutions. Good at excavating issues, integrating resources to solve problems.',
+    '您好！我是Lily，擁有 5 年以上 B2B/B2C SaaS 及行動應用產品管理經驗，專注於 AI 與機器學習驅動、以用戶為中心的產品解決方案。',
+    '具資訊工程背景，有 Android 開發與軟體測試實務經驗，與工程師溝通有共通語言，能有效推動專案執行。擁有 Scrum 敏捷開發豐富實踐，主導過 B2B/B2C 平台的完整產品生命週期，並成功交付多項 AI 功能（包含 AI Chatbot 與內部 AI Agent）。',
+    '善於整合跨部門資源解決問題，以數據驅動決策，追求有意義的產品體驗與商業影響力。',
   ],
   education: [
     {
@@ -37,6 +37,36 @@ export const aboutData: AboutData = {
     },
   ],
   certifications: [
+    {
+      name: 'AI Product Management Specialization',
+      org: 'Duke University (Coursera)',
+      year: '',
+    },
+    {
+      name: 'Microsoft Certified: AI Product Manager',
+      org: 'Microsoft',
+      year: '',
+    },
+    {
+      name: 'Google AI Essentials',
+      org: 'Google',
+      year: '',
+    },
+    {
+      name: 'iPAS+ AI Application Planner（AI應用規劃師）',
+      org: 'iPAS',
+      year: '',
+    },
+    {
+      name: 'Google Cloud Certifications (6項)',
+      org: 'Google Cloud',
+      year: '',
+    },
+    {
+      name: 'Google Analytics Certification',
+      org: 'Google',
+      year: '',
+    },
     {
       name: 'Microsoft Certificate DAT208x - Introduction to Python for Data Science',
       org: 'Microsoft',
@@ -48,8 +78,8 @@ export const aboutData: AboutData = {
       year: '',
     },
     {
-      name: 'Google Analytics Certification',
-      org: 'Google',
+      name: 'TOEIC 775',
+      org: 'ETS',
       year: '',
     },
   ],
@@ -65,11 +95,18 @@ export const aboutData: AboutData = {
 
 export const experienceData: ExperienceItem[] = [
   {
-    period: '2023年4月 - 至今',
+    period: '2023年4月 - 2026年1月',
     company: '104人力銀行',
     position: 'Product Manager',
-    description: '擔任產品經理職務，負責產品策略規劃與開發',
-    achievements: [],
+    description: '主導 B2B/B2C SaaS 平台端到端產品交付，涵蓋企業版與求職者 APP，月活躍用戶 99K+，APP 下載量 105K+。',
+    achievements: [
+      '提升 Activation Rate 從 18.6% 至 35.8%（+92%）',
+      '提升 Retention Rate 從 12.4% 至 21.4%（+73%）',
+      '主導交付 56 個 APP 版本及 50+ 項 SaaS 功能',
+      '降低 iOS Crash Rate 從 0.17% 至 0.05%，全平台評分顯著提升',
+      '規劃並上線 AI Chatbot、評價回覆功能及內部 AI Agent',
+      '帶領 B2B 訂閱制 SaaS 功能開發，提升企業用戶留存與滿意度',
+    ],
   },
   {
     period: '2022年1月 - 2023年3月',
@@ -149,6 +186,19 @@ export const experienceData: ExperienceItem[] = [
 
 export const projectsData: Project[] = [
   {
+    title: '104人力銀行 B2B/B2C SaaS 平台',
+    role: 'Product Manager | 2023/4 - 2026/1',
+    description: '主導 104人力銀行 B2B 企業端與 B2C 求職者端 SaaS 平台產品。月活躍用戶 99K+，APP 下載量 105K+，規劃並上線 AI Chatbot、評價回覆功能及內部 AI Agent，大幅提升平台活躍度與留存率。',
+    image: '/104-platform.jpg',
+    imagePlaceholder: '104人力銀行平台截圖',
+    tech: ['AI Chatbot', 'LLM', 'B2B SaaS', 'B2C APP', 'Firebase', 'A/B Testing', 'Figma'],
+    results: [
+      { label: 'Activation Rate', value: '+92%' },
+      { label: 'Retention Rate', value: '+73%' },
+      { label: 'APP 版本交付', value: '56 個' },
+    ],
+  },
+  {
     title: '全家APP (FamilyMart APP)',
     role: 'Software Product / Project Manager | 2022/1 - 2023/3',
     description: '台灣最大便利商店之一的全家APP，擁有超過4000家實體門市和超過1400萬的APP用戶。負責MAS資安檢測、APP加殼防護、全盈支付等數位專案。',
@@ -158,7 +208,7 @@ export const projectsData: Project[] = [
     results: [
       { label: '實體門市數量', value: '4000+' },
       { label: 'APP用戶數', value: '1400萬+' },
-      { label: '專案完成率', value: '100%' },
+      { label: '負責專案數', value: '38 項' },
     ],
   },
   {
@@ -209,6 +259,8 @@ export const skillsData: SkillsData = {
     { name: '用戶研究與訪談', level: 85 },
     { name: 'UI/UX設計思維', level: 90 },
     { name: '產品路線圖規劃', level: 85 },
+    { name: 'AI 產品規劃 (LLM / Generative AI)', level: 85 },
+    { name: 'B2B/B2C SaaS 產品管理', level: 90 },
   ],
   methodologies: [
     { name: '敏捷開發 (Scrum/Kanban)', level: 95 },
@@ -222,7 +274,8 @@ export const skillsData: SkillsData = {
     { name: '數據分析 (Firebase, Google Analytics)', level: 90 },
     { name: '資料視覺化 (Tableau, Power BI)', level: 85 },
     { name: '原型設計 (Figma, Axure RP)', level: 85 },
-    { name: '程式設計 (Kotlin, Python, Java)', level: 80 },
+    { name: 'Prompt Engineering / LLM 應用', level: 80 },
+    { name: '程式設計 (Python, SQL, Kotlin, Java)', level: 80 },
     { name: '專案管理工具 (Jira, Trello, Azure DevOps)', level: 90 },
   ],
   softSkills: [
@@ -238,28 +291,28 @@ export const skillsData: SkillsData = {
 
 export const highlightsData: Highlight[] = [
   {
-    title: '軟體產品經驗',
-    description: '擁有財經、內容與電商領域2C軟體產品經驗，涵蓋全家APP、Money錢雜誌、投資小學堂及每日財經頭條等多個專案。',
+    title: '5年以上 PM 經驗',
+    description: '橫跨 B2B/B2C SaaS、行動應用與 Fintech 領域，具備從 0 到 1 完整產品生命週期管理經驗，主導交付 50+ 項功能與 56 個 APP 版本。',
   },
   {
-    title: '產品策略與數據分析',
-    description: '能運用思維分析、組織邏輯，轉化產品策略、設計產品使用情境為產品需求文件，並進行深入的數據分析和商業決策。',
+    title: 'AI 產品規劃',
+    description: '主導 AI Chatbot、評價回覆功能及內部 AI Agent 的規劃與上線，具備 Generative AI、LLM 應用及 Prompt Engineering 實務能力。',
   },
   {
-    title: '敏捷專案管理',
-    description: '實際從0至1導入Scrum敏捷開發專案流程經驗，能根據專案資源進行調配，管理需求開發優先順序。',
+    title: '關鍵指標大幅提升',
+    description: '在 104人力銀行任職期間，將 Activation Rate 從 18.6% 提升至 35.8%（+92%），Retention Rate 從 12.4% 提升至 21.4%（+73%）。',
   },
   {
-    title: '使用者導向的設計思維',
-    description: '具備使用者導向的UI/UX設計思維，能夠從用戶需求出發，設計出符合市場需求的產品。',
+    title: '大型平台產品管理',
+    description: '管理月活躍 99K+、下載量 105K+ 的 SaaS 平台；同時曾負責全台 1,400 萬用戶規模的全家 APP 數位專案。',
   },
   {
-    title: '數據分析',
-    description: '擅長運用數據驅動決策，透過關鍵指標評估產品效能並持續優化。',
+    title: '數據驅動決策',
+    description: '熟練使用 Firebase、Google Analytics、Tableau、Power BI 進行產品數據分析，設計 A/B Testing 驗證假設，以數據優化產品迭代方向。',
   },
   {
     title: '工程背景優勢',
-    description: '具工程背景，有APP開發經驗及互聯網領域專業知識，與工程師溝通有共通語言，達成有效溝通，增加專案運行順暢度。',
+    description: '資訊工程學系畢業，具 Android 開發及自動化測試（Python/Appium）實務經驗，與工程師有共通語言，有效提升跨團隊溝通效率。',
   },
 ];
 
