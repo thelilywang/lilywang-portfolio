@@ -10,18 +10,17 @@
   --button-secondary-hover: #f2f2f2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary-color: #3291ff;
-    --primary-color-light: #0070f3;
-    --secondary-color: #f2f2f2;
-    --gray-alpha-200: rgba(255, 255, 255, 0.145);
-    --gray-alpha-100: rgba(255, 255, 255, 0.06);
-    --button-primary-hover: #0060df;
-    --button-secondary-hover: #1a1a1a;
-  }
+[data-joy-color-scheme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary-color: #3291ff;
+  --primary-color-light: #0070f3;
+  --secondary-color: #f2f2f2;
+  --gray-alpha-200: rgba(255, 255, 255, 0.145);
+  --gray-alpha-100: rgba(255, 255, 255, 0.06);
+  --button-primary-hover: #0060df;
+  --button-secondary-hover: #32383E;
+  color-scheme: dark;
 }
 
 html,
@@ -33,7 +32,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--joy-fontFamily-body, 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,8 +48,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
