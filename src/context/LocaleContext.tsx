@@ -9,7 +9,7 @@ import zhTWMessages from '../../messages/zh-TW.json';
 import enMessages from '../../messages/en.json';
 
 const STORAGE_KEY = 'portfolio-locale';
-const DEFAULT_LOCALE: Locale = 'zh-TW';
+const DEFAULT_LOCALE: Locale = 'en';
 
 type ResumeData = typeof zhTW | typeof en;
 

@@ -22,6 +22,7 @@ export default function Navbar() {
           <Link href="/about" className={styles.link}>{t('about')}</Link>
           <Link href="/experience" className={styles.link}>{t('experience')}</Link>
           <Link href="/projects" className={styles.link}>{t('projects')}</Link>
+          <Link href="/side-projects" className={styles.link}>{t('side_projects')}</Link>
           <Link href="/blog" className={styles.link}>{t('blog')}</Link>
           <Link href="/skills" className={styles.link}>{t('skills')}</Link>
           <Link href="/contact" className={styles.link}>{t('contact')}</Link>

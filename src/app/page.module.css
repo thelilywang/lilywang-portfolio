@@ -15,7 +15,7 @@
   font-family: var(--font-geist-sans);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,30 +35,16 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 80px;
 }
 
+/* ── Hero ── */
 .hero {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
-  margin: 40px 0;
-}
-
-.profileImage {
-  flex-shrink: 0;
-}
-
-.imagePlaceholder {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background-color: var(--gray-alpha-200);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #666;
+  margin: 16px 0;
 }
 
 .heroContent {
@@ -67,25 +53,43 @@
   gap: 16px;
 }
 
+.heroPhoto {
+  position: relative;
+  height: 580px;
+  border-radius: 4px 24px 4px 24px;
+  overflow: hidden;
+  box-shadow: 8px 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.heroPhotoImg {
+  object-fit: cover;
+  object-position: center 65%;
+}
+
 .name {
-  font-size: 42px;
+  font-size: 48px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--foreground);
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--primary-color);
   margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .intro {
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 560px;
   margin: 0;
+  opacity: 0.85;
 }
 
 .ctas {
@@ -132,18 +136,21 @@ a.secondary:hover {
   background-color: var(--button-secondary-hover);
 }
 
+/* ── Highlights ── */
 .highlights {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
-.highlights h2 {
+.highlights h2,
+.sideProjects h2 {
   font-size: 32px;
   margin-bottom: 30px;
   text-align: center;
   position: relative;
 }
 
-.highlights h2:after {
+.highlights h2:after,
+.sideProjects h2:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -184,6 +191,58 @@ a.secondary:hover {
   margin: 0;
 }
 
+/* ── Side Projects ── */
+.sideProjects {
+  margin-top: 0;
+}
+
+.sideProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.sideProjectCard {
+  background-color: var(--gray-alpha-100);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 3px solid var(--primary-color);
+}
+
+.sideProjectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.sideProjectCard h3 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.sideProjectCard p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sideProjectLink {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.sideProjectLink:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ── */
 .footer {
   margin-top: 80px;
   padding-top: 30px;
@@ -215,19 +274,34 @@ a.secondary:hover {
   color: #666;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
+/* ── Responsive ── */
+@media (max-width: 900px) {
   .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  
+
+  .heroPhoto {
+    height: 360px;
+    order: -1;
+    border-radius: 4px 20px 4px 20px;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
   .ctas {
-    justify-content: center;
+    justify-content: flex-start;
   }
-  
+
   .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sideProjectsGrid {
     grid-template-columns: 1fr;
   }
 }
@@ -256,16 +330,12 @@ a.secondary:hover {
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
+    padding: 24px 16px;
     padding-bottom: 80px;
   }
 
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
+  .name {
+    font-size: 34px;
   }
 
   .ctas {

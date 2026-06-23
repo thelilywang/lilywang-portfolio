@@ -4,6 +4,7 @@
     "about": "About",
     "experience": "Experience",
     "projects": "Projects",
+    "side_projects": "Side Projects",
     "blog": "Blog",
     "skills": "Skills",
     "contact": "Contact"
@@ -13,6 +14,7 @@
     "cta_contact": "Contact Me",
     "cta_portfolio": "View Portfolio",
     "highlights_heading": "Professional Highlights",
+    "side_projects_heading": "Side Projects",
     "footer_about": "About",
     "footer_experience": "Experience",
     "footer_projects": "Projects",

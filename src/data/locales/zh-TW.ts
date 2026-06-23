@@ -263,3 +263,11 @@ export const highlightsData: Highlight[] = [
 ];
 
 export const contactNote = '這是一個示範表單，實際功能需要後端處理';
+
+export const sideProjectsData = [
+  {
+    title: 'Coming Soon',
+    description: '個人專案內容即將更新，敬請期待！',
+    href: '',
+  },
+];

@@ -263,3 +263,11 @@ export const highlightsData: Highlight[] = [
 ];
 
 export const contactNote = 'This is a demo form.';
+
+export const sideProjectsData = [
+  {
+    title: 'Coming Soon',
+    description: 'Side project details will be added soon. Stay tuned!',
+    href: '',
+  },
+];
