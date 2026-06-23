@@ -25,6 +25,7 @@ export interface Certification {
   name: string;
   org: string;
   year: string;
+  highlights?: string[];
 }
 
 export interface Interest {
@@ -76,6 +77,7 @@ export interface Language {
 export interface SkillsData {
   productSkills: Skill[];
   methodologies: Skill[];
+  aiSkills: Skill[];
   technicalSkills: Skill[];
   softSkills: string[];
   languages: Language[];

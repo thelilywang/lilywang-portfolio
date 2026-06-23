@@ -10,7 +10,7 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
-  title: 'Software Product Manager',
+  title: 'Product Manager',
   intro: 'Product Manager with 5+ years building B2B/B2C SaaS and mobile products, specializing in AI and machine learning–powered, user-centered solutions that drive product impact and operational efficiency.',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',
@@ -51,6 +51,7 @@ export const aboutData: AboutData = {
       name: 'AI for Data Analysis',
       org: 'Google',
       year: '2026-03',
+      highlights: ['Data Analysis'],
     },
     {
       name: 'Machine Learning Foundations for Product Managers',
@@ -71,6 +72,7 @@ export const aboutData: AboutData = {
       name: 'Google Cloud Certification',
       org: 'Google Cloud',
       year: '2024-08',
+      highlights: ['Google Cloud'],
     },
     {
       name: 'Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud',
@@ -106,6 +108,7 @@ export const aboutData: AboutData = {
       name: 'DAT263x - Introduction to Artificial Intelligence (AI)',
       org: 'Microsoft',
       year: '2019-08',
+      highlights: ['Artificial Intelligence'],
     },
   ],
   interests: [
@@ -278,7 +281,6 @@ export const skillsData: SkillsData = {
     { name: 'Market & Competitor Analysis', level: 85 },
     { name: 'Cross-Functional Team Leadership', level: 90 },
     { name: 'Stakeholder Management', level: 90 },
-    { name: 'AI Product Planning', level: 85 },
   ],
   methodologies: [
     { name: 'Agile / Scrum / Kanban', level: 95 },
@@ -287,11 +289,14 @@ export const skillsData: SkillsData = {
     { name: 'Project Schedule & Risk Management', level: 85 },
     { name: 'Data-Driven Decision Making', level: 90 },
   ],
-  technicalSkills: [
+  aiSkills: [
+    { name: 'AI Product Planning', level: 90 },
     { name: 'Generative AI / LLM', level: 85 },
     { name: 'Prompt Engineering', level: 85 },
     { name: 'Agentic AI', level: 80 },
     { name: 'Machine Learning', level: 75 },
+  ],
+  technicalSkills: [
     { name: 'Data Analytics (Firebase / GA)', level: 90 },
     { name: 'Data Visualization (Tableau / Power BI)', level: 85 },
     { name: 'Figma / Axure RP', level: 85 },

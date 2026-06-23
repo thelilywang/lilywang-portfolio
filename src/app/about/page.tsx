@@ -7,6 +7,20 @@ import { GraduationCap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
 
+const CERT_KEYWORD_RE = /(Google Analytics|Data Analysis|Machine Learning|Generative AI|Agentic AI|Product Management|Infrastructure|Prompt|Python|Agent|LLM|ML|AI)/g;
+
+function highlightCertName(name: string, className: string, highlights?: string[]) {
+  const re = highlights
+    ? new RegExp(`(${highlights.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g')
+    : CERT_KEYWORD_RE;
+  const parts = name.split(re);
+  return parts.map((part, i) =>
+    i % 2 === 1
+      ? <span key={i} className={className}>{part}</span>
+      : part
+  );
+}
+
 export default function About() {
   const t = useTranslations('about');
   const { resumeData } = useLocaleContext();
@@ -80,6 +94,7 @@ export default function About() {
         <h2>{t('skills_heading')}</h2>
         <SkillGroup heading={t('product_skills_heading')} skills={skillsData.productSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('methodologies_heading')} skills={skillsData.methodologies} badgeLabels={badgeLabels} />
+        <SkillGroup heading={t('ai_skills_heading')} skills={skillsData.aiSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('technical_skills_heading')} skills={skillsData.technicalSkills} badgeLabels={badgeLabels} />
 
         <div className={styles.section}>
@@ -126,7 +141,7 @@ export default function About() {
           {aboutData.certifications.map((cert, index) => (
             <li key={index}>
               <span className={styles.certOrgBadge}>{cert.org}</span>
-              <span className={styles.certName}>{cert.name}</span>
+              <span className={styles.certName}>{highlightCertName(cert.name, styles.certHighlight, cert.highlights)}</span>
               {cert.year && <span className={styles.certYear}>{cert.year}</span>}
             </li>
           ))}

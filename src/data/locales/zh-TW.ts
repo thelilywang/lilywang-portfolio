@@ -10,7 +10,7 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
-  title: '軟體產品經理',
+  title: '產品經理',
   intro: '5年以上 B2B/B2C SaaS 及行動應用產品管理經驗，專注於 AI 驅動、以用戶為中心的解決方案。具工程背景，擅長跨部門溝通協調、數據驅動決策，並有完整的從 0 到 1 產品開發及上線經驗。',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',
@@ -51,6 +51,7 @@ export const aboutData: AboutData = {
       name: 'AI for Data Analysis',
       org: 'Google',
       year: '2026-03',
+      highlights: ['Data Analysis'],
     },
     {
       name: 'Machine Learning Foundations for Product Managers',
@@ -71,6 +72,7 @@ export const aboutData: AboutData = {
       name: 'Google Cloud Certification',
       org: 'Google Cloud',
       year: '2024-08',
+      highlights: ['Google Cloud'],
     },
     {
       name: 'Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud',
@@ -106,6 +108,7 @@ export const aboutData: AboutData = {
       name: 'DAT263x - Introduction to Artificial Intelligence (AI)',
       org: 'Microsoft',
       year: '2019-08',
+      highlights: ['Artificial Intelligence'],
     },
   ],
   interests: [
@@ -278,7 +281,6 @@ export const skillsData: SkillsData = {
     { name: '市場與競品分析', level: 85 },
     { name: '跨部門團隊領導', level: 90 },
     { name: '利害關係人管理', level: 90 },
-    { name: 'AI 產品規劃', level: 85 },
   ],
   methodologies: [
     { name: '敏捷開發 / Scrum / Kanban', level: 95 },
@@ -287,11 +289,14 @@ export const skillsData: SkillsData = {
     { name: '專案進度與風險管理', level: 85 },
     { name: '數據驅動決策', level: 90 },
   ],
-  technicalSkills: [
+  aiSkills: [
+    { name: 'AI 產品規劃', level: 90 },
     { name: 'Generative AI / LLM', level: 85 },
     { name: 'Prompt Engineering', level: 85 },
     { name: 'Agentic AI', level: 80 },
     { name: 'Machine Learning', level: 75 },
+  ],
+  technicalSkills: [
     { name: '數據分析 (Firebase, Google Analytics)', level: 90 },
     { name: '資料視覺化 (Tableau, Power BI)', level: 85 },
     { name: 'Figma / Axure RP', level: 85 },
