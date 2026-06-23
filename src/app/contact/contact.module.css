@@ -128,12 +128,12 @@
   .contactGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .contactInfo {
-    order: 2;
-  }
-  
-  .contactForm {
     order: 1;
+  }
+
+  .contactForm {
+    order: 2;
   }
 }

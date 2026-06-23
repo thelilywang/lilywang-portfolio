@@ -51,6 +51,30 @@
   flex-wrap: wrap;
 }
 
+/* <480px：links 均分整列寬，不 overflow */
+@media (max-width: 479px) {
+  .links {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .link {
+    font-size: 12px;
+    padding: 4px 4px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .langButton {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .iconButton {
+    padding: 4px 5px;
+  }
+}
+
 /* ≥768px：三欄 logo | links | controls */
 @media (min-width: 768px) {
   .container {
