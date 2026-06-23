@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className={styles.heroPhoto}>
             <Image
-              src="/ProfilePic.jpg"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/ProfilePic.jpg`}
               alt={personalInfo.name}
               fill
               className={styles.heroPhotoImg}
