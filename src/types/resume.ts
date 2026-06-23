@@ -45,6 +45,7 @@ export interface ExperienceItem {
   position: string;
   description: string;
   achievements: string[];
+  tags?: string[];
 }
 
 export interface ProjectResult {

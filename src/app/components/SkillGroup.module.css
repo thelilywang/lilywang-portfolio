@@ -1,0 +1,51 @@
+.skillsSection {
+  margin-bottom: 40px;
+}
+
+.skillsSection h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--secondary-color);
+}
+
+.skillGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillName {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.expert {
+  background-color: var(--joy-palette-success-100, #C7F7C7);
+  color: var(--joy-palette-success-700, #1F7A1F);
+}
+
+.proficient {
+  background-color: var(--joy-palette-primary-100, #E3EFFB);
+  color: var(--joy-palette-primary-700, #12467B);
+}
+
+.familiar {
+  background-color: var(--joy-palette-neutral-100, #F0F4F8);
+  color: var(--joy-palette-neutral-700, #32383E);
+}

@@ -94,41 +94,40 @@
   text-decoration: none;
 }
 
-a.primary {
+.primary {
   background: var(--primary-color);
   color: white;
 }
 
-a.primary:hover {
+.primary:hover {
   background: var(--button-primary-hover);
 }
 
-a.secondary {
+.secondary {
   border-color: var(--gray-alpha-200);
   color: var(--foreground);
 }
 
-a.secondary:hover {
+.secondary:hover {
   background-color: var(--button-secondary-hover) !important;
   border-color: var(--foreground);
   color: var(--foreground);
 }
+
 
 /* ── Highlights ── */
 .highlights {
   margin-top: 0;
 }
 
-.highlights h2,
-.sideProjects h2 {
+.highlights h2 {
   font-size: 32px;
   margin-bottom: 30px;
   text-align: center;
   position: relative;
 }
 
-.highlights h2:after,
-.sideProjects h2:after {
+.highlights h2:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -170,56 +169,123 @@ a.secondary:hover {
   margin: 0;
 }
 
-/* ── Side Projects ── */
-.sideProjects {
-  margin-top: 0;
-}
-
-.sideProjectsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.sideProjectCard {
-  background-color: var(--background);
-  border: 1px solid var(--gray-alpha-200);
-  border-left: 3px solid var(--primary-color);
-  border-radius: 12px;
-  padding: 28px;
+/* ── Quote ── */
+.quoteSection {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: center;
+  text-align: center;
+  padding: 48px 56px 44px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 2.5px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 0 0 2.5px transparent,
+    0 8px 32px rgba(99, 102, 241, 0.10),
+    0 2px 8px rgba(236, 72, 153, 0.07);
+  overflow: hidden;
 }
 
-.sideProjectCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+/* 彩色漸層邊框用 pseudo-element 模擬 */
+.quoteSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2.5px;
+  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-.sideProjectCard h3 {
-  font-size: 20px;
+.quoteSection::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(129,140,248,0.06) 0%, rgba(56,189,248,0.05) 50%, rgba(244,114,182,0.06) 100%);
+  pointer-events: none;
+}
+
+:global([data-joy-color-scheme="dark"]) .quoteSection {
+  background: #0f172a;
+  box-shadow:
+    0 8px 32px rgba(99,102,241,0.18),
+    0 2px 8px rgba(236,72,153,0.12);
+}
+
+:global([data-joy-color-scheme="dark"]) .quoteSection::after {
+  background: linear-gradient(135deg, rgba(129,140,248,0.10) 0%, rgba(56,189,248,0.08) 50%, rgba(244,114,182,0.10) 100%);
+}
+
+.quoteDecorTail {
+  display: inline;
+  margin-left: 6px;
+  font-size: 0.9em;
+  vertical-align: 0.05em;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(12deg); }
+}
+
+.quoteMarks {
+  font-family: var(--joy-fontFamily-display, 'Fraunces', serif);
+  font-size: 1.35em;
+  line-height: 1;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  vertical-align: -0.15em;
+}
+
+.quoteBody {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.quoteText {
+  font-family: var(--joy-fontFamily-display, 'Fraunces', serif);
+  font-size: 22px;
+  line-height: 1.65;
+  font-style: italic;
+  color: #1e293b;
   margin: 0;
-  color: var(--primary-color);
+  white-space: nowrap;
 }
 
-.sideProjectCard p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
+.quoteHighlight {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(90deg, #6366f1, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.sideProjectLink {
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--primary-color);
-  text-decoration: none;
+:global([data-joy-color-scheme="dark"]) .quoteText {
+  color: #e2e8f0;
 }
 
-.sideProjectLink:hover {
-  text-decoration: underline;
+:global([data-joy-color-scheme="dark"]) .quoteHighlight {
+  background: linear-gradient(90deg, #a5b4fc, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── Footer ── */
@@ -280,10 +346,6 @@ a.secondary:hover {
   .highlightsGrid {
     grid-template-columns: 1fr;
   }
-
-  .sideProjectsGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .footer img {
@@ -292,12 +354,12 @@ a.secondary:hover {
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
+  .primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
   }
 
-  a.secondary:hover {
+  .secondary:hover {
     background: var(--button-secondary-hover);
     border-color: transparent;
   }
@@ -328,7 +390,7 @@ a.secondary:hover {
     padding: 0 16px;
   }
 
-  a.secondary {
+  .secondary {
     min-width: auto;
   }
 

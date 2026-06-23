@@ -61,15 +61,6 @@ export default function Contact() {
 
         <ContactForm recipientEmail={personalInfo.email} />
       </div>
-
-      <div className={styles.schedule}>
-        <h2>✨</h2>
-        <p>
-          {t('closing_quote')}
-          {'\n'}{t('closing_text')}{' '}
-          <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
-        </p>
-      </div>
     </div>
   );
 }

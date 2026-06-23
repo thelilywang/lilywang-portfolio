@@ -9,7 +9,7 @@ import { useLocaleContext } from "@/context/LocaleContext";
 export default function Home() {
   const t = useTranslations('home');
   const { resumeData } = useLocaleContext();
-  const { personalInfo, highlightsData, sideProjectsData } = resumeData;
+  const { personalInfo, highlightsData } = resumeData;
 
   return (
     <div className={styles.page}>
@@ -20,8 +20,9 @@ export default function Home() {
             <h2 className={styles.title}>{personalInfo.title}</h2>
             <p className={styles.intro}>{personalInfo.intro}</p>
             <div className={styles.ctas}>
-              <Link href="/contact" className={styles.primary}>{t('cta_contact')}</Link>
-              <Link href="/projects" className={styles.secondary}>{t('cta_portfolio')}</Link>
+              <Link href="/projects" className={styles.primary}>{t('cta_portfolio')}</Link>
+              {/* TODO: replace href with actual resume file path e.g. /resume.pdf once uploaded to public/ */}
+              <a href="#" download className={styles.secondary}>{t('cta_download')}</a>
             </div>
           </div>
           <div className={styles.heroPhoto}>
@@ -47,29 +48,24 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.sideProjects}>
-          <h2>{t('side_projects_heading')}</h2>
-          <div className={styles.sideProjectsGrid}>
-            {sideProjectsData.map((project, index) => (
-              <div className={styles.sideProjectCard} key={index}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                {project.href && (
-                  <a href={project.href} target="_blank" rel="noopener noreferrer" className={styles.sideProjectLink}>
-                    View →
-                  </a>
-                )}
-              </div>
-            ))}
+        <div className={styles.quoteSection}>
+          <div className={styles.quoteBody}>
+            <p className={styles.quoteText}>
+              <span className={styles.quoteMarks} aria-hidden="true">&ldquo;</span>
+              {t.rich('quote', {
+                highlight: (chunks) => <span className={styles.quoteHighlight}>{chunks}</span>,
+              })}
+              <span className={styles.quoteMarks} aria-hidden="true">&rdquo;</span>
+              <span className={styles.quoteDecorTail} aria-hidden="true">✨</span>
+            </p>
           </div>
         </div>
       </main>
       <footer className={styles.footer}>
         <div className={styles.navigation}>
           <Link href="/about">{t('footer_about')}</Link>
-          <Link href="/experience">{t('footer_experience')}</Link>
           <Link href="/projects">{t('footer_projects')}</Link>
-          <Link href="/skills">{t('footer_skills')}</Link>
+          <Link href="/blog">{t('footer_blog')}</Link>
           <Link href="/contact">{t('footer_contact')}</Link>
         </div>
         <div className={styles.copyright}>

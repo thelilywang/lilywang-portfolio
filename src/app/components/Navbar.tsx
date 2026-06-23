@@ -32,12 +32,12 @@ export default function Navbar() {
         <div className={styles.links}>
           {navLink('/', t('home'))}
           {navLink('/about', t('about'))}
-          {navLink('/experience', t('experience'))}
           {navLink('/projects', t('projects'))}
-          {navLink('/side-projects', t('side_projects'))}
           {navLink('/blog', t('blog'))}
-          {navLink('/skills', t('skills'))}
           {navLink('/contact', t('contact'))}
+        </div>
+
+        <div className={styles.controls}>
           <button
             onClick={toggleLocale}
             className={styles.langButton}

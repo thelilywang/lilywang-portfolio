@@ -124,26 +124,6 @@
   font-style: italic;
 }
 
-.schedule {
-  margin-top: 2rem;
-  text-align: left;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background-color: transparent;
-  white-space: pre-line;  /* 新增: 保留文本中的換行和空格 */
-}
-
-.schedule h2 {
-  margin-bottom: 1rem;
-}
-
-.schedule p {
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
-  white-space: pre-line;  /* 新增: 確保段落內的文本也能正確換行 */
-}
-
 @media (max-width: 768px) {
   .contactGrid {
     grid-template-columns: 1fr;

@@ -2,23 +2,19 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "experience": "Experience",
     "projects": "Projects",
-    "side_projects": "Side Projects",
     "blog": "Blog",
-    "skills": "Skills",
     "contact": "Contact"
   },
   "home": {
     "photo_alt": "Profile Photo",
-    "cta_contact": "Contact Me",
-    "cta_portfolio": "View Portfolio",
+    "cta_download": "Download CV",
+    "cta_portfolio": "View Portfolio →",
     "highlights_heading": "Professional Highlights",
-    "side_projects_heading": "Side Projects",
+    "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well.",
     "footer_about": "About",
-    "footer_experience": "Experience",
     "footer_projects": "Projects",
-    "footer_skills": "Skills",
+    "footer_blog": "Blog",
     "footer_contact": "Contact"
   },
   "about": {
@@ -26,13 +22,31 @@
     "bio_heading": "Biography",
     "education_heading": "Education",
     "certifications_heading": "Certifications",
-    "interests_heading": "Interests"
+    "interests_heading": "Interests",
+    "anchor_intro": "About",
+    "anchor_experience": "Experience",
+    "anchor_skills": "Skills",
+    "anchor_credentials": "Education & Certs",
+    "education_heading_standalone": "Education",
+    "skill_expert": "Expert",
+    "skill_proficient": "Proficient",
+    "skill_familiar": "Familiar",
+    "experience_heading": "Work Experience",
+    "skills_heading": "Skills",
+    "soft_skills_heading": "Soft Skills",
+    "languages_heading": "Languages",
+    "product_skills_heading": "Product Management Skills",
+    "methodologies_heading": "Methodologies & Processes",
+    "technical_skills_heading": "Technical Skills"
   },
   "experience": {
     "page_title": "Work Experience"
   },
   "projects": {
-    "page_title": "Projects"
+    "page_title": "Projects",
+    "side_projects_heading": "Side Projects",
+    "anchor_main": "Main Projects",
+    "anchor_side": "Side Projects"
   },
   "skills": {
     "page_title": "Skills",
@@ -48,7 +62,6 @@
     "social_heading": "Social Media",
     "email_label": "Email",
     "location_label": "Location",
-    "closing_quote": "Whatever is worth doing is worth doing well.",
     "closing_text": "Feel free to reach out through the above channels:"
   },
   "contactForm": {
