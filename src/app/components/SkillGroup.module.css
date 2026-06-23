@@ -51,21 +51,21 @@
 }
 
 .expert {
-  background-color: #d4f7d4;
-  color: #1a6e1a;
-  border: 1px solid #a8e6a8;
+  background-color: var(--skill-expert-bg);
+  color: var(--skill-expert-text);
+  border: 1px solid var(--skill-expert-border);
 }
 
 .proficient {
-  background-color: #dbeeff;
-  color: #0b4fa3;
-  border: 1px solid #aed4f7;
+  background-color: var(--skill-proficient-bg);
+  color: var(--skill-proficient-text);
+  border: 1px solid var(--skill-proficient-border);
 }
 
 .familiar {
-  background-color: #f0f0f0;
-  color: #3a3a3a;
-  border: 1px solid #d0d0d0;
+  background-color: var(--skill-familiar-bg);
+  color: var(--skill-familiar-text);
+  border: 1px solid var(--skill-familiar-border);
 }
 
 @media (max-width: 600px) {

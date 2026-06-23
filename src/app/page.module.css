@@ -161,11 +161,12 @@
 }
 
 .highlightCard:hover h3 {
-  color: #ffffff;
+  color: var(--color-on-primary);
 }
 
 .highlightCard:hover p {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-on-primary);
+  opacity: 0.88;
 }
 
 .highlightCard h3 {

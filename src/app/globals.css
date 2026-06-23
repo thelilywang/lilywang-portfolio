@@ -82,6 +82,20 @@
   --radius-lg: 12px;
   --radius-xl: 20px;
   --radius-full: 999px;
+
+  /* ── Skill Badge ── */
+  --skill-expert-bg: #d4f7d4;
+  --skill-expert-text: #1a6e1a;
+  --skill-expert-border: #a8e6a8;
+  --skill-proficient-bg: #dbeeff;
+  --skill-proficient-text: #0b4fa3;
+  --skill-proficient-border: #aed4f7;
+  --skill-familiar-bg: #f0f0f0;
+  --skill-familiar-text: #3a3a3a;
+  --skill-familiar-border: #d0d0d0;
+
+  /* ── Navbar glass ── */
+  --navbar-bg: rgba(255, 255, 255, 0.85);
 }
 
 [data-joy-color-scheme="dark"] {
@@ -121,6 +135,20 @@
 
   /* ── Focus ── */
   --focus-ring: 0 0 0 3px rgba(50, 145, 255, 0.4);
+
+  /* ── Skill Badge (dark) ── */
+  --skill-expert-bg: #1a3d1a;
+  --skill-expert-text: #86efac;
+  --skill-expert-border: #166534;
+  --skill-proficient-bg: #0f2d52;
+  --skill-proficient-text: #93c5fd;
+  --skill-proficient-border: #1e4d8c;
+  --skill-familiar-bg: #1e1e1e;
+  --skill-familiar-text: #b0b8c4;
+  --skill-familiar-border: #3a3a3a;
+
+  /* ── Navbar glass (dark) ── */
+  --navbar-bg: rgba(10, 10, 10, 0.85);
 }
 
 html,

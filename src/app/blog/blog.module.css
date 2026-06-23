@@ -1,3 +1,9 @@
 .container {
   composes: pageContainerMedium from '../styles/shared.module.css';
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+}

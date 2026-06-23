@@ -9,17 +9,17 @@
 - Next.js (App Router)
 - React
 - TypeScript
-- Tailwind CSS
+- CSS Modules（無 Tailwind）
 
 ## 檔案結構
 
 - `src/app/`: 包含頁面組件和路由
 - `public/`: 靜態資源
-- `components/`: 可重用的 UI 組件
+- `src/app/components/`: 可重用的 UI 組件
 
 ## 編碼風格指南
 
 - 使用函數組件與 React Hooks
 - 採用 TypeScript 類型定義
 - 遵循 ESLint 規則
-- 使用 Tailwind CSS 進行樣式設計
+- 使用 CSS Modules 進行樣式設計，共用 token 定義於 `src/app/globals.css`

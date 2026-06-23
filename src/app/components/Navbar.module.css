@@ -2,7 +2,7 @@
   width: 100%;
   padding: 12px 0;
   border-bottom: 1px solid var(--gray-alpha-200);
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--navbar-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: fixed;
@@ -115,7 +115,7 @@
 }
 
 :global([data-joy-color-scheme="dark"]) .navbar {
-  background-color: rgba(10, 10, 10, 0.85);
+  background-color: var(--navbar-bg);
 }
 
 :global([data-joy-color-scheme="dark"]) .link:not(.linkActive):hover {
