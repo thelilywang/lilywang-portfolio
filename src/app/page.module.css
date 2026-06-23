@@ -1,18 +1,7 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-  --primary-color: #0070f3;
-  --primary-color-light: #3291ff;
-  --secondary-color: #2E2E2E;
-
-  --button-primary-hover: #0060df;
-  --button-secondary-hover: #f2f2f2;
-
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100svh;
-  font-family: var(--font-geist-sans);
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -69,10 +58,11 @@
 .name {
   font-size: 48px;
   margin: 0;
-  font-weight: 800;
+  font-weight: 600;
+  font-family: var(--joy-fontFamily-display, 'Fraunces', serif);
   color: var(--foreground);
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .title {
@@ -133,7 +123,9 @@ a.secondary {
 }
 
 a.secondary:hover {
-  background-color: var(--button-secondary-hover);
+  background-color: var(--button-secondary-hover) !important;
+  border-color: var(--foreground);
+  color: var(--foreground);
 }
 
 /* ── Highlights ── */
@@ -168,7 +160,8 @@ a.secondary:hover {
 }
 
 .highlightCard {
-  background-color: var(--gray-alpha-100);
+  background-color: var(--background);
+  border: 1px solid var(--gray-alpha-200);
   border-radius: 12px;
   padding: 24px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -203,14 +196,15 @@ a.secondary:hover {
 }
 
 .sideProjectCard {
-  background-color: var(--gray-alpha-100);
+  background-color: var(--background);
+  border: 1px solid var(--gray-alpha-200);
+  border-left: 3px solid var(--primary-color);
   border-radius: 12px;
   padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-left: 3px solid var(--primary-color);
 }
 
 .sideProjectCard:hover {

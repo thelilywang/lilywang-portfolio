@@ -18,6 +18,8 @@
 
 .pageTitle {
   font-size: 42px;
+  font-weight: 600;
+  font-family: var(--joy-fontFamily-display, 'Fraunces', serif);
   margin: 0 0 40px 0;
   position: relative;
   display: inline-block;
