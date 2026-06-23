@@ -25,6 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <ClientProviders>
+          <div id="scroll-sentinel" aria-hidden="true" style={{ height: '1px', pointerEvents: 'none' }} />
           <Navbar />
           {children}
         </ClientProviders>
