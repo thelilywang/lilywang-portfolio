@@ -23,11 +23,14 @@ interface LocaleContextValue {
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === 'undefined') return DEFAULT_LOCALE;
+  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
+
+  useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    return stored === 'en' || stored === 'zh-TW' ? stored : DEFAULT_LOCALE;
-  });
+    if (stored === 'en' || stored === 'zh-TW') {
+      setLocaleState(stored);
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = locale;

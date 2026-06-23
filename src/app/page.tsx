@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import styles from "./page.module.css";
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from "@/context/LocaleContext";
@@ -10,6 +11,17 @@ export default function Home() {
   const t = useTranslations('home');
   const { resumeData } = useLocaleContext();
   const { personalInfo, highlightsData } = resumeData;
+  const fadeRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const els = fadeRefs.current.filter(Boolean) as HTMLElement[];
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add(styles.visible); }),
+      { threshold: 0.12 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -36,11 +48,19 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.highlights}>
+        <div
+          className={`${styles.highlights} ${styles.fadeInUp}`}
+          ref={el => { fadeRefs.current[0] = el; }}
+        >
           <h2>{t('highlights_heading')}</h2>
           <div className={styles.highlightsGrid}>
             {highlightsData.map((highlight, index) => (
-              <div className={styles.highlightCard} key={index}>
+              <div
+                className={`${styles.highlightCard} ${styles.fadeInUp}`}
+                style={{ transitionDelay: `${index * 0.1}s` }}
+                ref={el => { fadeRefs.current[1 + index] = el; }}
+                key={index}
+              >
                 <h3>{highlight.title}</h3>
                 <p>{highlight.description}</p>
               </div>
@@ -48,7 +68,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.quoteSection}>
+        <div
+          className={`${styles.quoteSection} ${styles.fadeInUp}`}
+          ref={el => { fadeRefs.current[10] = el; }}
+        >
           <div className={styles.quoteBody}>
             <p className={styles.quoteText}>
               <span className={styles.quoteMarks} aria-hidden="true">&ldquo;</span>
@@ -69,7 +92,7 @@ export default function Home() {
           <Link href="/contact">{t('footer_contact')}</Link>
         </div>
         <div className={styles.copyright}>
-          © {new Date().getFullYear()} {personalInfo.name} • {personalInfo.title}
+          © {new Date().getFullYear()} {personalInfo.name} • Built with Next.js + Joy UI
         </div>
       </footer>
     </div>
