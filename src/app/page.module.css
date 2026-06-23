@@ -94,22 +94,22 @@
   text-decoration: none;
 }
 
-.primary {
+.ctas .primary {
   background: var(--primary-color);
-  color: white;
+  color: var(--color-on-primary);
 }
 
-.primary:hover {
+.ctas .primary:hover {
   background: var(--button-primary-hover);
 }
 
-.secondary {
-  border: 1px solid var(--gray-alpha-200) !important;
+.ctas .secondary {
+  border: 1px solid var(--border-default);
   color: var(--foreground);
 }
 
-.secondary:hover {
-  background-color: var(--button-secondary-hover) !important;
+.ctas .secondary:hover {
+  background-color: var(--surface-2);
   border-color: var(--foreground);
   color: var(--foreground);
 }
@@ -145,12 +145,12 @@
 }
 
 .highlightCard {
-  background-color: var(--background);
-  border: 1px solid var(--gray-alpha-200);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
   border-radius: 12px;
   padding: 24px;
   transition: transform 0.22s ease, box-shadow 0.22s ease,
-              background-color 0.22s ease;
+              background-color 0.22s ease, border-color 0.22s ease;
 }
 
 .highlightCard:hover {
@@ -170,7 +170,7 @@
 
 .highlightCard h3 {
   font-size: 20px;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   color: var(--primary-color);
   transition: color 0.22s ease;
 }
@@ -179,6 +179,7 @@
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
+  color: var(--color-muted-strong);
   transition: color 0.22s ease;
 }
 
@@ -262,7 +263,7 @@
   font-size: 22px;
   line-height: 1.65;
   font-style: italic;
-  color: #1e293b;
+  color: var(--foreground);
   margin: 0;
   white-space: nowrap;
 }
@@ -274,10 +275,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-:global([data-joy-color-scheme="dark"]) .quoteText {
-  color: #e2e8f0;
 }
 
 :global([data-joy-color-scheme="dark"]) .quoteHighlight {
@@ -356,14 +353,14 @@
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  .primary:hover {
+  .ctas .primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
   }
 
-  .secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .ctas .secondary:hover {
+    background: var(--surface-2);
+    border-color: var(--foreground);
   }
 }
 

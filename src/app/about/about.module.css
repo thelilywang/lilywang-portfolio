@@ -80,14 +80,20 @@
   height: 16px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  border: 4px solid white;
+  border: 4px solid var(--background);
   box-shadow: 0 0 0 2px var(--gray-alpha-200);
 }
 
 .timelineContent {
-  background-color: var(--gray-alpha-100);
+  background-color: var(--surface-raised);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   padding: 25px;
   border-radius: 12px;
+}
+
+:global([data-joy-color-scheme="dark"]) .timelineContent {
+  background-color: var(--surface-raised);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timelinePeriod {
@@ -135,8 +141,10 @@
 
 .techTag {
   font-size: 12px;
+  font-weight: 500;
   padding: 3px 10px;
-  background-color: var(--gray-alpha-200);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
   border-radius: 20px;
 }
 
@@ -144,54 +152,79 @@
 .tagCloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .tag {
-  padding: 8px 16px;
-  background-color: var(--gray-alpha-200);
-  border-radius: 30px;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  padding: 6px 14px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--foreground);
+  transition: background-color 0.18s ease, color 0.18s ease,
+              border-color 0.18s ease, transform 0.18s ease;
 }
 
 .tag:hover {
   background-color: var(--primary-color);
-  color: white;
-  transform: scale(1.05);
+  color: var(--color-on-primary);
+  border-color: transparent;
+  transform: translateY(-1px);
 }
 
-.languageGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 24px;
+/* ── Language ── */
+.languageList {
+  display: flex;
+  flex-direction: column;
 }
 
 .languageItem {
-  padding: 16px;
-  background-color: var(--gray-alpha-100);
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s ease;
+}
+
+.languageItem:hover {
+  background-color: var(--surface-1);
 }
 
 .languageName {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  margin-bottom: 4px;
+  color: var(--foreground);
 }
 
 .languageLevel {
-  font-size: 14px;
-  color: var(--joy-palette-neutral-500, #666);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-muted);
+  background-color: var(--surface-2);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .section {
-  margin-bottom: 50px;
+  margin-bottom: 72px;
+}
+
+.section:nth-child(3) {
+  padding-top: 8px;
 }
 
 .section h2 {
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: var(--secondary-color);
+  color: var(--foreground);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-default);
 }
 
 .section p {
@@ -200,58 +233,108 @@
   margin-bottom: 16px;
 }
 
+/* ── Education ── */
 .educationItem {
-  margin-bottom: 24px;
-  padding-left: 20px;
-  border-left: 3px solid var(--primary-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 8px 0 16px;
+}
+
+.educationMeta {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-display, 'Fraunces', serif);
+  flex-shrink: 0;
+}
+
+.educationBody {
+  flex: 1;
+  min-width: 0;
 }
 
 .degree {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+  color: var(--foreground);
   margin-bottom: 4px;
+  line-height: 1.4;
 }
 
 .school {
-  font-size: 16px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 0;
 }
 
 .period {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 2px;
 }
 
+/* ── Certifications ── */
 .certHeading {
-  margin-top: 40px;
+  margin-top: 36px;
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
 }
 
 .certifications {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .certifications li {
   display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--gray-alpha-200);
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 4px;
+}
+
+.certOrgBadge {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-2);
+  color: var(--color-muted);
 }
 
 .certName {
+  font-size: 14px;
   font-weight: 500;
   flex: 1;
+  color: var(--foreground);
+  line-height: 1.5;
 }
 
 .certOrg {
-  color: #666;
-  flex: 1;
+  display: none;
 }
 
 .certYear {
-  color: #666;
-  flex: 0 0 80px;
-  text-align: right;
+  display: none;
 }
 
 .interests {
@@ -265,15 +348,36 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 20px 12px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+              background-color 0.22s ease, border-color 0.22s ease;
+}
+
+.interestItem:hover {
+  transform: translateY(-4px);
+  background-color: var(--primary-color);
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(0, 112, 243, 0.22);
+}
+
+.interestItem:hover .interestName {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .interestIcon {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .interestName {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted-strong);
+  transition: color 0.22s ease;
 }
 
 @media (max-width: 768px) {

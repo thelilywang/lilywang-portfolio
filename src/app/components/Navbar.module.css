@@ -75,11 +75,11 @@
   color: var(--primary-color);
   text-decoration: none;
   letter-spacing: -0.01em;
-  transition: color 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
 .logo:hover {
-  color: var(--button-primary-hover);
+  opacity: 0.75;
 }
 
 .links {
@@ -98,20 +98,20 @@
 
 .link {
   font-size: 14px;
-  color: var(--foreground);
+  color: var(--color-muted);
   text-decoration: none;
-  font-weight: var(--joy-fontWeight-md, 500);
+  font-weight: 500;
   letter-spacing: 0.01em;
   padding: 5px 12px;
-  border-radius: var(--joy-radius-sm, 6px);
+  border-radius: var(--radius-sm);
   background-color: transparent;
   transition: background-color 0.15s ease, color 0.15s ease;
-  line-height: var(--joy-lineHeight-md, 1.5);
+  line-height: 1.5;
 }
 
 .link:hover {
-  color: var(--foreground);
-  background-color: var(--joy-palette-neutral-200, #DDE7EE);
+  color: var(--primary-color);
+  background-color: rgba(0, 112, 243, 0.07);
 }
 
 :global([data-joy-color-scheme="dark"]) .navbar {
@@ -119,53 +119,63 @@
 }
 
 :global([data-joy-color-scheme="dark"]) .link:not(.linkActive):hover {
-  background-color: var(--joy-palette-neutral-700, #32383E);
+  background-color: rgba(50, 145, 255, 0.12);
+  color: var(--primary-color);
 }
 
 .linkActive {
-  background-color: var(--joy-palette-primary-100, #E3EFFB);
-  color: var(--joy-palette-primary-600, #185EA5);
-  font-weight: var(--joy-fontWeight-lg, 600);
-  box-shadow: inset 0 -2px 0 var(--joy-palette-primary-400, #51A8DD);
+  background-color: rgba(0, 112, 243, 0.1);
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .linkActive:hover {
-  background-color: var(--joy-palette-primary-200, #C7DFF7);
-  color: var(--joy-palette-primary-700, #12467B);
+  background-color: rgba(0, 112, 243, 0.16);
 }
 
-/* 語言切換按鈕：soft neutral */
+/* 語言切換按鈕 */
 .langButton {
   font-size: 13px;
-  font-weight: var(--joy-fontWeight-lg, 600);
-  color: var(--joy-palette-neutral-700, #32383E);
-  background-color: var(--joy-palette-neutral-100, #F0F4F8);
-  border: none;
-  border-radius: var(--joy-radius-sm, 6px);
-  padding: 5px 10px;
+  font-weight: 600;
+  color: var(--color-muted);
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
-  line-height: var(--joy-lineHeight-md, 1.5);
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  line-height: 1.5;
 }
 
 .langButton:hover {
-  background-color: var(--joy-palette-neutral-200, #DDE7EE);
-  color: var(--joy-palette-neutral-700, #32383E);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: rgba(0, 112, 243, 0.07);
 }
 
-/* Dark mode 切換按鈕：無框線，soft neutral hover */
+:global([data-joy-color-scheme="dark"]) .langButton:hover {
+  background-color: rgba(50, 145, 255, 0.12);
+}
+
+/* Theme toggle 按鈕 */
 .iconButton {
   font-size: 16px;
   background: none;
   border: none;
-  border-radius: var(--joy-radius-sm, 6px);
+  border-radius: var(--radius-sm);
   padding: 5px 8px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
-  line-height: var(--joy-lineHeight-md, 1.5);
+  color: var(--color-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 1.5;
 }
 
 .iconButton:hover {
-  background-color: var(--joy-palette-neutral-100, #F0F4F8);
+  background-color: rgba(0, 112, 243, 0.07);
+  color: var(--primary-color);
+}
+
+:global([data-joy-color-scheme="dark"]) .iconButton:hover {
+  background-color: rgba(50, 145, 255, 0.12);
 }
 

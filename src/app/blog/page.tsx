@@ -37,11 +37,11 @@ export default function Blog() {
                   {post.title}
                 </Typography>
 
-                <Typography level="body-sm" sx={{ color: 'neutral.500', mb: 1.5 }}>
+                <Typography level="body-sm" sx={{ color: 'text.tertiary', mb: 1.5 }}>
                   {post.date}
                 </Typography>
 
-                <Typography level="body-md" sx={{ mb: 2, color: 'neutral.700' }}>
+                <Typography level="body-md" sx={{ mb: 2, color: 'text.secondary' }}>
                   {post.description}
                 </Typography>
 

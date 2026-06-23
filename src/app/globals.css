@@ -1,4 +1,5 @@
 :root {
+  /* ── Base ── */
   --background: #ffffff;
   --foreground: #171717;
   --primary-color: #0070f3;
@@ -8,6 +9,79 @@
   --gray-alpha-100: rgba(0, 0, 0, 0.05);
   --button-primary-hover: #0060df;
   --button-secondary-hover: #f2f2f2;
+
+  /* ── Surface ── */
+  --surface-1: #f8f8f8;
+  --surface-2: #f0f0f0;
+  --surface-raised: #ffffff;
+
+  /* ── Semantic Colors ── */
+  --color-muted: #636B74;
+  --color-muted-strong: #4a4a4a;
+  --color-on-primary: #ffffff;
+  --color-error: #d32f2f;
+  --color-success: #1a7f37;
+
+  /* ── Border ── */
+  --border-default: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+
+  /* ── Accent ── */
+  --accent-indigo: #6366f1;
+  --accent-sky: #38bdf8;
+  --accent-pink: #f472b6;
+  --accent-gradient: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
+  --accent-gradient-text: linear-gradient(90deg, #6366f1, #38bdf8);
+
+  /* ── Focus ── */
+  --focus-ring: 0 0 0 3px rgba(0, 112, 243, 0.35);
+
+  /* ── Typography ── */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 16px;
+  --text-md: 17px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 28px;
+  --text-3xl: 32px;
+  --text-4xl: 42px;
+  --text-5xl: 48px;
+  --leading-tight: 1.1;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.7;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --tracking-tight: -0.5px;
+  --tracking-normal: 0;
+  --tracking-wide: 0.01em;
+  --tracking-wider: 1px;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
 }
 
 [data-joy-color-scheme="dark"] {
@@ -18,9 +92,35 @@
   --secondary-color: #f2f2f2;
   --gray-alpha-200: rgba(255, 255, 255, 0.145);
   --gray-alpha-100: rgba(255, 255, 255, 0.06);
-  --button-primary-hover: #0060df;
+  --button-primary-hover: #4ba3ff;
   --button-secondary-hover: #32383E;
   color-scheme: dark;
+
+  /* ── Surface ── */
+  --surface-1: #141414;
+  --surface-2: #1e1e1e;
+  --surface-raised: #1a1a1a;
+
+  /* ── Semantic Colors ── */
+  --color-muted: #9BA4B0;
+  --color-muted-strong: #b0b8c4;
+  --color-on-primary: #ffffff;
+  --color-error: #f87171;
+  --color-success: #4ade80;
+
+  /* ── Border ── */
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+
+  /* ── Accent ── */
+  --accent-indigo: #a5b4fc;
+  --accent-sky: #7dd3fc;
+  --accent-pink: #f9a8d4;
+  --accent-gradient: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
+  --accent-gradient-text: linear-gradient(90deg, #a5b4fc, #7dd3fc);
+
+  /* ── Focus ── */
+  --focus-ring: 0 0 0 3px rgba(50, 145, 255, 0.4);
 }
 
 html,
@@ -40,7 +140,119 @@ body {
 }
 
 [data-joy-color-scheme="dark"] body {
-  background: linear-gradient(180deg, #0a0a0a 0%, #0d0a1a 55%, #090f1a 100%);
+  background: linear-gradient(170deg, #0c0b22 0%, #080e20 45%, #06101e 100%);
+}
+
+/* ── 星空：box-shadow 技巧，一個偽元素渲染數百顆星 ── */
+[data-joy-color-scheme="dark"] body::before,
+[data-joy-color-scheme="dark"] body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 細小星（1px）：約 160 顆，低中亮度 */
+[data-joy-color-scheme="dark"] body::before {
+  box-shadow:
+    42px  108px rgba(255,255,255,0.75), 137px  34px rgba(255,255,255,0.60),
+    268px 190px rgba(255,255,255,0.80), 391px  67px rgba(255,255,255,0.55),
+    512px 143px rgba(255,255,255,0.70), 634px  22px rgba(255,255,255,0.65),
+    748px 201px rgba(255,255,255,0.75), 856px  88px rgba(255,255,255,0.60),
+    923px 312px rgba(255,255,255,0.80), 1089px  45px rgba(255,255,255,0.55),
+    1156px 178px rgba(255,255,255,0.70), 1278px 256px rgba(255,255,255,0.65),
+    78px  341px rgba(255,255,255,0.75), 193px 423px rgba(255,255,255,0.60),
+    334px 389px rgba(255,255,255,0.80), 467px 512px rgba(255,255,255,0.55),
+    589px 445px rgba(255,255,255,0.70), 712px 378px rgba(255,255,255,0.65),
+    823px 534px rgba(255,255,255,0.75), 945px 467px rgba(255,255,255,0.60),
+    1034px 423px rgba(255,255,255,0.80), 1167px 512px rgba(255,255,255,0.55),
+    1245px 389px rgba(255,255,255,0.70), 19px  601px rgba(255,255,255,0.65),
+    156px 678px rgba(255,255,255,0.75), 289px 734px rgba(255,255,255,0.60),
+    412px 612px rgba(255,255,255,0.80), 523px 789px rgba(255,255,255,0.55),
+    645px 656px rgba(255,255,255,0.70), 778px 723px rgba(255,255,255,0.65),
+    889px 678px rgba(255,255,255,0.75), 1012px 801px rgba(255,255,255,0.60),
+    1123px 645px rgba(255,255,255,0.80), 1234px 712px rgba(255,255,255,0.55),
+    67px  867px rgba(255,255,255,0.70), 198px 934px rgba(255,255,255,0.65),
+    345px 878px rgba(255,255,255,0.75), 478px 956px rgba(255,255,255,0.60),
+    601px 912px rgba(255,255,255,0.80), 734px 845px rgba(255,255,255,0.55),
+    856px 978px rgba(255,255,255,0.70), 967px 923px rgba(255,255,255,0.65),
+    1078px 867px rgba(255,255,255,0.75), 1189px 934px rgba(255,255,255,0.60),
+    23px 1034px rgba(255,255,255,0.80), 145px 1112px rgba(255,255,255,0.55),
+    278px 1078px rgba(255,255,255,0.70), 412px 1145px rgba(255,255,255,0.65),
+    534px 1089px rgba(255,255,255,0.75), 667px 1167px rgba(255,255,255,0.60),
+    789px 1123px rgba(255,255,255,0.80), 912px 1045px rgba(255,255,255,0.55),
+    1034px 1189px rgba(255,255,255,0.70), 1156px 1056px rgba(255,255,255,0.65),
+    89px  56px rgba(255,255,255,0.80), 223px 123px rgba(255,255,255,0.65),
+    356px 89px rgba(255,255,255,0.75), 489px 234px rgba(255,255,255,0.60),
+    612px 167px rgba(255,255,255,0.70), 745px 45px rgba(255,255,255,0.85),
+    878px 289px rgba(255,255,255,0.65), 1001px 156px rgba(255,255,255,0.75),
+    1134px 312px rgba(255,255,255,0.60), 1267px 78px rgba(255,255,255,0.80),
+    34px  456px rgba(255,255,255,0.65), 167px 523px rgba(255,255,255,0.75),
+    312px 478px rgba(255,255,255,0.60), 445px 601px rgba(255,255,255,0.80),
+    578px 534px rgba(255,255,255,0.65), 701px 467px rgba(255,255,255,0.75),
+    834px 623px rgba(255,255,255,0.60), 967px 556px rgba(255,255,255,0.80),
+    1100px 489px rgba(255,255,255,0.65), 1223px 601px rgba(255,255,255,0.75),
+    56px  745px rgba(255,255,255,0.60), 189px 812px rgba(255,255,255,0.80),
+    323px 778px rgba(255,255,255,0.65), 456px 856px rgba(255,255,255,0.75),
+    589px 801px rgba(255,255,255,0.60), 712px 878px rgba(255,255,255,0.80),
+    845px 745px rgba(255,255,255,0.65), 978px 812px rgba(255,255,255,0.75),
+    1101px 934px rgba(255,255,255,0.60), 1234px 867px rgba(255,255,255,0.80),
+    12px 1200px rgba(255,255,255,0.65), 145px 1278px rgba(255,255,255,0.75),
+    289px 1245px rgba(255,255,255,0.60), 423px 1312px rgba(255,255,255,0.80),
+    556px 1267px rgba(255,255,255,0.65), 689px 1334px rgba(255,255,255,0.75),
+    823px 1289px rgba(255,255,255,0.60), 956px 1356px rgba(255,255,255,0.80),
+    1089px 1312px rgba(255,255,255,0.65), 1223px 1245px rgba(255,255,255,0.75),
+    178px 167px rgba(255,255,255,0.80), 312px 234px rgba(255,255,255,0.65),
+    445px 178px rgba(255,255,255,0.75), 578px 301px rgba(255,255,255,0.60),
+    711px 245px rgba(255,255,255,0.70), 844px 123px rgba(255,255,255,0.85),
+    977px 367px rgba(255,255,255,0.65), 1110px 289px rgba(255,255,255,0.75),
+    1243px 412px rgba(255,255,255,0.60), 67px 634px rgba(255,255,255,0.80),
+    201px 701px rgba(255,255,255,0.65), 334px 656px rgba(255,255,255,0.75),
+    467px 778px rgba(255,255,255,0.60), 600px 712px rgba(255,255,255,0.80),
+    733px 645px rgba(255,255,255,0.65), 866px 767px rgba(255,255,255,0.75),
+    999px 701px rgba(255,255,255,0.60), 1132px 823px rgba(255,255,255,0.80),
+    1265px 756px rgba(255,255,255,0.65), 89px 923px rgba(255,255,255,0.75),
+    223px 989px rgba(255,255,255,0.60), 356px 945px rgba(255,255,255,0.80),
+    489px 1012px rgba(255,255,255,0.65), 622px 978px rgba(255,255,255,0.75),
+    755px 1045px rgba(255,255,255,0.60), 888px 1000px rgba(255,255,255,0.80),
+    1021px 1067px rgba(255,255,255,0.65), 1154px 1023px rgba(255,255,255,0.75),
+    1287px 1089px rgba(255,255,255,0.60), 45px 1156px rgba(255,255,255,0.80),
+    178px 1223px rgba(255,255,255,0.65), 311px 1178px rgba(255,255,255,0.75),
+    444px 1289px rgba(255,255,255,0.60), 577px 1245px rgba(255,255,255,0.80),
+    710px 1356px rgba(255,255,255,0.65), 843px 1312px rgba(255,255,255,0.75),
+    976px 1378px rgba(255,255,255,0.60), 1109px 1423px rgba(255,255,255,0.80),
+    1242px 1367px rgba(255,255,255,0.65);
+}
+
+/* 大亮星（2px）：約 40 顆，高亮度 */
+[data-joy-color-scheme="dark"] body::after {
+  width: 2px;
+  height: 2px;
+  box-shadow:
+    156px  89px rgba(255,255,255,0.95), 423px  45px rgba(255,255,255,0.90),
+    678px 178px rgba(255,255,255,0.95), 934px  67px rgba(255,255,255,0.90),
+    1189px 234px rgba(255,255,255,0.95), 89px  356px rgba(255,255,255,0.90),
+    345px 489px rgba(255,255,255,0.95), 601px 423px rgba(255,255,255,0.90),
+    856px 578px rgba(255,255,255,0.95), 1112px 512px rgba(255,255,255,0.90),
+    234px 712px rgba(255,255,255,0.95), 489px 845px rgba(255,255,255,0.90),
+    745px 778px rgba(255,255,255,0.95), 1001px 912px rgba(255,255,255,0.90),
+    1256px 845px rgba(255,255,255,0.95), 67px  978px rgba(255,255,255,0.90),
+    323px 1112px rgba(255,255,255,0.95), 578px 1045px rgba(255,255,255,0.90),
+    834px 1178px rgba(255,255,255,0.95), 1089px 1112px rgba(255,255,255,0.90),
+    1245px 1023px rgba(255,255,255,0.95), 178px 1289px rgba(255,255,255,0.90),
+    434px 1356px rgba(255,255,255,0.95), 689px 1423px rgba(255,255,255,0.90),
+    945px 1289px rgba(255,255,255,0.95), 1201px 1356px rgba(255,255,255,0.90),
+    512px 267px rgba(255,255,255,0.95), 767px 134px rgba(255,255,255,0.90),
+    1023px 356px rgba(255,255,255,0.95), 278px 601px rgba(255,255,255,0.90),
+    1134px 734px rgba(255,255,255,0.95), 389px 934px rgba(255,255,255,0.90),
+    644px 1156px rgba(255,255,255,0.95), 900px 1023px rgba(255,255,255,0.90),
+    1155px 1245px rgba(255,255,255,0.95), 123px 1445px rgba(255,255,255,0.90),
+    456px 1512px rgba(255,255,255,0.95), 789px 1467px rgba(255,255,255,0.90),
+    1045px 1534px rgba(255,255,255,0.95), 1300px 1478px rgba(255,255,255,0.90);
 }
 
 * {
@@ -52,5 +264,22 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 

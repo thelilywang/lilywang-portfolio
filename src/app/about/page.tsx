@@ -3,6 +3,7 @@
 import styles from './about.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import SkillGroup from '@/app/components/SkillGroup';
+import { GraduationCap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
 
@@ -92,11 +93,11 @@ export default function About() {
 
         <div className={styles.section}>
           <h2>{t('languages_heading')}</h2>
-          <div className={styles.languageGrid}>
+          <div className={styles.languageList}>
             {skillsData.languages.map((lang, index) => (
               <div className={styles.languageItem} key={index}>
-                <div className={styles.languageName}>{lang.name}</div>
-                <div className={styles.languageLevel}>{lang.level}</div>
+                <span className={styles.languageName}>{lang.name}</span>
+                <span className={styles.languageLevel}>{lang.level}</span>
               </div>
             ))}
           </div>
@@ -107,19 +108,23 @@ export default function About() {
         <h2>{t('education_heading_standalone')}</h2>
         {aboutData.education.map((edu, index) => (
           <div className={styles.educationItem} key={index}>
-            <div className={styles.degree}>{edu.degree}</div>
-            <div className={styles.school}>{edu.school}</div>
-            <div className={styles.period}>{edu.period}</div>
+            <div className={styles.educationMeta}>
+              <GraduationCap size={22} strokeWidth={2} />
+            </div>
+            <div className={styles.educationBody}>
+              <div className={styles.degree}>{edu.degree}</div>
+              <div className={styles.school}>{edu.school}</div>
+              {edu.period && <div className={styles.period}>{edu.period}</div>}
+            </div>
           </div>
         ))}
 
-        <h2 className={styles.certHeading}>{t('certifications_heading')}</h2>
+        <p className={styles.certHeading}>{t('certifications_heading')}</p>
         <ul className={styles.certifications}>
           {aboutData.certifications.map((cert, index) => (
             <li key={index}>
+              <span className={styles.certOrgBadge}>{cert.org}</span>
               <span className={styles.certName}>{cert.name}</span>
-              <span className={styles.certOrg}>{cert.org}</span>
-              <span className={styles.certYear}>{cert.year}</span>
             </li>
           ))}
         </ul>

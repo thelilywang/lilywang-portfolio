@@ -6,11 +6,17 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const initials = project.title
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((w: string) => w[0])
+    .join('');
+
   return (
     <div className={styles.projectCard}>
       <div className={styles.projectImageContainer}>
         <div className={styles.projectImagePlaceholder}>
-          {project.imagePlaceholder}
+          <span className={styles.projectInitials}>{initials}</span>
         </div>
       </div>
       <div className={styles.projectContent}>

@@ -71,10 +71,10 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
       </Typography>
 
       <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
-        <Typography level="body-sm" sx={{ color: 'neutral.500' }}>
+        <Typography level="body-sm" sx={{ color: 'text.tertiary' }}>
           {post.date}
         </Typography>
-        <Typography level="body-sm" sx={{ color: 'neutral.400' }}>·</Typography>
+        <Typography level="body-sm" sx={{ color: 'text.tertiary' }}>·</Typography>
         {post.tags.map((tag) => (
           <Chip key={tag} size="sm" variant="soft" color="primary">
             {tag}
