@@ -64,22 +64,24 @@
 }
 
 .company {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
   margin: 0 0 4px 0;
   color: var(--foreground);
 }
 
 .position {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0 16px 0;
   font-weight: 500;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .description {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: var(--color-muted-strong);
 }
 
 .achievements {
@@ -87,8 +89,10 @@
 }
 
 .achievements li {
-  margin-bottom: 8px;
-  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 7px;
+  line-height: 1.6;
+  color: var(--foreground);
 }
 
 /* ── Tech tags ── */
@@ -116,11 +120,11 @@
 }
 
 .tag {
-  padding: 6px 14px;
+  padding: 7px 16px;
   background-color: var(--surface-raised);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--foreground);
   transition: background-color 0.18s ease, color 0.18s ease,
@@ -136,42 +140,75 @@
 
 /* ── Language ── */
 .languageList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .languageItem {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 7px 10px;
-  border-radius: var(--radius-md);
-  transition: background-color 0.15s ease;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* 漸層左 accent bar */
+.languageItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #818cf8 0%, #38bdf8 100%);
+  border-radius: 4px 0 0 4px;
 }
 
 .languageItem:hover {
-  background-color: var(--surface-1);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 14%, transparent);
+}
+
+.languageBody {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding-left: 4px;
 }
 
 .languageName {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--foreground);
+  line-height: 1;
 }
 
 .languageLevel {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--color-muted);
-  background-color: var(--surface-2);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
   padding: 2px 8px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  align-self: flex-start;
 }
 
 .section {
-  margin-bottom: 72px;
+  margin-bottom: 64px;
+}
+
+/* 巢狀 section（soft skills / language 區）間距縮小 */
+.section .section {
+  margin-bottom: 40px;
 }
 
 .section:nth-child(3) {
@@ -179,17 +216,26 @@
 }
 
 .section h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
   color: var(--foreground);
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   border-bottom: 2px solid var(--border-default);
+}
+
+/* 巢狀 section 的 h2 不重複加底線 */
+.section .section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 16px;
 }
 
 .section p {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 
@@ -244,13 +290,15 @@
 
 /* ── Certifications ── */
 .certHeading {
-  margin-top: 36px;
-  margin-bottom: 4px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-muted);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+  padding-bottom: 0;
+  border-bottom: none;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .certifications {
@@ -258,35 +306,59 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 .certifications li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  padding: 8px 4px;
+  padding: 11px 18px;
+  background-color: var(--surface-raised);
+  border-bottom: 1px solid var(--border-default);
+  transition: background-color 0.15s ease;
+  min-height: 44px;
+}
+
+.certifications li:last-child {
+  border-bottom: none;
+}
+
+.certifications li:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 5%, var(--surface-raised));
 }
 
 .certOrgBadge {
   flex-shrink: 0;
-  margin-top: 1px;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 2px 7px;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
   border-radius: var(--radius-sm);
-  background-color: var(--surface-2);
-  color: var(--color-muted);
+  background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
+  color: var(--primary-color);
+  white-space: nowrap;
+  max-width: 88px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-width 0.25s ease;
+}
+
+.certifications li:hover .certOrgBadge {
+  max-width: 200px;
 }
 
 .certName {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  flex: 1;
   color: var(--foreground);
-  line-height: 1.5;
+  line-height: 1.45;
+  flex: 1;
 }
 
 .certOrg {
@@ -294,64 +366,97 @@
 }
 
 .certYear {
-  display: none;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .interests {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .interestItem {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 20px 12px;
+  min-height: 110px;
+  padding: 24px 12px;
   background-color: var(--surface-raised);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  cursor: default;
+  overflow: hidden;
+  position: relative;
   transition: transform 0.22s ease, box-shadow 0.22s ease,
               background-color 0.22s ease, border-color 0.22s ease;
 }
 
+.interestItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    color-mix(in srgb, var(--primary-color) 8%, transparent) 50%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .interestItem:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   background-color: var(--primary-color);
   border-color: transparent;
-  box-shadow: 0 10px 24px rgba(0, 112, 243, 0.22);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 30%, transparent);
+}
+
+.interestItem:hover::after {
+  opacity: 1;
 }
 
 .interestItem:hover .interestName {
   color: var(--color-on-primary);
 }
 
+.interestItem:hover .interestIcon {
+  transform: scale(1.25) rotate(-5deg);
+}
+
 .interestIcon {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 10px;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .interestName {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-muted-strong);
+  letter-spacing: 0.01em;
   transition: color 0.22s ease;
 }
 
 @media (max-width: 768px) {
+  .certifications {
+    grid-template-columns: 1fr;
+  }
+
   .certifications li {
-    flex-direction: column;
-    padding: 16px 0;
+    padding: 12px 14px;
   }
 
-  .certOrg, .certYear {
-    margin-top: 4px;
-  }
-
-  .certYear {
-    text-align: left;
+  .languageList {
+    grid-template-columns: 1fr;
   }
 
   .timeline {
@@ -366,11 +471,11 @@
     padding: 20px;
   }
 
-  .languageGrid {
-    grid-template-columns: 1fr;
-  }
-
   .anchorNav {
     gap: 16px;
+  }
+
+  .interests {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

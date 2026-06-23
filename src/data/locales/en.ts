@@ -38,49 +38,74 @@ export const aboutData: AboutData = {
   ],
   certifications: [
     {
-      name: 'AI Product Management Specialization',
-      org: 'Duke University (Coursera)',
-      year: '',
+      name: 'iPAS AI Application Planner',
+      org: 'iPAS',
+      year: '2026-06',
     },
     {
-      name: 'Microsoft Certified: AI Product Manager',
+      name: 'Enterprise Product Management Fundamentals',
       org: 'Microsoft',
-      year: '',
+      year: '2026-04',
+    },
+    {
+      name: 'AI for Data Analysis',
+      org: 'Google',
+      year: '2026-03',
+    },
+    {
+      name: 'Machine Learning Foundations for Product Managers',
+      org: 'Duke University (Coursera)',
+      year: '2026-02',
     },
     {
       name: 'Google AI Essentials',
       org: 'Google',
-      year: '',
-    },
-    {
-      name: 'iPAS+ AI Application Planner',
-      org: 'iPAS',
-      year: '',
-    },
-    {
-      name: 'Google Cloud Certifications (×6)',
-      org: 'Google Cloud',
-      year: '',
-    },
-    {
-      name: 'Google Analytics Certification',
-      org: 'Google',
-      year: '',
-    },
-    {
-      name: 'Microsoft Certificate DAT208x - Introduction to Python for Data Science',
-      org: 'Microsoft',
-      year: '',
-    },
-    {
-      name: 'Microsoft Certificate DAT263x - Introduction to Artificial Intelligence (AI)',
-      org: 'Microsoft',
-      year: '',
+      year: '2026-01',
     },
     {
       name: 'TOEIC 775',
       org: 'ETS',
-      year: '',
+      year: '2025-08',
+    },
+    {
+      name: 'Google Cloud Certification',
+      org: 'Google Cloud',
+      year: '2024-08',
+    },
+    {
+      name: 'Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud',
+      org: 'Google Cloud',
+      year: '2024-07',
+    },
+    {
+      name: 'Google Cloud Computing Foundations: Infrastructure in Google Cloud',
+      org: 'Google Cloud',
+      year: '2024-07',
+    },
+    {
+      name: 'Generative AI Explorer - Agent Platform',
+      org: 'Google Cloud',
+      year: '2024-07',
+    },
+    {
+      name: 'Prompt Design in Agent Platform',
+      org: 'Google Cloud',
+      year: '2024-07',
+    },
+    {
+      name: 'Google Analytics Certification',
+      org: 'Google',
+      year: '2023-04',
+    },
+    {
+      name: 'DAT208x - Introduction to Python for Data Science',
+      org: 'Microsoft',
+      year: '2019-08',
+    },
+    {
+      name: 'DAT263x - Introduction to Artificial Intelligence (AI)',
+      org: 'Microsoft',
+      year: '2019-08',
     },
   ],
   interests: [
@@ -110,7 +135,7 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     period: 'Jan 2022 – Mar 2023',
-    company: '17Life_康太數位整合股份有限公司',
+    company: '17Life Corporation',
     position: 'Product Manager',
     description: 'Responsible for FamilyMart APP digital projects, including MAS security testing, app hardening protection, and FamilyPay integration — covering front-end, back-end, and admin digital projects.',
     achievements: [
@@ -123,7 +148,7 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     period: 'Nov 2020 – Dec 2021',
-    company: 'CMoney 全曜財經資訊股份有限公司',
+    company: 'CMoney Corporation',
     position: 'Product Manager',
     description: 'Managed 3 fintech 2C software products delivering value through professional financial content, including Money Magazine, Investment School, and Finance Daily News.',
     achievements: [
@@ -141,7 +166,7 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     period: 'Jun 2020 – Jun 2021',
-    company: 'CMoney 全曜財經資訊股份有限公司',
+    company: 'CMoney Corporation',
     position: 'Android Developer / Quality Engineer',
     description: 'Developed and tested Android applications, and performed quality control.',
     achievements: [
@@ -154,19 +179,6 @@ export const experienceData: ExperienceItem[] = [
       'Researched and built automated UI tests using Python and Appium',
       'Reported issues and tracked follow-ups; assisted engineers in debugging',
       'Managed product quality by implementing software regression testing before each sprint release',
-    ],
-  },
-  {
-    period: 'Sep 2019 – Mar 2020',
-    company: '功學社教育用品股份有限公司',
-    position: 'BI Engineer',
-    description: 'Daily operations and maintenance of the SAP Business Intelligence system.',
-    achievements: [
-      'Conducted cross-national communication in English (Germany / USA)',
-      'Collected and analyzed cross-departmental business data requirements',
-      'Provided BI consulting services and resolved system issues for end users',
-      'Assisted with basic issue resolution for SAP MM (logistics) and SD (finance) modules',
-      'Authored BI system operation manuals',
     ],
   },
   {
@@ -188,13 +200,16 @@ export const projectsData: Project[] = [
   {
     title: '104 Corporation – B2B/B2C SaaS Platform',
     role: 'Product Manager | 2023/4 - 2026/1',
-    description: 'Led product strategy and delivery for 104\'s B2B enterprise and B2C job-seeker SaaS platform (99K+ MAU, 105K+ downloads). Launched AI Chatbot, review reply features, and an internal AI Agent, significantly improving platform activation and retention.',
+    description: 'Led product strategy and end-to-end delivery for 104\'s B2B enterprise and B2C job-seeker SaaS platform (99K+ MAU, 105K+ downloads). Launched AI Chatbot, one-click AI review replies, in-app translation, and an internal AI Agent — driving major gains in activation, retention, and app store ratings.',
     image: '/104-platform.jpg',
     imagePlaceholder: '104 Platform Screenshot',
     tech: ['AI Chatbot', 'LLM', 'B2B SaaS', 'B2C APP', 'Firebase', 'A/B Testing', 'Figma'],
     results: [
       { label: 'Activation Rate', value: '+92%' },
       { label: 'Retention Rate', value: '+73%' },
+      { label: 'Android Rating', value: '2.52 → 4.9' },
+      { label: 'iOS Rating', value: '2.9 → 4.3' },
+      { label: 'iOS Crash Rate', value: '0.17% → 0.05%' },
       { label: 'App Releases', value: '56' },
     ],
   },
@@ -254,38 +269,44 @@ export const projectsData: Project[] = [
 
 export const skillsData: SkillsData = {
   productSkills: [
-    { name: 'Product Strategy Planning', level: 95 },
-    { name: 'Requirements Gathering & Analysis', level: 90 },
-    { name: 'User Research & Interviews', level: 85 },
-    { name: 'UI/UX Design Thinking', level: 90 },
-    { name: 'Product Roadmap Planning', level: 85 },
-    { name: 'AI Product Planning (LLM / Generative AI)', level: 85 },
+    { name: 'Product Management', level: 95 },
+    { name: 'Product Strategy & Roadmap', level: 95 },
     { name: 'B2B/B2C SaaS Product Management', level: 90 },
+    { name: '0→1 Product Development', level: 90 },
+    { name: 'Requirements Gathering & Analysis', level: 90 },
+    { name: 'User Research & UX Design', level: 85 },
+    { name: 'Market & Competitor Analysis', level: 85 },
+    { name: 'Cross-Functional Team Leadership', level: 90 },
+    { name: 'Stakeholder Management', level: 90 },
+    { name: 'AI Product Planning', level: 85 },
   ],
   methodologies: [
-    { name: 'Agile Development (Scrum/Kanban)', level: 95 },
-    { name: 'Project Communication / Integration Management', level: 90 },
-    { name: 'Project Schedule & Progress Management', level: 85 },
-    { name: 'Cost / Quality / Risk Management', level: 80 },
+    { name: 'Agile / Scrum / Kanban', level: 95 },
     { name: 'A/B Testing', level: 85 },
     { name: 'MVP Design', level: 85 },
+    { name: 'Project Schedule & Risk Management', level: 85 },
+    { name: 'Data-Driven Decision Making', level: 90 },
   ],
   technicalSkills: [
-    { name: 'Data Analytics (Firebase, Google Analytics)', level: 90 },
-    { name: 'Data Visualization (Tableau, Power BI)', level: 85 },
-    { name: 'Prototyping (Figma, Axure RP)', level: 85 },
-    { name: 'Prompt Engineering / LLM Applications', level: 80 },
-    { name: 'Programming (Python, SQL, Kotlin, Java)', level: 80 },
-    { name: 'Project Management Tools (Jira, Trello, Azure DevOps)', level: 90 },
+    { name: 'Generative AI / LLM', level: 85 },
+    { name: 'Prompt Engineering', level: 85 },
+    { name: 'Agentic AI', level: 80 },
+    { name: 'Machine Learning', level: 75 },
+    { name: 'Data Analytics (Firebase / GA)', level: 90 },
+    { name: 'Data Visualization (Tableau / Power BI)', level: 85 },
+    { name: 'Figma / Axure RP', level: 85 },
+    { name: 'Python / SQL', level: 80 },
+    { name: 'Jira / Azure DevOps / Trello', level: 90 },
   ],
   softSkills: [
-    'Teamwork', 'Cross-functional Communication', 'Presentation', 'Problem Solving',
-    'Logical Thinking', 'Design Thinking', 'Process Optimization', 'Coordination',
-    'Critical Thinking', 'Creative Thinking', 'Self-motivation', 'Continuous Learning',
+    'Cross-functional Communication', 'Stakeholder Management',
+    'Presentation & Facilitation', 'Problem Solving', 'Logical Thinking',
+    'Design Thinking', 'Process Optimization', 'Critical Thinking',
+    'Creative Thinking', 'Self-motivation', 'Continuous Learning',
   ],
   languages: [
     { name: 'Chinese', level: 'Native' },
-    { name: 'English', level: 'Professional Working Proficiency' },
+    { name: 'English', level: 'Professional Working' },
   ],
 };
 

@@ -96,8 +96,10 @@ export default function About() {
           <div className={styles.languageList}>
             {skillsData.languages.map((lang, index) => (
               <div className={styles.languageItem} key={index}>
-                <span className={styles.languageName}>{lang.name}</span>
-                <span className={styles.languageLevel}>{lang.level}</span>
+                <div className={styles.languageBody}>
+                  <span className={styles.languageName}>{lang.name}</span>
+                  <span className={styles.languageLevel}>{lang.level}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -125,6 +127,7 @@ export default function About() {
             <li key={index}>
               <span className={styles.certOrgBadge}>{cert.org}</span>
               <span className={styles.certName}>{cert.name}</span>
+              {cert.year && <span className={styles.certYear}>{cert.year}</span>}
             </li>
           ))}
         </ul>
