@@ -59,13 +59,13 @@ export default function Home() {
             <div className={styles.highlightsTopRow}>
               {highlightsData.slice(0, 2).map((highlight, index) => (
                 <div
-                  className={`${styles.highlightCard} ${styles.highlightCardLarge} ${styles.fadeInUp}`}
+                  className={`${styles.highlightCard} ${styles.highlightCardLarge} ${styles.fadeInUp}${highlight.tag === 'AI' ? ` ${styles.highlightCardAI}` : ''}`}
                   style={{ transitionDelay: `${index * 0.1}s` }}
                   ref={el => { fadeRefs.current[1 + index] = el; }}
                   key={index}
                 >
-                  <span className={styles.highlightTag}>{highlight.tag}</span>
-                  <h3>{highlight.title}</h3>
+                  <span className={`${styles.highlightTag}${highlight.tag === 'AI' ? ` ${styles.highlightTagAI}` : ''}`}>{highlight.tag}</span>
+                  <h3 className={highlight.tag === 'AI' ? styles.highlightTitleAI : ''}>{highlight.title}</h3>
                   <p>{highlight.description}</p>
                   {highlight.detail && <p className={styles.highlightDetail}>{highlight.detail}</p>}
                 </div>
@@ -74,7 +74,7 @@ export default function Home() {
             <div className={styles.highlightsBottomRow}>
               {highlightsData.slice(2).map((highlight, index) => (
                 <div
-                  className={`${styles.highlightCard} ${styles.highlightCardSmall} ${styles.fadeInUp}`}
+                  className={`${styles.highlightCard} ${styles.highlightCardSmall} ${styles.fadeInUp}${highlight.tag === 'DIFFERENTIATOR' || highlight.tag === '差異化優勢' ? ` ${styles.highlightCardDiff}` : ''}`}
                   style={{ transitionDelay: `${(index + 2) * 0.1}s` }}
                   ref={el => { fadeRefs.current[3 + index] = el; }}
                   key={index}

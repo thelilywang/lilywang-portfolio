@@ -322,14 +322,14 @@ export const highlightsData: Highlight[] = [
     description: 'End-to-end product lifecycle — from 0 to 1 roadmap definition to stakeholder alignment and cross-functional execution. Delivered 50+ features and 60+ app releases across B2B/B2C SaaS and mobile apps.',
   },
   {
-    tag: 'DIFFERENTIATOR',
-    title: 'Engineering Background Advantage',
-    description: 'B.S. in Computer Science with hands-on Android development and automated testing (Python/Appium) experience. Applied Machine Learning hands-on through Duke\'s ML for Product Managers program — enabling fluent collaboration with engineering and data science teams.',
-  },
-  {
     tag: 'AI',
     title: 'AI Product Leadership',
     description: 'Led end-to-end planning and launch of an AI Chatbot, review reply features, and an internal AI Agent. Hands-on experience with Generative AI, LLMs, RAG, and Prompt Engineering.',
+  },
+  {
+    tag: 'DIFFERENTIATOR',
+    title: 'Engineering Background Advantage',
+    description: 'B.S. in Computer Science with hands-on Android development and automated testing (Python/Appium) experience. Applied Machine Learning hands-on through Duke\'s ML for Product Managers program — enabling fluent collaboration with engineering and data science teams.',
   },
   {
     tag: 'DATA',

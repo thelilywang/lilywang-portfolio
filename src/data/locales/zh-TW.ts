@@ -322,14 +322,14 @@ export const highlightsData: Highlight[] = [
     description: '從 0 到 1 的 Roadmap 規劃、Stakeholder 溝通對齊到跨部門執行，具備完整產品生命週期管理經驗。主導交付 50+ 項功能與 60+ 個 APP 版本，橫跨 B2B/B2C SaaS 及行動應用領域。',
   },
   {
-    tag: '差異化優勢',
-    title: '工程背景優勢',
-    description: '資訊工程學系畢業，具 Android 開發及自動化測試（Python/Appium）實務經驗。透過 Duke ML for Product Managers 課程實作 Machine Learning 專案，與工程師及資料科學團隊溝通有共通語言，有效提升跨團隊執行效率。',
-  },
-  {
     tag: 'AI',
     title: 'AI 產品規劃',
     description: '端對端主導 AI Chatbot、評價回覆功能及內部 AI Agent 的規劃與上線，具備 Generative AI、LLM、RAG 應用及 Prompt Engineering 實務能力。',
+  },
+  {
+    tag: '差異化優勢',
+    title: '工程背景優勢',
+    description: '資訊工程學系畢業，具 Android 開發及自動化測試（Python/Appium）實務經驗。透過 Duke ML for Product Managers 課程實作 Machine Learning 專案，與工程師及資料科學團隊溝通有共通語言，有效提升跨團隊執行效率。',
   },
   {
     tag: '數據',

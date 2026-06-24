@@ -266,6 +266,85 @@
   );
 }
 
+/* ── AI 卡專屬樣式 ── */
+.highlightCardAI {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.4s ease;
+}
+
+.highlightCardAI:hover {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 16%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #a78bfa 12%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #38bdf8 14%, var(--surface-raised)) 100%
+  );
+}
+
+.highlightTagAI {
+  background: linear-gradient(90deg, #818cf8, #a78bfa);
+  color: #fff;
+}
+
+.highlightCard:hover .highlightTagAI {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.highlightTitleAI {
+  background: linear-gradient(90deg, #6366f1, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightCardAI:hover {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 22%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #a78bfa 18%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #38bdf8 20%, var(--surface-raised)) 100%
+  );
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightTitleAI {
+  background: linear-gradient(90deg, #a5b4fc, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Differentiator 卡專屬背景 ── */
+.highlightCardDiff {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 8%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #38bdf8 6%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #f472b6 7%, var(--surface-raised)) 100%
+  );
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.4s ease;
+}
+
+.highlightCardDiff:hover {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 16%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #38bdf8 12%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #f472b6 14%, var(--surface-raised)) 100%
+  );
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightCardDiff {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 12%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #38bdf8 9%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #f472b6 11%, var(--surface-raised)) 100%
+  );
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightCardDiff:hover {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, #818cf8 22%, var(--surface-raised)) 0%,
+    color-mix(in srgb, #38bdf8 18%, var(--surface-raised)) 50%,
+    color-mix(in srgb, #f472b6 20%, var(--surface-raised)) 100%
+  );
+}
+
 .highlightCardLarge h3 {
   font-size: 24px;
   font-weight: 700;
