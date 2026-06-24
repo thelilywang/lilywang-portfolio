@@ -6,6 +6,14 @@ import ClientProviders from "./components/ClientProviders";
 export const metadata: Metadata = {
   title: "Lily Wang | 軟體產品經理",
   description: "軟體產品經理Lily的個人履歷網站，展示專業能力、工作經驗和專案作品。",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
