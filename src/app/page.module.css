@@ -111,6 +111,7 @@
 .ctas .secondary {
   border: 1px solid var(--border-strong);
   color: var(--foreground);
+  background-color: var(--surface-raised);
 }
 
 .ctas .secondary:hover {
@@ -127,70 +128,175 @@
   margin-top: 0;
 }
 
+.highlightsHeader {
+  margin-bottom: 32px;
+}
+
+.highlightsSuperLabel {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-muted-strong);
+  margin-bottom: 10px;
+}
+
 .highlights h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--joy-fontFamily-display, 'Fraunces', serif);
+  margin: 0;
+  color: var(--foreground);
 }
 
-.highlights h2:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: var(--primary-color);
+.highlightsBento {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.highlightsGrid {
+.highlightsTopRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.highlightsBottomRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.highlightTag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
+  color: var(--primary-color);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .highlightCard {
+  position: relative;
   background-color: var(--surface-raised);
   border: 1px solid var(--border-default);
-  border-radius: 12px;
-  padding: 24px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease,
-              background-color 0.22s ease, border-color 0.22s ease;
+  border-radius: 20px;
+  padding: 28px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* 漸層邊框 glow — 用 ::before 疊在卡片底層 */
+.highlightCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #f472b6 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* shimmer 光澤 — 只套在大卡 */
+.highlightCardLarge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
 }
 
 .highlightCard:hover {
-  transform: translateY(-5px);
-  background-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(129, 140, 248, 0.18);
   border-color: transparent;
-  box-shadow: 0 12px 28px rgba(0, 112, 243, 0.25);
 }
 
-.highlightCard:hover h3 {
-  color: var(--color-on-primary);
+.highlightCard:hover::before {
+  opacity: 1;
 }
 
-.highlightCard:hover p {
-  color: var(--color-on-primary);
-  opacity: 0.88;
+.highlightCardLarge:hover::after {
+  opacity: 1;
+  animation: shimmer 0.65s ease forwards;
 }
 
-.highlightCard h3 {
-  font-size: 20px;
-  margin: 0 0 12px 0;
+@keyframes shimmer {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+.highlightCard:hover .highlightTag {
+  background-color: color-mix(in srgb, var(--primary-color) 22%, transparent);
   color: var(--primary-color);
-  transition: color 0.22s ease;
-  overflow-wrap: break-word;
-  word-break: break-word;
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightCard:hover {
+  box-shadow: 0 12px 40px rgba(129, 140, 248, 0.28);
+}
+
+:global([data-joy-color-scheme="dark"]) .highlightCardLarge::after {
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+}
+
+.highlightCardLarge h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--foreground);
+  line-height: 1.3;
+}
+
+.highlightCardSmall h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--foreground);
+  line-height: 1.3;
 }
 
 .highlightCard p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   margin: 0;
   color: var(--color-muted-strong);
-  transition: color 0.22s ease;
+}
+
+.highlightDetail {
+  margin-top: 16px !important;
+  font-size: 14px !important;
+}
+
+.highlightDetail strong {
+  font-weight: 600;
+  color: var(--foreground);
 }
 
 /* ── Scroll fade-in ── */
@@ -357,7 +463,17 @@
     justify-content: flex-start;
   }
 
-  .highlightsGrid {
+  .highlightsTopRow {
+    grid-template-columns: 1fr;
+  }
+
+  .highlightsBottomRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .highlightsBottomRow {
     grid-template-columns: 1fr;
   }
 }
@@ -395,13 +511,15 @@
   }
 
   .ctas {
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
   }
 
   .ctas a {
     font-size: 14px;
     height: 40px;
-    padding: 0 16px;
+    padding: 0 20px;
   }
 
   .secondary {

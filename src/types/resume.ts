@@ -84,8 +84,10 @@ export interface SkillsData {
 }
 
 export interface Highlight {
+  tag: string;
   title: string;
   description: string;
+  detail?: string;
 }
 
 export interface SideProject {

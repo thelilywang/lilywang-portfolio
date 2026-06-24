@@ -51,19 +51,40 @@ export default function Home() {
           className={`${styles.highlights} ${styles.fadeInUp}`}
           ref={el => { fadeRefs.current[0] = el; }}
         >
-          <h2>{t('highlights_heading')}</h2>
-          <div className={styles.highlightsGrid}>
-            {highlightsData.map((highlight, index) => (
-              <div
-                className={`${styles.highlightCard} ${styles.fadeInUp}`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-                ref={el => { fadeRefs.current[1 + index] = el; }}
-                key={index}
-              >
-                <h3>{highlight.title}</h3>
-                <p>{highlight.description}</p>
-              </div>
-            ))}
+          <div className={styles.highlightsHeader}>
+            <span className={styles.highlightsSuperLabel}>{t('highlights_label')}</span>
+            <h2>{t('highlights_heading')}</h2>
+          </div>
+          <div className={styles.highlightsBento}>
+            <div className={styles.highlightsTopRow}>
+              {highlightsData.slice(0, 2).map((highlight, index) => (
+                <div
+                  className={`${styles.highlightCard} ${styles.highlightCardLarge} ${styles.fadeInUp}`}
+                  style={{ transitionDelay: `${index * 0.1}s` }}
+                  ref={el => { fadeRefs.current[1 + index] = el; }}
+                  key={index}
+                >
+                  <span className={styles.highlightTag}>{highlight.tag}</span>
+                  <h3>{highlight.title}</h3>
+                  <p>{highlight.description}</p>
+                  {highlight.detail && <p className={styles.highlightDetail}>{highlight.detail}</p>}
+                </div>
+              ))}
+            </div>
+            <div className={styles.highlightsBottomRow}>
+              {highlightsData.slice(2).map((highlight, index) => (
+                <div
+                  className={`${styles.highlightCard} ${styles.highlightCardSmall} ${styles.fadeInUp}`}
+                  style={{ transitionDelay: `${(index + 2) * 0.1}s` }}
+                  ref={el => { fadeRefs.current[3 + index] = el; }}
+                  key={index}
+                >
+                  <span className={styles.highlightTag}>{highlight.tag}</span>
+                  <h3>{highlight.title}</h3>
+                  <p>{highlight.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
