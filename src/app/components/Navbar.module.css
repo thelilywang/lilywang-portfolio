@@ -51,23 +51,30 @@
   flex-wrap: wrap;
 }
 
-/* <480px：links 均分整列寬，不 overflow */
+/* <480px：links 水平可滑動，連結完整顯示 */
 @media (max-width: 479px) {
   .links {
-    justify-content: space-between;
-    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 4px;
+    padding-bottom: 2px;
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
   }
 
   .link {
-    font-size: 11px;
-    padding: 4px 2px;
-    flex: 1;
-    text-align: center;
+    font-size: 12px;
+    padding: 4px 10px;
+    flex-shrink: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
+    scroll-snap-align: start;
   }
 
   .langButton {
@@ -77,6 +84,26 @@
 
   .iconButton {
     padding: 4px 4px;
+  }
+}
+
+/* 480px–767px：同樣可水平滑動，避免換行 */
+@media (min-width: 480px) and (max-width: 767px) {
+  .links {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .link {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 }
 

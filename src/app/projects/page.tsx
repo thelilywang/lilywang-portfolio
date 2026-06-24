@@ -3,6 +3,7 @@
 import styles from './projects.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import ProjectCard from '@/app/components/ProjectCard';
+import AnchorNav from '@/app/components/AnchorNav';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
 
@@ -16,10 +17,10 @@ export default function Projects() {
       <PageHeader title={t('page_title')} />
 
       {sideProjectsData.length > 0 && (
-        <nav className={styles.anchorNav}>
-          <a href="#main-projects" className={styles.anchorLink}>{t('anchor_main')}</a>
-          <a href="#side-projects" className={styles.anchorLink}>{t('anchor_side')}</a>
-        </nav>
+        <AnchorNav links={[
+          { href: '#main-projects', label: t('anchor_main') },
+          { href: '#side-projects', label: t('anchor_side') },
+        ]} />
       )}
 
       <div id="main-projects" className={styles.projectGrid}>

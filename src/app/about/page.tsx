@@ -3,6 +3,7 @@
 import styles from './about.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import SkillGroup from '@/app/components/SkillGroup';
+import AnchorNav from '@/app/components/AnchorNav';
 import { GraduationCap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
@@ -36,12 +37,12 @@ export default function About() {
     <div className={styles.container}>
       <PageHeader title={t('page_title')} />
 
-      <nav className={styles.anchorNav}>
-        <a href="#intro" className={styles.anchorLink}>{t('anchor_intro')}</a>
-        <a href="#experience" className={styles.anchorLink}>{t('anchor_experience')}</a>
-        <a href="#skills" className={styles.anchorLink}>{t('anchor_skills')}</a>
-        <a href="#credentials" className={styles.anchorLink}>{t('anchor_credentials')}</a>
-      </nav>
+      <AnchorNav links={[
+        { href: '#intro', label: t('anchor_intro') },
+        { href: '#experience', label: t('anchor_experience') },
+        { href: '#skills', label: t('anchor_skills') },
+        { href: '#credentials', label: t('anchor_credentials') },
+      ]} />
 
       <section id="intro" className={styles.section}>
         <h2>{t('bio_heading')}</h2>

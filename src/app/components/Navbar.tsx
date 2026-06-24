@@ -15,6 +15,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const [hidden, setHidden] = useState(false);
+  const hiddenRef = useRef(false);
   const lastScrollY = useRef(0);
   const rafRef = useRef<number | null>(null);
   const isPastTop = useRef(false);
@@ -31,9 +32,7 @@ export default function Navbar() {
     const updateNavOffset = (isHidden: boolean) => {
       const h = navRef.current?.offsetHeight ?? 0;
       const root = document.documentElement;
-      // --navbar-height: always the real height (for page padding-top)
       root.style.setProperty('--navbar-height', `${h}px`);
-      // --navbar-offset: 0 when hidden (for anchor nav sticky top)
       root.style.setProperty('--navbar-offset', isHidden ? '0px' : `${h}px`);
     };
 
@@ -44,6 +43,7 @@ export default function Navbar() {
         if (!isPastTop.current) return;
         const y = window.scrollY;
         const nextHidden = y > lastScrollY.current;
+        hiddenRef.current = nextHidden;
         setHidden(nextHidden);
         updateNavOffset(nextHidden);
         lastScrollY.current = y;
@@ -53,9 +53,14 @@ export default function Navbar() {
     // set initial offset after layout
     updateNavOffset(false);
 
+    // re-measure when navbar height changes (font load, RWD reflow, etc.)
+    const ro = new ResizeObserver(() => updateNavOffset(hiddenRef.current));
+    if (navRef.current) ro.observe(navRef.current);
+
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       io.disconnect();
+      ro.disconnect();
       window.removeEventListener('scroll', onScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
