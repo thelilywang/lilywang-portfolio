@@ -1,19 +1,19 @@
 .pageContainer {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 24px 20px 40px;
 }
 
 .pageContainerWide {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 24px 20px 40px;
 }
 
 .pageContainerMedium {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 24px 20px 40px;
 }
 
 .pageTitle {
@@ -39,7 +39,7 @@
   .pageContainer,
   .pageContainerWide,
   .pageContainerMedium {
-    padding: 20px 16px;
+    padding: 20px 16px 32px;
   }
 }
 
@@ -48,8 +48,25 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 0 0 36px;
-  margin-bottom: 8px;
+  padding: 10px 20px;
+  margin: 0 -20px 24px;
+  position: sticky;
+  top: var(--navbar-offset, 56px);
+  z-index: 50;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-default);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: top 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .anchorNav {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .anchorLink {

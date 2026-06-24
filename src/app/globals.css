@@ -151,20 +151,28 @@
   --navbar-bg: rgba(10, 10, 10, 0.85);
 }
 
-html,
-body {
+html {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
+  max-width: 100vw;
   color: var(--foreground);
   background: linear-gradient(180deg, #ffffff 0%, #f5f3ff 55%, #eff6ff 100%);
   min-height: 100vh;
-  padding-top: 57px;
+  /* desktop navbar ~62px; keep space below fixed navbar */
+  padding-top: 62px;
   font-family: var(--joy-fontFamily-body, 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 767px) {
+  body {
+    /* mobile two-row navbar ~94px */
+    padding-top: 94px;
+  }
 }
 
 [data-joy-color-scheme="dark"] body {

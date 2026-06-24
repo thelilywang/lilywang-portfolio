@@ -18,6 +18,7 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const rafRef = useRef<number | null>(null);
   const isPastTop = useRef(false);
+  const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const sentinel = document.getElementById('scroll-sentinel');
@@ -27,16 +28,31 @@ export default function Navbar() {
     });
     if (sentinel) io.observe(sentinel);
 
+    const updateNavOffset = (isHidden: boolean) => {
+      const h = navRef.current?.offsetHeight ?? 0;
+      const root = document.documentElement;
+      // --navbar-height: always the real height (for page padding-top)
+      root.style.setProperty('--navbar-height', `${h}px`);
+      // --navbar-offset: 0 when hidden (for anchor nav sticky top)
+      root.style.setProperty('--navbar-offset', isHidden ? '0px' : `${h}px`);
+    };
+
     const onScroll = () => {
       if (rafRef.current) return;
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = null;
         if (!isPastTop.current) return;
         const y = window.scrollY;
-        setHidden(y > lastScrollY.current);
+        const nextHidden = y > lastScrollY.current;
+        setHidden(nextHidden);
+        updateNavOffset(nextHidden);
         lastScrollY.current = y;
       });
     };
+
+    // set initial offset after layout
+    updateNavOffset(false);
+
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       io.disconnect();
@@ -55,7 +71,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className={`${styles.navbar} ${hidden ? styles.navbarHidden : ''}`}>
+    <nav ref={navRef} className={`${styles.navbar} ${hidden ? styles.navbarHidden : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           {personalInfo.name}
