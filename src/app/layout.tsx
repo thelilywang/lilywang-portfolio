@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 import ClientProviders from "./components/ClientProviders";
 
 export const metadata: Metadata = {
-  title: "Lily Wang | 軟體產品經理",
-  description: "軟體產品經理Lily的個人履歷網站，展示專業能力、工作經驗和專案作品。",
+  title: "Lily Wang | Product Manager",
+  description: "Portfolio of Lily Wang, a Product Manager with 5+ years building AI/ML-powered SaaS and mobile products. View case studies, work experience, and skills.",
 };
 
 export default function RootLayout({
