@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import styles from './about.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import SkillGroup from '@/app/components/SkillGroup';
@@ -26,6 +27,17 @@ export default function About() {
   const t = useTranslations('about');
   const { resumeData } = useLocaleContext();
   const { aboutData, experienceData, skillsData } = resumeData;
+  const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const els = timelineRefs.current.filter(Boolean) as HTMLElement[];
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add(styles.visible); }),
+      { threshold: 0.08 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
 
   const badgeLabels = {
     expert: t('skill_expert'),
@@ -64,7 +76,7 @@ export default function About() {
         <h2>{t('experience_heading')}</h2>
         <div className={styles.timeline}>
           {experienceData.map((exp, index) => (
-            <div className={styles.timelineItem} key={index}>
+            <div className={styles.timelineItem} key={index} ref={el => { timelineRefs.current[index] = el; }}>
               <div className={styles.timelineDot}></div>
               <div className={styles.timelineContent}>
                 <div className={styles.timelinePeriod}>{exp.period}</div>

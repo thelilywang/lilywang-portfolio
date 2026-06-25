@@ -230,6 +230,19 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    title: 'EVERRICH Duty-Free APP',
+    role: 'Software Product / Project Manager | 2022/1 - 2023/3',
+    description: 'Ever Rich Duty-Free is Taiwan\'s leading airport duty-free retailer (4 major airports: Taoyuan, Songshan, Taichung, Kaohsiung). Led delivery of the RICHCLUB member app — featuring badge mission rewards, QR-code airport pickup with flight reminders, Rich Pay integration, member points exchange, and exclusive digital coupons. Rated 4.8★ on the App Store.',
+    image: '/everrich-app.jpg',
+    imagePlaceholder: 'EVERRICH Duty-Free APP Screenshot',
+    tech: ['Requirements Analysis', 'Agile / Scrum', 'Cross-functional Communication', 'Payment Integration (Rich Pay)', 'MAS Security Compliance'],
+    results: [
+      { label: 'App Store Rating', value: '4.8★' },
+      { label: 'Airport Locations', value: '4' },
+      { label: 'Features Delivered', value: '38' },
+    ],
+  },
+  {
     title: 'Money Magazine – Personal Finance Reading APP',
     role: 'Product Manager | 2021/8 - 2021/12',
     description: 'A content platform focused on sound financial concepts and long-term financial planning. Taiwan\'s first financial media company to successfully transform into a Fintech company.',

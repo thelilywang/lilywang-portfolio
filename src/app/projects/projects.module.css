@@ -33,7 +33,22 @@
 
 .projectCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 112, 243, 0.14);
+}
+
+.projectCard:hover .expandable {
+  max-height: 600px;
+}
+
+.projectCard:hover .projectDescription.clamped {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.projectCard:hover .chevron {
+  transform: rotate(180deg);
+  color: var(--primary-color);
 }
 
 .projectImageContainer {
@@ -53,13 +68,18 @@
   background: linear-gradient(145deg, #1a3a6b 0%, #1e3a8a 50%, #3730a3 100%);
 }
 
-.projectInitials {
+.projectBrand {
   font-family: var(--font-display, 'Fraunces', serif);
-  font-size: 64px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--color-on-primary);
-  letter-spacing: -2px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  padding: 0 16px;
+  line-height: 1.2;
+  word-break: break-word;
   user-select: none;
+  opacity: 0.92;
 }
 
 .projectContent {
@@ -81,7 +101,37 @@
 .projectDescription {
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+}
+
+.projectDescription.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s ease;
+}
+
+.expandableOpen {
+  max-height: 600px;
+}
+
+.chevron {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  color: var(--color-muted);
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--primary-color);
 }
 
 .projectTech {

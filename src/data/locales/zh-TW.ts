@@ -230,6 +230,19 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    title: 'EVERRICH昇恆昌免稅購物 APP',
+    role: 'Software Product / Project Manager | 2022/1 - 2023/3',
+    description: '昇恆昌為台灣最大機場免稅零售商，門市遍布桃園、松山、台中、高雄四大國際機場。主導 RICHCLUB 會員 APP 端到端交付，功能涵蓋徽章任務制、QR Code 機場取貨與航班提醒、Rich Pay 支付整合、點數兌換住宿餐飲及商品、專屬電子優惠券。上線後 App Store 評分 4.8★。',
+    image: '/everrich-app.jpg',
+    imagePlaceholder: 'EVERRICH昇恆昌APP截圖',
+    tech: ['需求分析', '敏捷開發 / Scrum', '跨部門溝通', 'Rich Pay 支付整合', 'MAS 資安合規'],
+    results: [
+      { label: 'App Store 評分', value: '4.8★' },
+      { label: '機場據點', value: '4 座' },
+      { label: '負責專案數', value: '38 項' },
+    ],
+  },
+  {
     title: 'Money錢雜誌 - 理財知識隨身讀APP',
     role: 'Product Manager | 2021/8 - 2021/12',
     description: '內容以提供正確的理財觀念與長期的理財規劃內容為主，主要提供金融科技理財服務，為台灣首家成功轉型成 Fintech 公司的財經媒體。',
