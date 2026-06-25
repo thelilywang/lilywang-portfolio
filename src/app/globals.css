@@ -94,6 +94,13 @@
   --skill-familiar-text: #3a3a3a;
   --skill-familiar-border: #d0d0d0;
 
+  /* ── Primary color scale（用於 anchor nav、互動元件）── */
+  --primary-50: #E9F3FD;
+  --primary-200: #C7DFF7;
+  --primary-500: #0B6BCB;
+  --primary-600: #185EA5;
+  --primary-700: #12467B;
+
   /* ── Navbar glass ── */
   --navbar-bg: rgba(255, 255, 255, 0.85);
 }
@@ -147,6 +154,13 @@
   --skill-familiar-text: #b0b8c4;
   --skill-familiar-border: #3a3a3a;
 
+  /* ── Primary color scale（dark）── */
+  --primary-50: rgba(11, 107, 203, 0.15);
+  --primary-200: #C7DFF7;
+  --primary-500: #0B6BCB;
+  --primary-600: #185EA5;
+  --primary-700: #12467B;
+
   /* ── Navbar glass (dark) ── */
   --navbar-bg: rgba(10, 10, 10, 0.85);
 }
@@ -163,7 +177,7 @@ body {
   min-height: 100vh;
   /* desktop navbar ~62px; keep space below fixed navbar */
   padding-top: 62px;
-  font-family: var(--joy-fontFamily-body, 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

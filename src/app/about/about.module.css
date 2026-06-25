@@ -256,7 +256,7 @@
   height: 44px;
   border-radius: var(--radius-md);
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: var(--color-on-primary);
   font-size: 20px;
   font-weight: 700;
   font-family: var(--font-display, 'Fraunces', serif);
