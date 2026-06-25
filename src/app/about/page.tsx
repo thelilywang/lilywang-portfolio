@@ -34,15 +34,15 @@ export default function About() {
   };
 
   return (
-    <div className={styles.container}>
-      <PageHeader title={t('page_title')} />
-
+    <>
       <AnchorNav links={[
         { href: '#intro', label: t('anchor_intro') },
         { href: '#experience', label: t('anchor_experience') },
         { href: '#skills', label: t('anchor_skills') },
         { href: '#credentials', label: t('anchor_credentials') },
       ]} />
+      <div className={styles.container}>
+      <PageHeader title={t('page_title')} />
 
       <section id="intro" className={styles.section}>
         <h2>{t('bio_heading')}</h2>
@@ -148,6 +148,7 @@ export default function About() {
           ))}
         </ul>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -13,15 +13,18 @@ export default function Projects() {
   const { projectsData, sideProjectsData } = resumeData;
 
   return (
-    <div className={styles.container}>
-      <PageHeader title={t('page_title')} />
-
+    <>
       {sideProjectsData.length > 0 && (
-        <AnchorNav links={[
-          { href: '#main-projects', label: t('anchor_main') },
-          { href: '#side-projects', label: t('anchor_side') },
-        ]} />
+        <AnchorNav
+          links={[
+            { href: '#main-projects', label: t('anchor_main') },
+            { href: '#side-projects', label: t('anchor_side') },
+          ]}
+          maxWidth={1000}
+        />
       )}
+      <div className={styles.container}>
+      <PageHeader title={t('page_title')} />
 
       <div id="main-projects" className={styles.projectGrid}>
         {projectsData.map((project, index) => (
@@ -47,6 +50,7 @@ export default function Projects() {
           </div>
         </section>
       )}
-    </div>
+      </div>
+    </>
   );
 }
