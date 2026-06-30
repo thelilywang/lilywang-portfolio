@@ -210,10 +210,7 @@ export const projectsData: Project[] = [
     results: [
       { label: 'Activation Rate', value: '+92%' },
       { label: 'Retention Rate', value: '+73%' },
-      { label: 'Android 評分', value: '2.52 → 4.9' },
-      { label: 'iOS 評分', value: '2.9 → 4.3' },
-      { label: 'iOS Crash Rate', value: '0.17% → 0.05%' },
-      { label: 'APP 版本交付', value: '56 個' },
+      { label: 'App 評分', value: '2.52 → 4.9' },
     ],
   },
   {

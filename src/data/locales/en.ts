@@ -210,10 +210,7 @@ export const projectsData: Project[] = [
     results: [
       { label: 'Activation Rate', value: '+92%' },
       { label: 'Retention Rate', value: '+73%' },
-      { label: 'Android Rating', value: '2.52 → 4.9' },
-      { label: 'iOS Rating', value: '2.9 → 4.3' },
-      { label: 'iOS Crash Rate', value: '0.17% → 0.05%' },
-      { label: 'App Releases', value: '56' },
+      { label: 'App Rating', value: '2.52 → 4.9' },
     ],
   },
   {
