@@ -31,24 +31,11 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.projectCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 32px rgba(0, 112, 243, 0.14);
-}
-
-.projectCard:hover .expandable {
-  max-height: 600px;
-}
-
-.projectCard:hover .projectDescription.clamped {
-  display: block;
-  overflow: visible;
-  -webkit-line-clamp: unset;
-}
-
-.projectCard:hover .chevron {
-  transform: rotate(180deg);
-  color: var(--primary-color);
+@media (hover: hover) and (pointer: fine) {
+  .projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 112, 243, 0.14);
+  }
 }
 
 .projectImageContainer {

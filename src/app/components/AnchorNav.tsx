@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import sharedStyles from '../styles/shared.module.css';
 
 interface AnchorLink {
@@ -15,8 +15,37 @@ interface AnchorNavProps {
   maxWidth?: number;
 }
 
-export default function AnchorNav({ links, activeClass, linkClass, maxWidth }: AnchorNavProps) {
+export default function AnchorNav({ links, linkClass, maxWidth }: AnchorNavProps) {
   const navRef = useRef<HTMLElement>(null);
+  const [activeId, setActiveId] = useState<string>('');
+
+  useEffect(() => {
+    const sectionIds = links.map(({ href }) => href.replace(/^#/, ''));
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // 找出所有目前可見且最靠近頂部的 section
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: '-80px 0px -55% 0px',
+        threshold: 0,
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [links]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -56,16 +85,27 @@ export default function AnchorNav({ links, activeClass, linkClass, maxWidth }: A
         className={sharedStyles.anchorNavInner}
         style={maxWidth ? { maxWidth } : undefined}
       >
-        {links.map(({ href, label }) => (
-          <a
-            key={href}
-            href={href}
-            className={`${sharedStyles.anchorLink}${linkClass ? ` ${linkClass}` : ''}`}
-            onClick={(e) => handleClick(e, href)}
-          >
-            {label}
-          </a>
-        ))}
+        {links.map(({ href, label }) => {
+          const id = href.replace(/^#/, '');
+          const isActive = activeId === id;
+          return (
+            <a
+              key={href}
+              href={href}
+              className={[
+                sharedStyles.anchorLink,
+                isActive ? sharedStyles.anchorLinkActive : '',
+                linkClass ?? '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              onClick={(e) => handleClick(e, href)}
+              aria-current={isActive ? 'true' : undefined}
+            >
+              {label}
+            </a>
+          );
+        })}
       </div>
     </nav>
   );

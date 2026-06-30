@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import type { Project } from '@/types/resume';
 import styles from '../projects/projects.module.css';
@@ -7,10 +10,26 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const brandName = project.title.split(/[\s–—-]/)[0];
+  const expandId = `expand-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
 
   return (
-    <div className={styles.projectCard}>
+    <div
+      className={styles.projectCard}
+      onClick={() => setIsExpanded(!isExpanded)}
+      role="button"
+      tabIndex={0}
+      aria-expanded={isExpanded}
+      aria-controls={expandId}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setIsExpanded(!isExpanded);
+        }
+      }}
+      style={{ cursor: 'pointer' }}
+    >
       <div className={styles.projectImageContainer}>
         <div className={styles.projectImagePlaceholder}>
           <span className={styles.projectBrand}>{brandName}</span>
@@ -19,10 +38,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className={styles.projectContent}>
         <h2 className={styles.projectTitle}>{project.title}</h2>
         <div className={styles.projectRole}>{project.role}</div>
-        <p className={`${styles.projectDescription} ${styles.clamped}`}>
+        <p className={`${styles.projectDescription} ${isExpanded ? '' : styles.clamped}`}>
           {project.description}
         </p>
-        <div className={styles.expandable}>
+        <div
+          id={expandId}
+          className={`${styles.expandable} ${isExpanded ? styles.expandableOpen : ''}`}
+        >
           <div className={styles.projectTech}>
             {project.tech.map((tech, i) => (
               <span key={i}>{tech}</span>
@@ -37,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
         </div>
-        <div className={styles.chevron}>
+        <div className={`${styles.chevron} ${isExpanded ? styles.chevronOpen : ''}`}>
           <ChevronDown size={18} />
         </div>
       </div>

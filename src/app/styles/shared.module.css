@@ -126,3 +126,17 @@
   border-color: var(--primary-500);
   box-shadow: 0 3px 10px rgba(11,107,203,0.30);
 }
+
+.anchorLinkActive {
+  background-color: var(--primary-500);
+  color: var(--color-on-primary);
+  border-color: var(--primary-500);
+  box-shadow: 0 3px 10px rgba(11,107,203,0.22);
+}
+
+:global([data-joy-color-scheme="dark"]) .anchorLinkActive {
+  background-color: var(--primary-600);
+  color: var(--color-on-primary);
+  border-color: var(--primary-500);
+  box-shadow: 0 3px 10px rgba(11,107,203,0.30);
+}
