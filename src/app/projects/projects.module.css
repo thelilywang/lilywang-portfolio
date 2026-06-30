@@ -110,15 +110,31 @@
 
 .chevron {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 4px;
   margin-top: 8px;
   color: var(--color-muted);
-  transition: transform 0.3s ease, color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.chevron svg {
+  transition: transform 0.3s ease;
 }
 
 .chevronOpen {
-  transform: rotate(180deg);
   color: var(--primary-color);
+}
+
+.chevronOpen svg {
+  transform: rotate(180deg);
+}
+
+.chevronLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .projectTech {

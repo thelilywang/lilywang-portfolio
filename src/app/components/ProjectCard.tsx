@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import type { Project } from '@/types/resume';
 import styles from '../projects/projects.module.css';
 
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useTranslations('projects');
   const brandName = project.title.split(/[\s–—-]/)[0];
   const expandId = `expand-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
 
@@ -60,6 +62,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
         <div className={`${styles.chevron} ${isExpanded ? styles.chevronOpen : ''}`}>
+          <span className={styles.chevronLabel}>
+            {isExpanded ? t('card_collapse') : t('card_expand')}
+          </span>
           <ChevronDown size={18} />
         </div>
       </div>

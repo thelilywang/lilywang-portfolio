@@ -48,7 +48,9 @@
     "page_title": "專案作品",
     "side_projects_heading": "Side Projects",
     "anchor_main": "主要專案",
-    "anchor_side": "Side Projects"
+    "anchor_side": "Side Projects",
+    "card_expand": "展開",
+    "card_collapse": "收合"
   },
   "skills": {
     "page_title": "專業技能",

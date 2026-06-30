@@ -48,7 +48,9 @@
     "page_title": "Projects",
     "side_projects_heading": "Side Projects",
     "anchor_main": "Main Projects",
-    "anchor_side": "Side Projects"
+    "anchor_side": "Side Projects",
+    "card_expand": "More",
+    "card_collapse": "Less"
   },
   "skills": {
     "page_title": "Skills",
