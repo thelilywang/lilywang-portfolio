@@ -99,9 +99,13 @@ export interface SideProject {
 export type Locale = 'zh-TW' | 'en';
 
 export interface BlogSection {
-  type: 'paragraph' | 'heading' | 'code' | 'list';
+  type: 'paragraph' | 'heading' | 'code' | 'list' | 'table' | 'image';
   content: string;
   items?: string[];
+  headers?: string[];
+  rows?: string[][];
+  alt?: string;
+  language?: string;
 }
 
 export interface BlogPost {
