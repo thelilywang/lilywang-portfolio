@@ -121,7 +121,7 @@ function renderSection(section: BlogSection, index: number) {
         >
           <Box sx={{ position: 'relative', width: '100%' }}>
             <Image
-              src={section.content}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${section.content}`}
               alt={section.alt ?? ''}
               width={1400}
               height={1000}
