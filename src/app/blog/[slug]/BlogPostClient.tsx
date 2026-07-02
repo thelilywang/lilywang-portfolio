@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Typography from '@mui/joy/Typography';
 import Chip from '@mui/joy/Chip';
 import Button from '@mui/joy/Button';
@@ -13,6 +14,38 @@ import { blogData } from '@/data/blogData';
 import styles from './slug.module.css';
 import { useTranslations } from 'next-intl';
 
+const MARKDOWN_LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+function renderTextWithLinks(text: string) {
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  MARKDOWN_LINK_RE.lastIndex = 0;
+  while ((match = MARKDOWN_LINK_RE.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        key={key++}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: 'var(--joy-palette-primary-500, #0b6bcb)', textDecoration: 'underline' }}
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 function renderSection(section: BlogSection, index: number) {
   switch (section.type) {
     case 'heading':
@@ -24,7 +57,7 @@ function renderSection(section: BlogSection, index: number) {
     case 'paragraph':
       return (
         <Typography key={index} level="body-md" sx={{ mb: 1.5, lineHeight: 1.8 }}>
-          {section.content}
+          {renderTextWithLinks(section.content)}
         </Typography>
       );
     case 'list':
@@ -32,21 +65,108 @@ function renderSection(section: BlogSection, index: number) {
         <Box key={index} component="ul" sx={{ pl: 3, mb: 1.5 }}>
           {section.items?.map((item, i) => (
             <Typography key={i} component="li" level="body-md" sx={{ mb: 0.5, lineHeight: 1.8 }}>
-              {item}
+              {renderTextWithLinks(item)}
             </Typography>
           ))}
         </Box>
       );
     case 'code':
       return (
-        <Sheet
+        <Box key={index} sx={{ mb: 1.5 }}>
+          {section.language && (
+            <Box
+              sx={{
+                display: 'inline-block',
+                px: 1,
+                py: 0.25,
+                fontSize: '0.7rem',
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: 'text.tertiary',
+                bgcolor: 'background.level2',
+                borderRadius: 'sm sm 0 0',
+              }}
+            >
+              {section.language}
+            </Box>
+          )}
+          <Sheet
+            variant="soft"
+            color="neutral"
+            sx={{
+              p: 2,
+              borderRadius: section.language ? '0 sm sm sm' : 'sm',
+              fontFamily: 'monospace',
+              fontSize: '0.875rem',
+              whiteSpace: 'pre-wrap',
+              overflowX: 'auto',
+            }}
+          >
+            {section.content}
+          </Sheet>
+        </Box>
+      );
+    case 'image':
+      return (
+        <Box
           key={index}
-          variant="soft"
-          color="neutral"
-          sx={{ p: 2, mb: 1.5, borderRadius: 'sm', fontFamily: 'monospace', fontSize: '0.875rem', whiteSpace: 'pre-wrap', overflowX: 'auto' }}
+          sx={{
+            mb: 1.5,
+            p: 2,
+            borderRadius: 'sm',
+            bgcolor: '#ffffff',
+          }}
         >
-          {section.content}
-        </Sheet>
+          <Box sx={{ position: 'relative', width: '100%' }}>
+            <Image
+              src={section.content}
+              alt={section.alt ?? ''}
+              width={1400}
+              height={1000}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+              sizes="(max-width: 768px) 100vw, 720px"
+            />
+          </Box>
+        </Box>
+      );
+    case 'table':
+      return (
+        <Box key={index} sx={{ mb: 1.5, overflowX: 'auto' }}>
+          <Box component="table" sx={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+            {section.headers && (
+              <Box component="thead">
+                <Box component="tr">
+                  {section.headers.map((header, i) => (
+                    <Box
+                      key={i}
+                      component="th"
+                      sx={{ textAlign: 'left', p: 1, borderBottom: '2px solid', borderColor: 'divider', fontWeight: 700 }}
+                    >
+                      {header}
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            )}
+            <Box component="tbody">
+              {section.rows?.map((row, rowIndex) => (
+                <Box component="tr" key={rowIndex}>
+                  {row.map((cell, cellIndex) => (
+                    <Box
+                      key={cellIndex}
+                      component="td"
+                      sx={{ p: 1, borderBottom: '1px solid', borderColor: 'divider', verticalAlign: 'top' }}
+                    >
+                      {cell}
+                    </Box>
+                  ))}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
       );
     default:
       return null;
