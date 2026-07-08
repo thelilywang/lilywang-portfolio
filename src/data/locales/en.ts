@@ -362,6 +362,16 @@ export const contactNote = 'This is a demo form.';
 
 export const sideProjectsData: SideProject[] = [
   {
+    title: 'AI Job Matcher',
+    description: 'A local Node.js app that scrapes job postings with Playwright and uses OpenAI to score job-resume fit (1-10), surface skill gaps, and draft tailored cover letters.',
+    href: 'https://github.com/thelilywang/AI-Job-Matcher',
+  },
+  {
+    title: 'Tool Box',
+    description: 'A free, multilingual online utility hub offering a collection of productivity tools, supporting 13 languages including English and Traditional Chinese.',
+    href: 'https://www.tools-website.com/',
+  },
+  {
     title: 'Coming Soon',
     description: 'Side project details will be added soon. Stay tuned!',
     href: '',
