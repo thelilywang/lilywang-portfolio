@@ -73,7 +73,7 @@
   background-color: var(--surface-raised);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   padding: 25px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 :global([data-joy-color-scheme="dark"]) .timelineContent {
@@ -129,12 +129,7 @@
 }
 
 .techTag {
-  font-size: 12px;
-  font-weight: 500;
-  padding: 3px 10px;
-  background-color: var(--surface-raised);
-  border: 1px solid var(--border-default);
-  border-radius: 20px;
+  composes: chip from '../styles/shared.module.css';
 }
 
 /* ── Skills section ── */

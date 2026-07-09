@@ -49,7 +49,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         >
           <div className={styles.projectTech}>
             {project.tech.map((tech, i) => (
-              <span key={i}>{tech}</span>
+              <span key={i} className={styles.techChip}>{tech}</span>
             ))}
           </div>
           <div className={styles.projectResults}>
