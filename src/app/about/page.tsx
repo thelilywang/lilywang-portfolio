@@ -57,7 +57,7 @@ export default function About() {
       <PageHeader title={t('page_title')} />
 
       <section id="intro" className={styles.section}>
-        <h2>{t('bio_heading')}</h2>
+        <h2 className={styles.sectionHeading}>{t('bio_heading')}</h2>
         {aboutData.bio.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
@@ -73,7 +73,7 @@ export default function About() {
       </section>
 
       <section id="experience" className={styles.section}>
-        <h2>{t('experience_heading')}</h2>
+        <h2 className={styles.sectionHeading}>{t('experience_heading')}</h2>
         <div className={styles.timeline}>
           {experienceData.map((exp, index) => (
             <div className={styles.timelineItem} key={index} ref={el => { timelineRefs.current[index] = el; }}>
@@ -104,14 +104,14 @@ export default function About() {
       </section>
 
       <section id="skills" className={styles.section}>
-        <h2>{t('skills_heading')}</h2>
+        <h2 className={styles.sectionHeading}>{t('skills_heading')}</h2>
         <SkillGroup heading={t('product_skills_heading')} skills={skillsData.productSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('methodologies_heading')} skills={skillsData.methodologies} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('ai_skills_heading')} skills={skillsData.aiSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('technical_skills_heading')} skills={skillsData.technicalSkills} badgeLabels={badgeLabels} />
 
         <div className={styles.section}>
-          <h2>{t('soft_skills_heading')}</h2>
+          <h2 className={styles.sectionHeadingNested}>{t('soft_skills_heading')}</h2>
           <div className={styles.tagCloud}>
             {skillsData.softSkills.map((skill, index) => (
               <span className={styles.tag} key={index}>{skill}</span>
@@ -120,7 +120,7 @@ export default function About() {
         </div>
 
         <div className={styles.section}>
-          <h2>{t('languages_heading')}</h2>
+          <h2 className={styles.sectionHeadingNested}>{t('languages_heading')}</h2>
           <div className={styles.languageList}>
             {skillsData.languages.map((lang, index) => (
               <div className={styles.languageItem} key={index}>
@@ -135,7 +135,7 @@ export default function About() {
       </section>
 
       <section id="credentials" className={styles.section}>
-        <h2>{t('education_heading_standalone')}</h2>
+        <h2 className={styles.sectionHeading}>{t('education_heading_standalone')}</h2>
         {aboutData.education.map((edu, index) => (
           <div className={styles.educationItem} key={index}>
             <div className={styles.educationMeta}>

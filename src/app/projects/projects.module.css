@@ -193,13 +193,9 @@
   margin-top: 80px;
 }
 
-.sideSection h2 {
-  font-size: 24px;
-  font-weight: 600;
+.sideSectionHeading {
+  composes: sectionTitle from '../styles/shared.module.css';
   margin-bottom: 24px;
-  color: var(--foreground);
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--border-default);
 }
 
 .sideGrid {

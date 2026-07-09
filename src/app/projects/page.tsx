@@ -34,7 +34,7 @@ export default function Projects() {
 
       {sideProjectsData.length > 0 && (
         <section id="side-projects" className={styles.sideSection}>
-          <h2>{t('side_projects_heading')}</h2>
+          <h2 className={styles.sideSectionHeading}>{t('side_projects_heading')}</h2>
           <div className={styles.sideGrid}>
             {sideProjectsData.map((project, index) => (
               <div className={styles.sideCard} key={index}>

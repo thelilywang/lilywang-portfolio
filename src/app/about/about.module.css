@@ -240,22 +240,18 @@
   padding-top: 8px;
 }
 
-.section h2 {
-  font-size: 26px;
-  font-weight: 700;
+.sectionHeading {
+  composes: sectionTitle from '../styles/shared.module.css';
   margin-bottom: 24px;
-  color: var(--foreground);
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--border-default);
 }
 
-/* 巢狀 section 的 h2 不重複加底線 */
-.section .section h2 {
+/* 巢狀 section 標題（soft skills / languages）較小、無 accent bar */
+.sectionHeadingNested {
   font-size: 20px;
   font-weight: 600;
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 16px;
+  font-family: var(--font-display);
+  color: var(--foreground);
+  margin: 0 0 16px 0;
 }
 
 .section p {

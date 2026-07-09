@@ -28,7 +28,7 @@ export default function ContactForm({ recipientEmail }: ContactFormProps) {
 
   return (
     <div className={styles.contactForm}>
-      <h2>{t('heading')}</h2>
+      <h2 className={styles.contactFormHeading}>{t('heading')}</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="name">{t('name_label')}</label>

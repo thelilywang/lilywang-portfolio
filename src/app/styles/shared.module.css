@@ -43,6 +43,35 @@
   }
 }
 
+/* 區塊標題組合：kicker + display 標題 + 漸層 accent bar */
+.sectionKicker {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-muted-strong);
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  font-family: var(--font-display);
+  color: var(--foreground);
+  margin: 0 0 8px 0;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-gradient);
+}
+
 /* ── Anchor nav（共用於 About、Projects 頁）── */
 .anchorNav {
   width: 100%;

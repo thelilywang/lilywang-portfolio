@@ -19,7 +19,7 @@ export default function Contact() {
       <div className={styles.contactGrid}>
         <div className={styles.contactInfo}>
           <div className={styles.contactSection}>
-            <h2>{t('basic_info_heading')}</h2>
+            <h2 className={styles.contactSectionHeading}>{t('basic_info_heading')}</h2>
             <ContactItem
               icon="📧"
               label={t('email_label')}
@@ -34,7 +34,7 @@ export default function Contact() {
           </div>
 
           <div className={styles.contactSection}>
-            <h2>{t('social_heading')}</h2>
+            <h2 className={styles.contactSectionHeading}>{t('social_heading')}</h2>
             <ContactItem
               icon="🔗"
               label="LinkedIn"
