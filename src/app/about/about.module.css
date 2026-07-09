@@ -151,11 +151,13 @@
               border-color 0.18s ease, transform 0.18s ease;
 }
 
-.tag:hover {
-  background-color: var(--primary-color);
-  color: var(--color-on-primary);
-  border-color: transparent;
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover {
+    background-color: var(--primary-color);
+    color: var(--color-on-primary);
+    border-color: transparent;
+    transform: translateY(-1px);
+  }
 }
 
 /* ── Language ── */
@@ -189,10 +191,12 @@
   border-radius: 4px 0 0 4px;
 }
 
-.languageItem:hover {
-  transform: translateY(-2px);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 14%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .languageItem:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 14%, transparent);
+  }
 }
 
 .languageBody {
@@ -435,23 +439,25 @@
   transition: opacity 0.3s ease;
 }
 
-.interestItem:hover {
-  transform: translateY(-5px);
-  background-color: var(--primary-color);
-  border-color: transparent;
-  box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 30%, transparent);
-}
+@media (hover: hover) and (pointer: fine) {
+  .interestItem:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-color);
+    border-color: transparent;
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 30%, transparent);
+  }
 
-.interestItem:hover::after {
-  opacity: 1;
-}
+  .interestItem:hover::after {
+    opacity: 1;
+  }
 
-.interestItem:hover .interestName {
-  color: var(--color-on-primary);
-}
+  .interestItem:hover .interestName {
+    color: var(--color-on-primary);
+  }
 
-.interestItem:hover .interestIcon {
-  transform: scale(1.25) rotate(-5deg);
+  .interestItem:hover .interestIcon {
+    transform: scale(1.25) rotate(-5deg);
+  }
 }
 
 .interestIcon {

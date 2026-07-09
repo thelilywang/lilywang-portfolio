@@ -29,7 +29,7 @@ export default function Home() {
         <div className={styles.hero}>
           <div className={styles.heroContent}>
             <h1 className={styles.name}>{personalInfo.name}</h1>
-            <h2 className={styles.title}>{personalInfo.title}</h2>
+            <p className={styles.title}>{personalInfo.title}</p>
             <p className={styles.intro}>{personalInfo.intro}</p>
             <div className={styles.ctas}>
               <Link href="/projects" className={styles.primary}>{t('cta_portfolio')}</Link>

@@ -80,8 +80,8 @@ export default function About() {
               <div className={styles.timelineDot}></div>
               <div className={styles.timelineContent}>
                 <div className={styles.timelinePeriod}>{exp.period}</div>
-                <h2 className={styles.company}>{exp.company}</h2>
-                <h3 className={styles.position}>{exp.position}</h3>
+                <h3 className={styles.company}>{exp.company}</h3>
+                <p className={styles.position}>{exp.position}</p>
                 <p className={styles.description}>{exp.description}</p>
                 {exp.achievements.length > 0 && (
                   <ul className={styles.achievements}>

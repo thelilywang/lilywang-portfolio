@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import styles from '../contact/contact.module.css';
 import { useTranslations } from 'next-intl';
 
@@ -9,6 +10,7 @@ interface ContactFormProps {
 
 export default function ContactForm({ recipientEmail }: ContactFormProps) {
   const t = useTranslations('contactForm');
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ export default function ContactForm({ recipientEmail }: ContactFormProps) {
     );
 
     window.location.href = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setSubmitted(true);
   };
 
   return (
@@ -50,8 +53,8 @@ export default function ContactForm({ recipientEmail }: ContactFormProps) {
           {t('submit_button')}
         </button>
       </form>
-      <div className={styles.formNote}>
-        {t('form_note')}
+      <div className={styles.formNote} role="status">
+        {submitted ? t('submitted_feedback') : t('form_note')}
       </div>
     </div>
   );

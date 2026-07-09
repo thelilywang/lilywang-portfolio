@@ -83,7 +83,8 @@
     "form_note": "* 點擊發送後將開啟您的郵件客戶端",
     "mailto_name_label": "姓名",
     "mailto_email_label": "電子郵件",
-    "mailto_message_label": "訊息內容"
+    "mailto_message_label": "訊息內容",
+    "submitted_feedback": "已為您開啟郵件程式。"
   },
   "blog": {
     "page_title": "文章分享",

@@ -83,7 +83,8 @@
     "form_note": "* Clicking Send will open your email client",
     "mailto_name_label": "Name",
     "mailto_email_label": "Email",
-    "mailto_message_label": "Message"
+    "mailto_message_label": "Message",
+    "submitted_feedback": "Your email client should now be open."
   },
   "blog": {
     "page_title": "Blog",
