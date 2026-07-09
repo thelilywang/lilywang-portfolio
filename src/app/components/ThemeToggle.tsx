@@ -2,6 +2,7 @@
 
 import { useColorScheme } from '@mui/joy/styles';
 import { useEffect, useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function ThemeToggle() {
@@ -18,7 +19,7 @@ export default function ThemeToggle() {
       className={styles.iconButton}
       aria-label="Toggle dark mode"
     >
-      {mounted ? (resolved === 'dark' ? '☀️' : '🌙') : '🌙'}
+      {mounted && resolved === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
 }
