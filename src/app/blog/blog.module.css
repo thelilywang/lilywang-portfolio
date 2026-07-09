@@ -2,8 +2,93 @@
   composes: pageContainerMedium from '../styles/shared.module.css';
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 28px 32px;
+  background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* 漸層邊框 — 與 side project 卡技法相同 */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  padding: 2px;
+  background: var(--accent-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px color-mix(in srgb, #818cf8 18%, transparent);
+  }
+}
+
+.cardTitle {
+  position: relative;
+  z-index: 1;
+  font-size: 19px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--foreground);
+  margin: 0 0 8px 0;
+}
+
+.cardDate {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  color: var(--color-muted-strong);
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-muted-strong);
+  margin-bottom: 16px;
+}
+
+.cardTags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  composes: chip from '../styles/shared.module.css';
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px 16px;
+  }
+
+  .card {
+    padding: 22px 20px;
   }
 }
