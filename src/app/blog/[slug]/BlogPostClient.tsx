@@ -2,13 +2,6 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Typography from '@mui/joy/Typography';
-import Chip from '@mui/joy/Chip';
-import Button from '@mui/joy/Button';
-import Divider from '@mui/joy/Divider';
-import Stack from '@mui/joy/Stack';
-import Box from '@mui/joy/Box';
-import Sheet from '@mui/joy/Sheet';
 import type { BlogPost, BlogSection } from '@/types/resume';
 import { blogData } from '@/data/blogData';
 import styles from './slug.module.css';
@@ -28,13 +21,7 @@ function renderTextWithLinks(text: string) {
       parts.push(text.slice(lastIndex, match.index));
     }
     parts.push(
-      <a
-        key={key++}
-        href={match[2]}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ color: 'var(--joy-palette-primary-500, #0b6bcb)', textDecoration: 'underline' }}
-      >
+      <a key={key++} href={match[2]} target="_blank" rel="noopener noreferrer">
         {match[1]}
       </a>
     );
@@ -50,76 +37,39 @@ function renderSection(section: BlogSection, index: number) {
   switch (section.type) {
     case 'heading':
       return (
-        <Typography key={index} level="h3" sx={{ mt: 3, mb: 1, fontSize: '1.15rem', fontWeight: 700 }}>
+        <h3 key={index} className={styles.heading}>
           {section.content}
-        </Typography>
+        </h3>
       );
     case 'paragraph':
       return (
-        <Typography key={index} level="body-md" sx={{ mb: 1.5, lineHeight: 1.8 }}>
+        <p key={index} className={styles.paragraph}>
           {renderTextWithLinks(section.content)}
-        </Typography>
+        </p>
       );
     case 'list':
       return (
-        <Box key={index} component="ul" sx={{ pl: 3, mb: 1.5 }}>
+        <ul key={index} className={styles.list}>
           {section.items?.map((item, i) => (
-            <Typography key={i} component="li" level="body-md" sx={{ mb: 0.5, lineHeight: 1.8 }}>
-              {renderTextWithLinks(item)}
-            </Typography>
+            <li key={i}>{renderTextWithLinks(item)}</li>
           ))}
-        </Box>
+        </ul>
       );
     case 'code':
       return (
-        <Box key={index} sx={{ mb: 1.5 }}>
+        <div key={index} className={styles.codeBlock}>
           {section.language && (
-            <Box
-              sx={{
-                display: 'inline-block',
-                px: 1,
-                py: 0.25,
-                fontSize: '0.7rem',
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-                color: 'text.tertiary',
-                bgcolor: 'background.level2',
-                borderRadius: 'sm sm 0 0',
-              }}
-            >
-              {section.language}
-            </Box>
+            <div className={styles.codeLanguage}>{section.language}</div>
           )}
-          <Sheet
-            variant="soft"
-            color="neutral"
-            sx={{
-              p: 2,
-              borderRadius: section.language ? '0 sm sm sm' : 'sm',
-              fontFamily: 'monospace',
-              fontSize: '0.875rem',
-              whiteSpace: 'pre-wrap',
-              overflowX: 'auto',
-            }}
-          >
+          <pre className={`${styles.codeContent} ${section.language ? styles.codeContentWithLanguage : ''}`}>
             {section.content}
-          </Sheet>
-        </Box>
+          </pre>
+        </div>
       );
     case 'image':
       return (
-        <Box
-          key={index}
-          sx={{
-            mb: 1.5,
-            p: 2,
-            borderRadius: 'sm',
-            bgcolor: '#ffffff',
-          }}
-        >
-          <Box sx={{ position: 'relative', width: '100%' }}>
+        <div key={index} className={styles.imageBlock}>
+          <div className={styles.imageWrapper}>
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${section.content}`}
               alt={section.alt ?? ''}
@@ -128,45 +78,33 @@ function renderSection(section: BlogSection, index: number) {
               style={{ width: '100%', height: 'auto', display: 'block' }}
               sizes="(max-width: 768px) 100vw, 720px"
             />
-          </Box>
-        </Box>
+          </div>
+        </div>
       );
     case 'table':
       return (
-        <Box key={index} sx={{ mb: 1.5, overflowX: 'auto' }}>
-          <Box component="table" sx={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+        <div key={index} className={styles.tableWrapper}>
+          <table className={styles.table}>
             {section.headers && (
-              <Box component="thead">
-                <Box component="tr">
+              <thead>
+                <tr>
                   {section.headers.map((header, i) => (
-                    <Box
-                      key={i}
-                      component="th"
-                      sx={{ textAlign: 'left', p: 1, borderBottom: '2px solid', borderColor: 'divider', fontWeight: 700 }}
-                    >
-                      {header}
-                    </Box>
+                    <th key={i}>{header}</th>
                   ))}
-                </Box>
-              </Box>
+                </tr>
+              </thead>
             )}
-            <Box component="tbody">
+            <tbody>
               {section.rows?.map((row, rowIndex) => (
-                <Box component="tr" key={rowIndex}>
+                <tr key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <Box
-                      key={cellIndex}
-                      component="td"
-                      sx={{ p: 1, borderBottom: '1px solid', borderColor: 'divider', verticalAlign: 'top' }}
-                    >
-                      {cell}
-                    </Box>
+                    <td key={cellIndex}>{cell}</td>
                   ))}
-                </Box>
+                </tr>
               ))}
-            </Box>
-          </Box>
-        </Box>
+            </tbody>
+          </table>
+        </div>
       );
     default:
       return null;
@@ -180,63 +118,48 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
 
   return (
     <div className={styles.container}>
-      <Box sx={{ mb: 2 }}>
-        <Button component={Link} href="/blog" variant="plain" size="sm" sx={{ pl: 0 }}>
-          {t('back_to_list')}
-        </Button>
-      </Box>
+      <Link href="/blog" className={styles.backLink}>
+        {t('back_to_list')}
+      </Link>
 
-      <Typography level="h1" sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, fontWeight: 700, mb: 1, lineHeight: 1.3 }}>
-        {post.title}
-      </Typography>
+      <h1 className={styles.title}>{post.title}</h1>
 
-      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
-        <Typography level="body-sm" sx={{ color: 'text.tertiary' }}>
-          {post.date}
-        </Typography>
-        <Typography level="body-sm" sx={{ color: 'text.tertiary' }}>·</Typography>
+      <div className={styles.meta}>
+        <span className={styles.metaDate}>{post.date}</span>
+        <span className={styles.metaDivider}>·</span>
         {post.tags.map((tag) => (
-          <Chip key={tag} size="sm" variant="soft" color="primary">
-            {tag}
-          </Chip>
+          <span key={tag} className={styles.chip}>{tag}</span>
         ))}
-      </Stack>
+      </div>
 
-      <Divider sx={{ mb: 3 }} />
+      <hr className={styles.divider} />
 
-      <Box>
+      <div>
         {post.content.map((section, index) => renderSection(section, index))}
-      </Box>
+      </div>
 
-      <Box sx={{ mt: 4, mb: 3 }}>
-        <Button
-          component="a"
-          href={post.mediumUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="outlined"
-          size="sm"
-        >
+      <div className={styles.mediumLinkWrap}>
+        <a href={post.mediumUrl} target="_blank" rel="noopener noreferrer" className={styles.mediumLink}>
           {t('read_on_medium')}
-        </Button>
-      </Box>
+        </a>
+      </div>
 
-      <Divider sx={{ mb: 3 }} />
+      <hr className={styles.divider} />
 
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
-        <Button component={Link} href="/blog" variant="soft" size="sm">
+      <div className={styles.postNav}>
+        <Link href="/blog" className={`${styles.navButton} ${styles.navButtonSoft}`}>
           {t('back_to_list')}
-        </Button>
+        </Link>
         {nextPost ? (
-          <Button component={Link} href={`/blog/${nextPost.slug}`} variant="solid" size="sm">
+          <Link href={`/blog/${nextPost.slug}`} className={`${styles.navButton} ${styles.navButtonSolid}`}>
             {t('next_post_prefix')}{nextPost.title.length > 30 ? nextPost.title.slice(0, 30) + '…' : nextPost.title} →
-          </Button>
+          </Link>
         ) : (
-          <Button component={Link} href="/blog" variant="solid" size="sm">
+          <Link href="/blog" className={`${styles.navButton} ${styles.navButtonSolid}`}>
             {t('back_to_list_end')}
-          </Button>
+          </Link>
         )}
-      </Box>
+      </div>
     </div>
   );
 }
