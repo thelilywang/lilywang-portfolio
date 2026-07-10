@@ -367,6 +367,11 @@
   color: var(--color-muted-strong);
 }
 
+.highlightCard p .metric {
+  font-weight: var(--weight-bold);
+  color: var(--primary-color);
+}
+
 .highlightDetail {
   margin-top: 16px !important;
   font-size: 14px !important;

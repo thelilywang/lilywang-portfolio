@@ -20,13 +20,13 @@ interface SkillGroupProps {
 }
 
 function getBadgeClass(level: number): string {
-  if (level >= 90) return styles.expert;
+  if (level >= 85) return styles.expert;
   if (level >= 80) return styles.proficient;
   return styles.familiar;
 }
 
 function getBadgeLabel(level: number, labels: BadgeLabels): string {
-  if (level >= 90) return labels.expert;
+  if (level >= 85) return labels.expert;
   if (level >= 80) return labels.proficient;
   return labels.familiar;
 }

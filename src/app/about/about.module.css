@@ -107,6 +107,11 @@
   color: var(--foreground);
 }
 
+.metric {
+  font-weight: var(--weight-bold);
+  color: var(--primary-color);
+}
+
 /* ── Tech tags ── */
 .techTags {
   display: flex;

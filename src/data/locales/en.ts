@@ -130,7 +130,7 @@ export const experienceData: ExperienceItem[] = [
     achievements: [
       'Increased Activation Rate from 18.6% to 35.8% (+92%)',
       'Increased Retention Rate from 12.4% to 21.4% (+73%)',
-      'Delivered 56 app releases and 50+ SaaS features',
+      'Delivered 60+ app releases and 50+ SaaS features',
       'Reduced iOS crash rate from 0.17% to 0.05%; improved ratings across all platforms',
       'Launched AI Chatbot, review reply features, and internal AI Agent',
       'Led B2B subscription SaaS feature development to improve enterprise user retention and satisfaction',

@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { useLocaleContext } from "@/context/LocaleContext";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import SectionHeading from "@/app/components/SectionHeading";
+import { emphasizeMetrics } from "@/lib/emphasizeMetrics";
 
 const TAG_CLASS_MAP: Record<string, string> = {
   core: 'tagCore',
@@ -69,7 +70,7 @@ export default function Home() {
                   >
                     <span className={`${styles.highlightTag}${isAI ? ` ${styles.highlightTagAI}` : tagClass ? ` ${styles[tagClass]}` : ''}`}>{highlight.tag}</span>
                     <h3 className={isAI ? styles.highlightTitleAI : ''}>{highlight.title}</h3>
-                    <p>{highlight.description}</p>
+                    <p>{emphasizeMetrics(highlight.description, styles.metric)}</p>
                     {highlight.detail && <p className={styles.highlightDetail}>{highlight.detail}</p>}
                   </div>
                 );
@@ -88,7 +89,7 @@ export default function Home() {
                   >
                     <span className={`${styles.highlightTag}${tagClass ? ` ${styles[tagClass]}` : ''}`}>{highlight.tag}</span>
                     <h3>{highlight.title}</h3>
-                    <p>{highlight.description}</p>
+                    <p>{emphasizeMetrics(highlight.description, styles.metric)}</p>
                   </div>
                 );
               })}

@@ -9,6 +9,7 @@ import { GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
 import { useScrollFadeIn } from '@/hooks/useScrollFadeIn';
+import { emphasizeMetrics } from '@/lib/emphasizeMetrics';
 import { useState } from 'react';
 
 const CERTS_COLLAPSED_COUNT = 6;
@@ -82,7 +83,7 @@ export default function About() {
                 {exp.achievements.length > 0 && (
                   <ul className={styles.achievements}>
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                      <li key={i}>{emphasizeMetrics(achievement, styles.metric)}</li>
                     ))}
                   </ul>
                 )}
