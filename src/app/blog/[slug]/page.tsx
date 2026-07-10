@@ -11,9 +11,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = blogData.find((p) => p.slug === slug);
   if (!post) return {};
+  const title = `${post.title} | Lily Wang`;
   return {
-    title: `${post.title} | Lily Wang`,
+    title,
     description: post.description,
+    openGraph: {
+      title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: post.description,
+    },
   };
 }
 
