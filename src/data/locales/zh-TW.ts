@@ -130,7 +130,7 @@ export const experienceData: ExperienceItem[] = [
     achievements: [
       '提升 Activation Rate 從 18.6% 至 35.8%（+92%）',
       '提升 Retention Rate 從 12.4% 至 21.4%（+73%）',
-      '主導交付 56 個 APP 版本及 50+ 項 SaaS 功能',
+      '主導交付 60+ 個 APP 版本及 50+ 項 SaaS 功能',
       '降低 iOS Crash Rate 從 0.17% 至 0.05%，全平台評分顯著提升',
       '規劃並上線 AI Chatbot、評價回覆功能及內部 AI Agent',
       '帶領 B2B 訂閱制 SaaS 功能開發，提升企業用戶留存與滿意度',
