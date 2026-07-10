@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import sharedStyles from '../styles/shared.module.css';
 
 interface AnchorLink {
@@ -15,7 +15,6 @@ interface AnchorNavProps {
 }
 
 export default function AnchorNav({ links, linkClass, maxWidth }: AnchorNavProps) {
-  const navRef = useRef<HTMLElement>(null);
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -46,40 +45,8 @@ export default function AnchorNav({ links, linkClass, maxWidth }: AnchorNavProps
     return () => observer.disconnect();
   }, [links]);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const id = href.replace(/^#/, '');
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    const styles = getComputedStyle(document.documentElement);
-    const navbarHeight = parseFloat(styles.getPropertyValue('--navbar-height') || '0');
-    const navbarOffset = parseFloat(styles.getPropertyValue('--navbar-offset') || '0');
-    const anchorH = navRef.current?.offsetHeight ?? 0;
-
-    const targetY = target.getBoundingClientRect().top + window.scrollY;
-    const isScrollingUp = targetY < window.scrollY;
-
-    const sentinel = document.getElementById('scroll-sentinel');
-    const sentinelRect = sentinel?.getBoundingClientRect();
-    const isPastTop = sentinelRect ? sentinelRect.bottom <= 0 : window.scrollY > 0;
-
-    let effectiveNavbarOffset: number;
-    if (isScrollingUp) {
-      effectiveNavbarOffset = navbarHeight;
-    } else if (isPastTop) {
-      effectiveNavbarOffset = 0;
-    } else {
-      effectiveNavbarOffset = navbarOffset;
-    }
-    const totalOffset = effectiveNavbarOffset + anchorH;
-
-    const y = targetY - totalOffset;
-    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-  };
-
   return (
-    <nav ref={navRef} className={sharedStyles.anchorNav}>
+    <nav className={sharedStyles.anchorNav}>
       <div
         className={sharedStyles.anchorNavInner}
         style={maxWidth ? { maxWidth } : undefined}
@@ -98,7 +65,7 @@ export default function AnchorNav({ links, linkClass, maxWidth }: AnchorNavProps
               ]
                 .filter(Boolean)
                 .join(' ')}
-              onClick={(e) => handleClick(e, href)}
+              onClick={() => setActiveId(id)}
               aria-current={isActive ? 'true' : undefined}
             >
               {label}

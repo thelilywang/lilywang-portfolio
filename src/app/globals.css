@@ -226,6 +226,19 @@ html {
   overflow-x: clip;
 }
 
+/* AnchorNav 錨點列吸頂：讓原生 #hash 跳轉/scroll-behavior 落點對齊 sticky navbar + sticky 錨點列下方
+   --navbar-offset 由 Navbar.tsx 依捲動方向動態寫入（顯示時=navbar高度，下滑隱藏時=0）
+   40px ≈ 錨點列自身高度（.anchorNav padding 10px*2 + 文字行高 ~20px），16px 為呼吸空間 */
+[id] {
+  scroll-margin-top: calc(var(--navbar-offset, 62px) + 40px + 16px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   max-width: 100vw;
   color: var(--foreground);
