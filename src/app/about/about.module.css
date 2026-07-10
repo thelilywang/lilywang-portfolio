@@ -216,7 +216,7 @@
 }
 
 .languageLevel {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--primary-color);
   background-color: color-mix(in srgb, var(--primary-color) 12%, transparent);
