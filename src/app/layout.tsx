@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Noto_Sans_TC, Fraunces } from "next/font/google";
+import { Plus_Jakarta_Sans, Noto_Sans_TC, Lora, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,10 +19,18 @@ const notoSansTC = Noto_Sans_TC({
   display: "swap",
 });
 
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
+// Hero「Lily Wang」專用品牌字，僅載 600 一個字重
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["600"],
   variable: "--font-fraunces",
   display: "swap",
 });
@@ -60,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${notoSansTC.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${notoSansTC.variable} ${lora.variable} ${fraunces.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>

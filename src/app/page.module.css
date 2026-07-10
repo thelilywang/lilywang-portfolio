@@ -45,7 +45,7 @@
   font-size: var(--text-display);
   margin: 0;
   font-weight: 600;
-  font-family: var(--font-display);
+  font-family: var(--font-brand);
   color: var(--foreground);
   line-height: 1.1;
   letter-spacing: -0.5px;
