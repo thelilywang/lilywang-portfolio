@@ -57,7 +57,7 @@
 
 .heroPhotoImg {
   object-fit: cover;
-  object-position: center 65%;
+  object-position: center 65%; /* 圖檔已裁右側讓人臉置中，水平置中即可 */
 }
 
 .name {
@@ -471,9 +471,21 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+  /* 平板寬度維持圖文並排，縮小間距與照片高度 */
+  .hero {
+    gap: 40px;
+  }
+
+  .heroPhoto {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 手機寬度才改為圖上文下 */
   .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 
   .heroPhotoWrap {
@@ -481,12 +493,10 @@
   }
 
   .heroPhoto {
-    height: 360px;
-    border-radius: 4px 20px 4px 20px;
+    height: 400px;
+    border-radius: 16px 36px 16px 36px;
   }
-}
 
-@media (max-width: 768px) {
   .ctas {
     justify-content: flex-start;
   }
