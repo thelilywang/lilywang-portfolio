@@ -1,17 +1,11 @@
 'use client';
 
-import { useColorScheme } from '@mui/joy/styles';
-import { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
 import styles from './Navbar.module.css';
 
 export default function ThemeToggle() {
-  const { mode, systemMode, setMode } = useColorScheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  const resolved = mode === 'system' ? systemMode : mode;
+  const { resolved, setMode, mounted } = useTheme();
 
   return (
     <button
