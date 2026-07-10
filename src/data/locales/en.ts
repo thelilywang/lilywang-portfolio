@@ -115,7 +115,7 @@ export const aboutData: AboutData = {
     { name: 'Travel', icon: '✈️' },
     { name: 'Hiking', icon: '🏔️' },
     { name: 'Yoga', icon: '🧘' },
-    { name: 'Model Assembly', icon: '⛏️' },
+    { name: 'Model Assembly', icon: '🛠️' },
     { name: 'Watercolor Sketching', icon: '🎨' },
     { name: 'Movies & Media', icon: '🎬' },
   ],

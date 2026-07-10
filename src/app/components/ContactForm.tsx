@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './ContactForm.module.css';
+import SectionHeading from './SectionHeading';
 import { useTranslations } from 'next-intl';
 
 interface ContactFormProps {
@@ -31,7 +32,7 @@ export default function ContactForm({ recipientEmail }: ContactFormProps) {
 
   return (
     <div className={styles.contactForm}>
-      <h2 className={styles.contactFormHeading}>{t('heading')}</h2>
+      <SectionHeading as="h2" title={t('heading')} />
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="name">{t('name_label')}</label>

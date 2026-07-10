@@ -1,0 +1,15 @@
+.wrap {
+  margin-bottom: 24px;
+}
+
+.kicker {
+  composes: sectionKicker from '../styles/shared.module.css';
+}
+
+.title {
+  font-size: var(--text-heading);
+  font-weight: var(--weight-bold);
+  font-family: var(--font-display);
+  color: var(--foreground);
+  margin: 0;
+}

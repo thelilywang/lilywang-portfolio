@@ -8,13 +8,15 @@ import styles from '../projects/projects.module.css';
 
 interface ProjectCardProps {
   project: Project;
+  index: number;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const t = useTranslations('projects');
   const brandName = project.title.split(/[\s–—-]/)[0];
   const expandId = `expand-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
+  const indexLabel = String(index + 1).padStart(2, '0');
 
   return (
     <div
@@ -33,12 +35,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       style={{ cursor: 'pointer' }}
     >
       <div className={styles.projectImageContainer}>
+        {/* ponytail: locale data's `image` paths don't have matching files under
+            public/ yet — always use the placeholder until real screenshots land,
+            then swap this back to `project.image ? <Image ...> : <placeholder>`. */}
         <div className={styles.projectImagePlaceholder}>
           <span className={styles.projectBrand}>{brandName}</span>
         </div>
+        <span className={styles.projectIndex} aria-hidden="true">{indexLabel}</span>
       </div>
       <div className={styles.projectContent}>
-        <h2 className={styles.projectTitle}>{project.title}</h2>
+        <h3 className={styles.projectTitle}>{project.title}</h3>
         <div className={styles.projectRole}>{project.role}</div>
         <p className={`${styles.projectDescription} ${isExpanded ? '' : styles.clamped}`}>
           {project.description}

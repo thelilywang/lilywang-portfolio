@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Noto_Sans_TC, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ClientProviders from "./components/ClientProviders";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -68,6 +69,7 @@ export default function RootLayout({
           <div id="scroll-sentinel" aria-hidden="true" style={{ height: '1px', pointerEvents: 'none' }} />
           <Navbar />
           {children}
+          <Footer />
         </ClientProviders>
       </body>
     </html>

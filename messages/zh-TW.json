@@ -12,11 +12,16 @@
     "cta_portfolio": "查看作品集 →",
     "highlights_label": "專業亮點",
     "highlights_heading": "我能為你帶來什麼",
-    "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well.",
-    "footer_about": "關於我",
-    "footer_projects": "專案作品",
-    "footer_blog": "文章分享",
-    "footer_contact": "聯絡方式"
+    "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well."
+  },
+  "footer": {
+    "built_with": "使用 Next.js 打造"
+  },
+  "notFound": {
+    "kicker": "迷路在頁邊空白",
+    "title": "404",
+    "description": "這個頁面不小心從故事裡走失了，帶你回到首頁繼續看下去。",
+    "backHome": "回到首頁"
   },
   "about": {
     "page_title": "關於我",
@@ -46,6 +51,7 @@
   },
   "projects": {
     "page_title": "專案作品",
+    "main_projects_heading": "精選作品",
     "side_projects_heading": "Side Projects",
     "anchor_main": "主要專案",
     "anchor_side": "Side Projects",
@@ -84,7 +90,7 @@
     "mailto_name_label": "姓名",
     "mailto_email_label": "電子郵件",
     "mailto_message_label": "訊息內容",
-    "submitted_feedback": "已為您開啟郵件程式。"
+    "submitted_feedback": "正在開啟您的郵件程式，請寄出草稿訊息以完成聯繫。"
   },
   "blog": {
     "page_title": "文章分享",

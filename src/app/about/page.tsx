@@ -1,13 +1,14 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
 import styles from './about.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import SkillGroup from '@/app/components/SkillGroup';
 import AnchorNav from '@/app/components/AnchorNav';
+import SectionHeading from '@/app/components/SectionHeading';
 import { GraduationCap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
+import { useScrollFadeIn } from '@/hooks/useScrollFadeIn';
 
 const CERT_KEYWORD_RE = /(Google Analytics|Data Analysis|Machine Learning|Generative AI|Agentic AI|Product Management|Infrastructure|Prompt|Python|Agent|LLM|ML|AI)/g;
 
@@ -27,17 +28,8 @@ export default function About() {
   const t = useTranslations('about');
   const { resumeData } = useLocaleContext();
   const { aboutData, experienceData, skillsData } = resumeData;
-  const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const els = timelineRefs.current.filter(Boolean) as HTMLElement[];
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add(styles.visible); }),
-      { threshold: 0.08 }
-    );
-    els.forEach(el => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
+  const timelineFadeRef = useScrollFadeIn<HTMLDivElement>(0.08);
+  const fadeRef = useScrollFadeIn<HTMLElement>(0.1);
 
   const badgeLabels = {
     expert: t('skill_expert'),
@@ -57,15 +49,15 @@ export default function About() {
       <PageHeader title={t('page_title')} />
 
       <section id="intro" className={styles.section}>
-        <h2 className={styles.sectionHeading}>{t('bio_heading')}</h2>
+        <SectionHeading kicker={t('anchor_intro')} title={t('bio_heading')} />
         {aboutData.bio.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
 
-        <div className={styles.interests}>
+        <div className={`${styles.interests} ${styles.fadeInUp}`} ref={fadeRef}>
           {aboutData.interests.map((interest, index) => (
             <div className={styles.interestItem} key={index}>
-              <div className={styles.interestIcon}>{interest.icon}</div>
+              <div className={styles.interestIcon}><span aria-hidden="true">{interest.icon}</span></div>
               <div className={styles.interestName}>{interest.name}</div>
             </div>
           ))}
@@ -73,10 +65,10 @@ export default function About() {
       </section>
 
       <section id="experience" className={styles.section}>
-        <h2 className={styles.sectionHeading}>{t('experience_heading')}</h2>
+        <SectionHeading kicker={t('anchor_experience')} title={t('experience_heading')} />
         <div className={styles.timeline}>
           {experienceData.map((exp, index) => (
-            <div className={styles.timelineItem} key={index} ref={el => { timelineRefs.current[index] = el; }}>
+            <div className={styles.timelineItem} key={index} ref={timelineFadeRef}>
               <div className={styles.timelineDot}></div>
               <div className={styles.timelineContent}>
                 <div className={styles.timelinePeriod}>{exp.period}</div>
@@ -104,15 +96,15 @@ export default function About() {
       </section>
 
       <section id="skills" className={styles.section}>
-        <h2 className={styles.sectionHeading}>{t('skills_heading')}</h2>
+        <SectionHeading kicker={t('anchor_skills')} title={t('skills_heading')} />
         <SkillGroup heading={t('product_skills_heading')} skills={skillsData.productSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('methodologies_heading')} skills={skillsData.methodologies} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('ai_skills_heading')} skills={skillsData.aiSkills} badgeLabels={badgeLabels} />
         <SkillGroup heading={t('technical_skills_heading')} skills={skillsData.technicalSkills} badgeLabels={badgeLabels} />
 
         <div className={styles.section}>
-          <h2 className={styles.sectionHeadingNested}>{t('soft_skills_heading')}</h2>
-          <div className={styles.tagCloud}>
+          <h3 className={styles.sectionHeadingNested}>{t('soft_skills_heading')}</h3>
+          <div className={`${styles.tagCloud} ${styles.fadeInUp}`} ref={fadeRef}>
             {skillsData.softSkills.map((skill, index) => (
               <span className={styles.tag} key={index}>{skill}</span>
             ))}
@@ -120,8 +112,8 @@ export default function About() {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionHeadingNested}>{t('languages_heading')}</h2>
-          <div className={styles.languageList}>
+          <h3 className={styles.sectionHeadingNested}>{t('languages_heading')}</h3>
+          <div className={`${styles.languageList} ${styles.fadeInUp}`} ref={fadeRef}>
             {skillsData.languages.map((lang, index) => (
               <div className={styles.languageItem} key={index}>
                 <div className={styles.languageBody}>
@@ -135,7 +127,7 @@ export default function About() {
       </section>
 
       <section id="credentials" className={styles.section}>
-        <h2 className={styles.sectionHeading}>{t('education_heading_standalone')}</h2>
+        <SectionHeading kicker={t('anchor_credentials')} title={t('education_heading_standalone')} />
         {aboutData.education.map((edu, index) => (
           <div className={styles.educationItem} key={index}>
             <div className={styles.educationMeta}>
@@ -149,8 +141,8 @@ export default function About() {
           </div>
         ))}
 
-        <p className={styles.certHeading}>{t('certifications_heading')}</p>
-        <ul className={styles.certifications}>
+        <h3 className={styles.certHeading}>{t('certifications_heading')}</h3>
+        <ul className={`${styles.certifications} ${styles.fadeInUp}`} ref={fadeRef}>
           {aboutData.certifications.map((cert, index) => (
             <li key={index}>
               <span className={styles.certOrgBadge}>{cert.org}</span>

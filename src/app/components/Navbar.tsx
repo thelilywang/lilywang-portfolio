@@ -66,14 +66,15 @@ export default function Navbar() {
     };
   }, []);
 
-  const navLink = (href: string, label: string) => (
-    <Link
-      href={href}
-      className={`${styles.link} ${pathname === href ? styles.linkActive : ''}`}
-    >
-      {label}
-    </Link>
-  );
+  const navLink = (href: string, label: string) => {
+    const isActive =
+      pathname === href || (href !== '/' && pathname.startsWith(href + '/'));
+    return (
+      <Link href={href} className={`${styles.link} ${isActive ? styles.linkActive : ''}`}>
+        {label}
+      </Link>
+    );
+  };
 
   return (
     <nav ref={navRef} className={`${styles.navbar} ${hidden ? styles.navbarHidden : ''}`}>

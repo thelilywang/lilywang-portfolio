@@ -58,7 +58,7 @@ export interface Project {
   title: string;
   role: string;
   description: string;
-  image: string;
+  image?: string;
   imagePlaceholder: string;
   tech: string[];
   results: ProjectResult[];

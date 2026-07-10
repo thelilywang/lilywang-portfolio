@@ -13,7 +13,13 @@ export default function ThemeToggle() {
       className={styles.iconButton}
       aria-label="Toggle dark mode"
     >
-      {mounted && resolved === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+      {!mounted ? (
+        <span style={{ width: 18, height: 18 }} />
+      ) : resolved === 'dark' ? (
+        <Sun size={18} />
+      ) : (
+        <Moon size={18} />
+      )}
     </button>
   );
 }

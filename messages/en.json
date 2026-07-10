@@ -12,11 +12,16 @@
     "cta_portfolio": "View Portfolio →",
     "highlights_label": "PROFESSIONAL HIGHLIGHTS",
     "highlights_heading": "What I bring to the table",
-    "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well.",
-    "footer_about": "About",
-    "footer_projects": "Projects",
-    "footer_blog": "Blog",
-    "footer_contact": "Contact"
+    "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well."
+  },
+  "footer": {
+    "built_with": "Built with Next.js"
+  },
+  "notFound": {
+    "kicker": "Lost in the margins",
+    "title": "404",
+    "description": "This page wandered off the page. Let's get you back to the story.",
+    "backHome": "Back to home"
   },
   "about": {
     "page_title": "About Me",
@@ -46,6 +51,7 @@
   },
   "projects": {
     "page_title": "Projects",
+    "main_projects_heading": "Selected Work",
     "side_projects_heading": "Side Projects",
     "anchor_main": "Main Projects",
     "anchor_side": "Side Projects",
@@ -84,7 +90,7 @@
     "mailto_name_label": "Name",
     "mailto_email_label": "Email",
     "mailto_message_label": "Message",
-    "submitted_feedback": "Your email client should now be open."
+    "submitted_feedback": "Opening your email app — please send the drafted message to reach me."
   },
   "blog": {
     "page_title": "Blog",

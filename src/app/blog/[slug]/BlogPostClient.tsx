@@ -37,9 +37,9 @@ function renderSection(section: BlogSection, index: number) {
   switch (section.type) {
     case 'heading':
       return (
-        <h3 key={index} className={styles.heading}>
+        <h2 key={index} className={styles.heading}>
           {section.content}
-        </h3>
+        </h2>
       );
     case 'paragraph':
       return (
@@ -134,7 +134,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
 
       <hr className={styles.divider} />
 
-      <div>
+      <div className={styles.body}>
         {post.content.map((section, index) => renderSection(section, index))}
       </div>
 

@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
 import styles from '../contact/contact.module.css';
 
 interface ContactItemProps {
-  icon: string;
+  icon: ReactNode;
   label: string;
   value: string;
   href?: string;

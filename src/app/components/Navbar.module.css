@@ -167,26 +167,17 @@
 
 .link:hover {
   color: var(--primary-color);
-  background-color: rgba(0, 112, 243, 0.07);
-}
-
-:global([data-joy-color-scheme="dark"]) .navbar {
-  background-color: var(--navbar-bg);
-}
-
-:global([data-joy-color-scheme="dark"]) .link:not(.linkActive):hover {
-  background-color: rgba(50, 145, 255, 0.12);
-  color: var(--primary-color);
+  background-color: var(--primary-alpha-weak);
 }
 
 .linkActive {
-  background-color: rgba(0, 112, 243, 0.1);
+  background-color: var(--primary-alpha-medium);
   color: var(--primary-color);
   font-weight: 600;
 }
 
 .linkActive:hover {
-  background-color: rgba(0, 112, 243, 0.16);
+  background-color: var(--primary-alpha-strong);
 }
 
 /* 語言切換按鈕 */
@@ -206,11 +197,7 @@
 .langButton:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  background-color: rgba(0, 112, 243, 0.07);
-}
-
-:global([data-joy-color-scheme="dark"]) .langButton:hover {
-  background-color: rgba(50, 145, 255, 0.12);
+  background-color: var(--primary-alpha-weak);
 }
 
 /* Theme toggle 按鈕 */
@@ -227,11 +214,7 @@
 }
 
 .iconButton:hover {
-  background-color: rgba(0, 112, 243, 0.07);
+  background-color: var(--primary-alpha-weak);
   color: var(--primary-color);
-}
-
-:global([data-joy-color-scheme="dark"]) .iconButton:hover {
-  background-color: rgba(50, 145, 255, 0.12);
 }
 

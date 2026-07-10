@@ -96,8 +96,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .gradientBorderCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px color-mix(in srgb, #818cf8 18%, transparent);
+    transform: translateY(var(--hover-lift));
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--accent-indigo-strong) 18%, transparent);
   }
 }
 
@@ -171,7 +171,7 @@
   background-color: var(--primary-500);
   color: var(--color-on-primary);
   border-color: var(--primary-500);
-  box-shadow: 0 3px 10px rgba(11,107,203,0.22);
+  box-shadow: var(--shadow-anchor);
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -192,19 +192,19 @@
   background-color: var(--primary-600);
   color: var(--color-on-primary);
   border-color: var(--primary-500);
-  box-shadow: 0 3px 10px rgba(11,107,203,0.30);
+  box-shadow: var(--shadow-anchor);
 }
 
 .anchorLinkActive {
   background-color: var(--primary-500);
   color: var(--color-on-primary);
   border-color: var(--primary-500);
-  box-shadow: 0 3px 10px rgba(11,107,203,0.22);
+  box-shadow: var(--shadow-anchor);
 }
 
 :global([data-joy-color-scheme="dark"]) .anchorLinkActive {
   background-color: var(--primary-600);
   color: var(--color-on-primary);
   border-color: var(--primary-500);
-  box-shadow: 0 3px 10px rgba(11,107,203,0.30);
+  box-shadow: var(--shadow-anchor);
 }

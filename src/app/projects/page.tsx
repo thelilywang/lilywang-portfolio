@@ -4,13 +4,16 @@ import styles from './projects.module.css';
 import PageHeader from '@/app/components/PageHeader';
 import ProjectCard from '@/app/components/ProjectCard';
 import AnchorNav from '@/app/components/AnchorNav';
+import SectionHeading from '@/app/components/SectionHeading';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
+import { useScrollFadeIn } from '@/hooks/useScrollFadeIn';
 
 export default function Projects() {
   const t = useTranslations('projects');
   const { resumeData } = useLocaleContext();
   const { projectsData, sideProjectsData } = resumeData;
+  const fadeRef = useScrollFadeIn<HTMLElement>(0.1);
 
   return (
     <>
@@ -26,18 +29,23 @@ export default function Projects() {
       <div className={styles.container}>
       <PageHeader title={t('page_title')} />
 
-      <div id="main-projects" className={styles.projectGrid}>
-        {projectsData.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </div>
+      <section id="main-projects">
+        <SectionHeading as="h2" title={t('main_projects_heading')} />
+        <div className={styles.projectGrid}>
+          {projectsData.map((project, index) => (
+            <div className={styles.fadeInUp} ref={fadeRef} key={index}>
+              <ProjectCard project={project} index={index} />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {sideProjectsData.length > 0 && (
         <section id="side-projects" className={styles.sideSection}>
-          <h2 className={styles.sideSectionHeading}>{t('side_projects_heading')}</h2>
+          <SectionHeading as="h2" title={t('side_projects_heading')} />
           <div className={styles.sideGrid}>
             {sideProjectsData.map((project, index) => (
-              <div className={styles.sideCard} key={index}>
+              <div className={`${styles.sideCard} ${styles.fadeInUp}`} ref={fadeRef} key={index}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 {project.href && (

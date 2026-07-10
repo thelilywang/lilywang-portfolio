@@ -35,7 +35,7 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.timelineItem.visible {
+.timelineItem[data-visible="true"] {
   opacity: 1;
   transform: translateY(0);
 }
@@ -48,14 +48,6 @@
 .timelineItem:nth-child(6) { transition-delay: 500ms; }
 .timelineItem:nth-child(7) { transition-delay: 600ms; }
 .timelineItem:nth-child(8) { transition-delay: 700ms; }
-
-@media (prefers-reduced-motion: reduce) {
-  .timelineItem {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
 
 .timelineDot {
   position: absolute;
@@ -71,14 +63,9 @@
 
 .timelineContent {
   background-color: var(--surface-raised);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-card);
   padding: 25px;
   border-radius: var(--radius-lg);
-}
-
-:global([data-joy-color-scheme="dark"]) .timelineContent {
-  background-color: var(--surface-raised);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timelinePeriod {
@@ -187,15 +174,15 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, #818cf8 0%, #38bdf8 100%);
+  background: linear-gradient(180deg, var(--accent-indigo-strong) 0%, var(--accent-sky) 100%);
   border-radius: 4px 0 0 4px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .languageItem:hover {
-    transform: translateY(-2px);
+    transform: translateY(var(--hover-lift));
     border-color: var(--primary-color);
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 14%, transparent);
+    box-shadow: var(--shadow-card-hover);
   }
 }
 
@@ -237,11 +224,6 @@
 
 .section:nth-child(3) {
   padding-top: 8px;
-}
-
-.sectionHeading {
-  composes: sectionTitle from '../styles/shared.module.css';
-  margin-bottom: 24px;
 }
 
 /* 巢狀 section 標題（soft skills / languages）較小、無 accent bar */
@@ -374,18 +356,11 @@
 }
 
 .certHighlight {
-  background: linear-gradient(90deg, #6366f1, #38bdf8);
+  background: linear-gradient(90deg, var(--accent-indigo), var(--accent-sky));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 600;
-}
-
-:global([data-joy-color-scheme="dark"]) .certHighlight {
-  background: linear-gradient(90deg, #a5b4fc, #7dd3fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .certOrg {
@@ -441,10 +416,10 @@
 
 @media (hover: hover) and (pointer: fine) {
   .interestItem:hover {
-    transform: translateY(-5px);
+    transform: translateY(var(--hover-lift));
     background-color: var(--primary-color);
     border-color: transparent;
-    box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 30%, transparent);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .interestItem:hover::after {
@@ -473,6 +448,19 @@
   color: var(--color-muted-strong);
   letter-spacing: 0.01em;
   transition: color 0.22s ease;
+}
+
+/* ── Scroll fade-in ── */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--motion-duration-slow) var(--ease-out),
+              transform var(--motion-duration-slow) var(--ease-out);
+}
+
+.fadeInUp[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

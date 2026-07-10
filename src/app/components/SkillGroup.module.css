@@ -2,7 +2,7 @@
   margin-bottom: 32px;
 }
 
-.skillsSection h2 {
+.skillsSection h3 {
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -68,7 +68,7 @@
   border: 1px solid var(--skill-familiar-border);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .skillGrid {
     grid-template-columns: 1fr;
   }

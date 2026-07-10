@@ -1,3 +1,5 @@
+/* Breakpoints convention: 1024 / 768 / 480 — the only allowed media query widths */
+
 :root {
   /* ── Base ── */
   --background: #ffffff;
@@ -32,9 +34,36 @@
   --accent-pink: #f472b6;
   --accent-gradient: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
   --accent-gradient-text: linear-gradient(90deg, #6366f1, #38bdf8);
+  --accent-violet: #a78bfa;
+  --accent-indigo-strong: #818cf8;
+  --accent-pink-strong: #f472b6;
 
   /* ── Focus ── */
   --focus-ring: 0 0 0 3px rgba(0, 112, 243, 0.35);
+
+  /* ── Motion ── */
+  --motion-duration-fast: 0.15s;
+  --motion-duration-base: 0.22s;
+  --motion-duration-slow: 0.4s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: ease;
+
+  /* ── Hover / Shadow ── */
+  --hover-lift: -4px;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-card-hover: 0 12px 40px rgba(129, 140, 248, 0.18);
+
+  /* ── Primary alpha (Navbar hover states) ── */
+  --primary-alpha-weak: rgba(0, 112, 243, 0.07);
+  --primary-alpha-medium: rgba(0, 112, 243, 0.1);
+  --primary-alpha-strong: rgba(0, 112, 243, 0.16);
+
+  /* ── Anchor nav shadow ── */
+  --shadow-anchor: 0 3px 10px rgba(11, 107, 203, 0.22);
+
+  /* ── Fluid type (defined only — not yet applied) ── */
+  --text-display: clamp(40px, 5vw + 16px, 64px);
+  --text-heading: clamp(26px, 2vw + 18px, 34px);
 
   /* ── Typography ── */
   --font-display: var(--font-fraunces), Georgia, serif;
@@ -139,9 +168,36 @@
   --accent-pink: #f9a8d4;
   --accent-gradient: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
   --accent-gradient-text: linear-gradient(90deg, #a5b4fc, #7dd3fc);
+  --accent-violet: #a78bfa;
+  --accent-indigo-strong: #818cf8;
+  --accent-pink-strong: #f472b6;
 
   /* ── Focus ── */
   --focus-ring: 0 0 0 3px rgba(50, 145, 255, 0.4);
+
+  /* ── Motion ── */
+  --motion-duration-fast: 0.15s;
+  --motion-duration-base: 0.22s;
+  --motion-duration-slow: 0.4s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: ease;
+
+  /* ── Hover / Shadow ── */
+  --hover-lift: -4px;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 40px rgba(129, 140, 248, 0.28);
+
+  /* ── Primary alpha (Navbar hover states) ── */
+  --primary-alpha-weak: rgba(50, 145, 255, 0.12);
+  --primary-alpha-medium: rgba(50, 145, 255, 0.12);
+  --primary-alpha-strong: rgba(50, 145, 255, 0.12);
+
+  /* ── Anchor nav shadow ── */
+  --shadow-anchor: 0 3px 10px rgba(11, 107, 203, 0.3);
+
+  /* ── Fluid type (defined only — not yet applied) ── */
+  --text-display: clamp(40px, 5vw + 16px, 64px);
+  --text-heading: clamp(26px, 2vw + 18px, 34px);
 
   /* ── Skill Badge (dark) ── */
   --skill-expert-bg: #1a3d1a;

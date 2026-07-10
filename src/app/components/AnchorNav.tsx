@@ -10,7 +10,6 @@ interface AnchorLink {
 
 interface AnchorNavProps {
   links: AnchorLink[];
-  activeClass?: string;
   linkClass?: string;
   maxWidth?: number;
 }

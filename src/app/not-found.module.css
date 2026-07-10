@@ -1,0 +1,60 @@
+.container {
+  composes: pageContainer from './styles/shared.module.css';
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  gap: 12px;
+}
+
+.kicker {
+  composes: sectionKicker from './styles/shared.module.css';
+  margin-bottom: 0;
+}
+
+.number {
+  font-size: var(--text-display);
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  margin: 0;
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  max-width: 480px;
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted-strong);
+  margin: 0;
+}
+
+.backLink {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-full);
+  background: var(--primary-color);
+  color: var(--color-on-primary);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  transition: transform var(--motion-duration-base) var(--ease-out), box-shadow var(--motion-duration-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .backLink:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-card-hover);
+  }
+}

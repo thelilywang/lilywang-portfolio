@@ -16,7 +16,32 @@
 
 .card {
   composes: gradientBorderCard from '../styles/shared.module.css';
+  position: relative;
   padding: 28px 32px;
+}
+
+.cardIndex {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: color-mix(in srgb, var(--foreground) 8%, transparent);
+  user-select: none;
+  pointer-events: none;
+}
+
+.cardDate {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 8px;
 }
 
 .cardTitle {
@@ -26,15 +51,7 @@
   font-weight: 700;
   font-family: var(--font-display);
   color: var(--foreground);
-  margin: 0 0 8px 0;
-}
-
-.cardDate {
-  position: relative;
-  z-index: 1;
-  font-size: 13px;
-  color: var(--color-muted-strong);
-  margin-bottom: 12px;
+  margin: 0 0 12px 0;
 }
 
 .cardDescription {
@@ -66,4 +83,20 @@
   .card {
     padding: 22px 20px;
   }
+
+  .cardIndex {
+    font-size: 30px;
+  }
+}
+
+/* ── Scroll fade-in ── */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--motion-duration-slow) var(--ease-out), transform var(--motion-duration-slow) var(--ease-out);
+}
+
+.fadeInUp[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
 }

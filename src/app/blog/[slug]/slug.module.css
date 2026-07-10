@@ -55,22 +55,26 @@
 .divider {
   border: none;
   border-top: 1px solid var(--border-default);
-  margin: 0 0 24px 0;
+  margin: 0 0 var(--space-6) 0;
 }
 
 /* ── Section renderer ── */
+.body {
+  max-width: 68ch;
+}
+
 .heading {
   font-size: 19px;
   font-weight: 700;
   font-family: var(--font-display);
-  margin: 24px 0 8px 0;
+  margin: var(--space-6) 0 var(--space-2) 0;
   color: var(--foreground);
 }
 
 .paragraph {
   font-size: 16px;
   line-height: 1.8;
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-3) 0;
 }
 
 .paragraph a,
@@ -80,18 +84,18 @@
 }
 
 .list {
-  padding-left: 24px;
-  margin: 0 0 12px 0;
+  padding-left: var(--space-6);
+  margin: 0 0 var(--space-3) 0;
 }
 
 .list li {
   font-size: 16px;
   line-height: 1.8;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-1);
 }
 
 .codeBlock {
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-3) 0;
 }
 
 .codeLanguage {
@@ -125,8 +129,8 @@
 }
 
 .imageBlock {
-  margin: 0 0 12px 0;
-  padding: 16px;
+  margin: 0 0 var(--space-3) 0;
+  padding: var(--space-4);
   border-radius: var(--radius-sm);
   background-color: var(--surface-raised);
 }
@@ -143,7 +147,7 @@
 }
 
 .tableWrapper {
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-3) 0;
   overflow-x: auto;
 }
 
@@ -168,7 +172,7 @@
 
 /* ── Footer nav ── */
 .mediumLinkWrap {
-  margin: 32px 0 24px 0;
+  margin: var(--space-8) 0 var(--space-6) 0;
 }
 
 .mediumLink {

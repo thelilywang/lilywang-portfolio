@@ -15,11 +15,6 @@
   gap: 30px;
 }
 
-.contactSectionHeading {
-  composes: sectionTitle from '../styles/shared.module.css';
-  margin-bottom: 20px;
-}
-
 .contactItem {
   display: flex;
   align-items: flex-start;
@@ -28,14 +23,15 @@
 }
 
 .contactIcon {
-  font-size: 24px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--primary-color);
   background-color: var(--gray-alpha-100);
   border-radius: var(--radius-md);
+  flex-shrink: 0;
 }
 
 .contactLabel {
@@ -67,4 +63,16 @@
   .contactInfo {
     order: 1;
   }
+}
+
+/* ── Scroll fade-in ── */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--motion-duration-slow) var(--ease-out), transform var(--motion-duration-slow) var(--ease-out);
+}
+
+.fadeInUp[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
 }

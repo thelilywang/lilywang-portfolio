@@ -34,7 +34,7 @@ function getBadgeLabel(level: number, labels: BadgeLabels): string {
 export default function SkillGroup({ heading, skills, badgeLabels = DEFAULT_LABELS }: SkillGroupProps) {
   return (
     <div className={styles.skillsSection}>
-      <h2>{heading}</h2>
+      <h3>{heading}</h3>
       <div className={styles.skillGrid}>
         {skills.map((skill, index) => (
           <div className={styles.skillItem} key={index}>
