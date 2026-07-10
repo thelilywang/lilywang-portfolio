@@ -101,14 +101,12 @@ export default function Home() {
           className={`${styles.quoteSection} ${styles.fadeInUp}`}
           ref={fadeRef}
         >
+          <span className={styles.quoteMarks} aria-hidden="true">&ldquo;</span>
           <div className={styles.quoteBody}>
             <p className={styles.quoteText}>
-              <span className={styles.quoteMarks} aria-hidden="true">&ldquo;</span>
               {t.rich('quote', {
                 highlight: (chunks) => <span className={styles.quoteHighlight}>{chunks}</span>,
               })}
-              <span className={styles.quoteMarks} aria-hidden="true">&rdquo;</span>
-              <span className={styles.quoteDecorTail} aria-hidden="true">✨</span>
             </p>
           </div>
         </div>

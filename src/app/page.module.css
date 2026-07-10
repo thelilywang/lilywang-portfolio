@@ -401,51 +401,24 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 48px 56px 44px;
-  background: transparent;
+  padding: 56px 56px 44px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-default);
   border-radius: 24px;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* 彩色漸層邊框 */
-.quoteSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--accent-indigo-strong) 0%, var(--accent-sky) 40%, var(--accent-pink-strong) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.quoteDecorTail {
-  display: inline;
-  margin-left: 6px;
-  font-size: 0.9em;
-  vertical-align: 0.05em;
-  animation: twinkle 2.6s ease-in-out infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(12deg); }
-}
-
 .quoteMarks {
+  position: absolute;
+  top: 12px;
+  left: 24px;
   font-family: var(--font-display);
-  font-size: 1.35em;
+  font-size: 48px;
   line-height: 1;
-  background: linear-gradient(135deg, var(--accent-indigo-strong), var(--accent-sky));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: color-mix(in srgb, var(--color-muted) 40%, transparent);
   user-select: none;
-  vertical-align: -0.15em;
 }
 
 .quoteBody {
