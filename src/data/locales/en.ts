@@ -328,31 +328,37 @@ export const skillsData: SkillsData = {
 export const highlightsData: Highlight[] = [
   {
     tag: 'CORE EXPERIENCE',
+    tagKey: 'core',
     title: '5+ Years PM Experience',
     description: 'End-to-end product lifecycle — from 0 to 1 roadmap definition to stakeholder alignment and cross-functional execution. Delivered 50+ features and 60+ app releases across B2B/B2C SaaS and mobile apps.',
   },
   {
     tag: 'AI',
+    tagKey: 'ai',
     title: 'AI Product Leadership',
     description: 'Led end-to-end planning and launch of an AI Chatbot, review reply features, and an internal AI Agent. Hands-on experience with Generative AI, LLMs, RAG, and Prompt Engineering.',
   },
   {
     tag: 'DIFFERENTIATOR',
+    tagKey: 'differentiator',
     title: 'Engineering Background Advantage',
     description: 'B.S. in Computer Science with hands-on Android development and automated testing (Python/Appium) experience. Applied Machine Learning hands-on through Duke\'s ML for Product Managers program — enabling fluent collaboration with engineering and data science teams.',
   },
   {
     tag: 'DATA',
+    tagKey: 'data',
     title: 'Data-Driven Decisions',
     description: 'Proficient in Firebase, Google Analytics, Tableau, and Power BI. Designs A/B tests and MVPs to validate hypotheses, with PRD-backed prioritization to continuously optimize product performance.',
   },
   {
     tag: 'IMPACT',
+    tagKey: 'impact',
     title: 'Measurable Impact',
     description: 'At 104 Corporation: Activation Rate 18.6% → 35.8% (+92%), Retention Rate 12.4% → 21.4% (+73%), iOS crash rate reduced from 0.17% to 0.05% — driven by data-driven roadmap prioritization.',
   },
   {
     tag: 'SCALE',
+    tagKey: 'scale',
     title: 'Large-Scale Platform Experience',
     description: 'Managed a 99K+ MAU, 105K+ download SaaS platform with full cross-functional ownership. Previously led digital projects on FamilyMart APP with 14M+ users across Taiwan.',
   },

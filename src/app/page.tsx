@@ -8,6 +8,14 @@ import { useLocaleContext } from "@/context/LocaleContext";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import SectionHeading from "@/app/components/SectionHeading";
 
+const TAG_CLASS_MAP: Record<string, string> = {
+  core: 'tagCore',
+  data: 'tagData',
+  impact: 'tagImpact',
+  scale: 'tagScale',
+  differentiator: 'tagDiff',
+};
+
 export default function Home() {
   const t = useTranslations('home');
   const { resumeData } = useLocaleContext();
@@ -49,33 +57,41 @@ export default function Home() {
           />
           <div className={styles.highlightsBento}>
             <div className={styles.highlightsTopRow}>
-              {highlightsData.slice(0, 2).map((highlight, index) => (
-                <div
-                  className={`${styles.highlightCard} ${styles.highlightCardLarge} ${styles.fadeInUp}${highlight.tag === 'AI' ? ` ${styles.highlightCardAI}` : ''}`}
-                  style={{ transitionDelay: `${Math.min(index * 0.1, 0.4)}s` }}
-                  ref={fadeRef}
-                  key={index}
-                >
-                  <span className={`${styles.highlightTag}${highlight.tag === 'AI' ? ` ${styles.highlightTagAI}` : ''}`}>{highlight.tag}</span>
-                  <h3 className={highlight.tag === 'AI' ? styles.highlightTitleAI : ''}>{highlight.title}</h3>
-                  <p>{highlight.description}</p>
-                  {highlight.detail && <p className={styles.highlightDetail}>{highlight.detail}</p>}
-                </div>
-              ))}
+              {highlightsData.slice(0, 2).map((highlight, index) => {
+                const isAI = highlight.tagKey === 'ai';
+                const tagClass = highlight.tagKey ? TAG_CLASS_MAP[highlight.tagKey] : undefined;
+                return (
+                  <div
+                    className={`${styles.highlightCard} ${styles.highlightCardLarge} ${styles.fadeInUp}${isAI ? ` ${styles.highlightCardAI}` : ''}`}
+                    style={{ transitionDelay: `${Math.min(index * 0.1, 0.4)}s` }}
+                    ref={fadeRef}
+                    key={index}
+                  >
+                    <span className={`${styles.highlightTag}${isAI ? ` ${styles.highlightTagAI}` : tagClass ? ` ${styles[tagClass]}` : ''}`}>{highlight.tag}</span>
+                    <h3 className={isAI ? styles.highlightTitleAI : ''}>{highlight.title}</h3>
+                    <p>{highlight.description}</p>
+                    {highlight.detail && <p className={styles.highlightDetail}>{highlight.detail}</p>}
+                  </div>
+                );
+              })}
             </div>
             <div className={styles.highlightsBottomRow}>
-              {highlightsData.slice(2).map((highlight, index) => (
-                <div
-                  className={`${styles.highlightCard} ${styles.highlightCardSmall} ${styles.fadeInUp}${highlight.tag === 'DIFFERENTIATOR' || highlight.tag === '差異化優勢' ? ` ${styles.highlightCardDiff}` : ''}`}
-                  style={{ transitionDelay: `${Math.min((index + 2) * 0.1, 0.4)}s` }}
-                  ref={fadeRef}
-                  key={index}
-                >
-                  <span className={styles.highlightTag}>{highlight.tag}</span>
-                  <h3>{highlight.title}</h3>
-                  <p>{highlight.description}</p>
-                </div>
-              ))}
+              {highlightsData.slice(2).map((highlight, index) => {
+                const isDiff = highlight.tagKey === 'differentiator';
+                const tagClass = highlight.tagKey ? TAG_CLASS_MAP[highlight.tagKey] : undefined;
+                return (
+                  <div
+                    className={`${styles.highlightCard} ${styles.highlightCardSmall} ${styles.fadeInUp}${isDiff ? ` ${styles.highlightCardDiff}` : ''}`}
+                    style={{ transitionDelay: `${Math.min((index + 2) * 0.1, 0.4)}s` }}
+                    ref={fadeRef}
+                    key={index}
+                  >
+                    <span className={`${styles.highlightTag}${tagClass ? ` ${styles[tagClass]}` : ''}`}>{highlight.tag}</span>
+                    <h3>{highlight.title}</h3>
+                    <p>{highlight.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

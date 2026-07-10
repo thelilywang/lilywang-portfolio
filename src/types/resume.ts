@@ -85,6 +85,7 @@ export interface SkillsData {
 
 export interface Highlight {
   tag: string;
+  tagKey?: 'core' | 'ai' | 'differentiator' | 'data' | 'impact' | 'scale';
   title: string;
   description: string;
   detail?: string;

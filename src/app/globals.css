@@ -38,6 +38,18 @@
   --accent-indigo-strong: #818cf8;
   --accent-pink-strong: #f472b6;
 
+  /* ── Highlight tag categories (per-category color system) ── */
+  --tag-core-text: var(--primary-color);
+  --tag-core-bg: color-mix(in srgb, var(--tag-core-text) 12%, transparent);
+  --tag-data-text: color-mix(in srgb, var(--accent-sky) 65%, black);
+  --tag-data-bg: color-mix(in srgb, var(--accent-sky) 12%, transparent);
+  --tag-impact-text: var(--color-success);
+  --tag-impact-bg: color-mix(in srgb, var(--tag-impact-text) 12%, transparent);
+  --tag-scale-text: var(--accent-indigo);
+  --tag-scale-bg: color-mix(in srgb, var(--tag-scale-text) 12%, transparent);
+  --tag-diff-text: color-mix(in srgb, var(--accent-pink) 70%, black);
+  --tag-diff-bg: color-mix(in srgb, var(--accent-pink) 12%, transparent);
+
   /* ── Focus ── */
   --focus-ring: 0 0 0 3px rgba(0, 112, 243, 0.35);
 
@@ -171,6 +183,18 @@
   --accent-violet: #a78bfa;
   --accent-indigo-strong: #818cf8;
   --accent-pink-strong: #f472b6;
+
+  /* ── Highlight tag categories (per-category color system) ── */
+  --tag-core-text: var(--primary-color);
+  --tag-core-bg: color-mix(in srgb, var(--tag-core-text) 16%, transparent);
+  --tag-data-text: var(--accent-sky);
+  --tag-data-bg: color-mix(in srgb, var(--tag-data-text) 16%, transparent);
+  --tag-impact-text: var(--color-success);
+  --tag-impact-bg: color-mix(in srgb, var(--tag-impact-text) 16%, transparent);
+  --tag-scale-text: var(--accent-indigo);
+  --tag-scale-bg: color-mix(in srgb, var(--tag-scale-text) 16%, transparent);
+  --tag-diff-text: var(--accent-pink);
+  --tag-diff-bg: color-mix(in srgb, var(--tag-diff-text) 16%, transparent);
 
   /* ── Focus ── */
   --focus-ring: 0 0 0 3px rgba(50, 145, 255, 0.4);

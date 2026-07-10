@@ -328,31 +328,37 @@ export const skillsData: SkillsData = {
 export const highlightsData: Highlight[] = [
   {
     tag: '核心經驗',
+    tagKey: 'core',
     title: '5年以上 PM 經驗',
     description: '從 0 到 1 的 Roadmap 規劃、Stakeholder 溝通對齊到跨部門執行，具備完整產品生命週期管理經驗。主導交付 50+ 項功能與 60+ 個 APP 版本，橫跨 B2B/B2C SaaS 及行動應用領域。',
   },
   {
     tag: 'AI',
+    tagKey: 'ai',
     title: 'AI 產品規劃',
     description: '端對端主導 AI Chatbot、評價回覆功能及內部 AI Agent 的規劃與上線，具備 Generative AI、LLM、RAG 應用及 Prompt Engineering 實務能力。',
   },
   {
     tag: '差異化優勢',
+    tagKey: 'differentiator',
     title: '工程背景優勢',
     description: '資訊工程學系畢業，具 Android 開發及自動化測試（Python/Appium）實務經驗。透過 Duke ML for Product Managers 課程實作 Machine Learning 專案，與工程師及資料科學團隊溝通有共通語言，有效提升跨團隊執行效率。',
   },
   {
     tag: '數據',
+    tagKey: 'data',
     title: '數據驅動決策',
     description: '熟練使用 Firebase、Google Analytics、Tableau、Power BI 進行產品數據分析，以 PRD 驅動優先序，設計 A/B Testing 與 MVP 驗證假設，持續優化產品迭代方向。',
   },
   {
     tag: '成果',
+    tagKey: 'impact',
     title: '關鍵指標大幅提升',
     description: '在 104人力銀行任職期間，將 Activation Rate 從 18.6% 提升至 35.8%（+92%），Retention Rate 從 12.4% 提升至 21.4%（+73%）— 以數據驅動的 Roadmap 優先序排列為核心方法。',
   },
   {
     tag: '規模',
+    tagKey: 'scale',
     title: '大型平台產品管理',
     description: '全面負責月活躍 99K+、下載量 105K+ SaaS 平台的跨部門產品所有權。曾主導全台 1,400 萬用戶規模的全家 APP 數位專案。',
   },
