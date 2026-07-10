@@ -36,14 +36,16 @@ export default function Home() {
               <a href="https://drive.google.com/uc?export=download&id=1tAVqQN55mZnHIf2LO5sdRodr-9_4yTGk" target="_blank" rel="noopener noreferrer" className={styles.secondary}>{t('cta_download')}</a>
             </div>
           </div>
-          <div className={styles.heroPhoto}>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/ProfilePic.jpg`}
-              alt={personalInfo.name}
-              fill
-              className={styles.heroPhotoImg}
-              priority
-            />
+          <div className={styles.heroPhotoWrap}>
+            <div className={styles.heroPhoto}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/ProfilePic.jpg`}
+                alt={personalInfo.name}
+                fill
+                className={styles.heroPhotoImg}
+                priority
+              />
+            </div>
           </div>
         </div>
 

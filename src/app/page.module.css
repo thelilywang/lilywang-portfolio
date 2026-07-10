@@ -28,12 +28,31 @@
   gap: 14px;
 }
 
+.heroPhotoWrap {
+  position: relative;
+  overflow-x: clip;
+}
+
+.heroPhotoWrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--accent-indigo) 18%, transparent);
+  border-radius: 48px 20px 48px 20px;
+  transform: rotate(-3deg);
+}
+
 .heroPhoto {
   position: relative;
   height: 580px;
-  border-radius: 4px 24px 4px 24px;
+  border-radius: 20px 48px 20px 48px;
   overflow: hidden;
   box-shadow: 8px 12px 40px rgba(0, 0, 0, 0.15);
+  transform: rotate(1.5deg);
+}
+
+:global([data-joy-color-scheme="dark"]) .heroPhotoWrap::before {
+  background: color-mix(in srgb, var(--accent-indigo) 24%, transparent);
 }
 
 .heroPhotoImg {
@@ -457,9 +476,12 @@
     gap: 40px;
   }
 
+  .heroPhotoWrap {
+    order: -1;
+  }
+
   .heroPhoto {
     height: 360px;
-    order: -1;
     border-radius: 4px 20px 4px 20px;
   }
 }
