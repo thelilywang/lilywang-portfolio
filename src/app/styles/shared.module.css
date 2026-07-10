@@ -72,6 +72,35 @@
   background: var(--accent-gradient);
 }
 
+/* 共用漸層邊框卡片（Side project 卡、Blog 卡技法相同）*/
+.gradientBorderCard {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.gradientBorderCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  padding: 2px;
+  background: var(--accent-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gradientBorderCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px color-mix(in srgb, #818cf8 18%, transparent);
+  }
+}
+
 /* 共用 tech chip（About 經歷標籤、Projects 技術標籤）*/
 .chip {
   font-size: 13px;

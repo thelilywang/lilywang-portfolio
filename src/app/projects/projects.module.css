@@ -202,8 +202,7 @@
 }
 
 .sideCard {
-  position: relative;
-  border-radius: var(--radius-xl);
+  composes: gradientBorderCard from '../styles/shared.module.css';
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
@@ -213,23 +212,6 @@
   gap: 10px;
   height: 100%;
   min-height: 220px;
-  background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
-  overflow: hidden;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-/* 漸層邊框 — 與首頁 quote 技法相同 */
-.sideCard::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  padding: 2px;
-  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 40%, #f472b6 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 /* 微光背景暈 */
@@ -247,11 +229,6 @@
 
 .sideCard:has(.sideLink) {
   justify-content: flex-start;
-}
-
-.sideCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px color-mix(in srgb, #818cf8 18%, transparent);
 }
 
 .sideCard h3 {

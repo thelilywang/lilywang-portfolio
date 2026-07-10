@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import styles from '../contact/contact.module.css';
+import styles from './ContactForm.module.css';
 import { useTranslations } from 'next-intl';
 
 interface ContactFormProps {
