@@ -94,7 +94,7 @@ export default function Navbar() {
         <div className={styles.controls}>
           <button
             onClick={toggleLocale}
-            className={styles.langButton}
+            className={styles.controlButton}
             aria-label={locale === 'zh-TW' ? '切換語言' : 'Switch language'}
           >
             {locale === 'zh-TW' ? 'EN' : '中文'}

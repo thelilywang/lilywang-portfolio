@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setMode(resolved === 'dark' ? 'light' : 'dark')}
-      className={styles.iconButton}
+      className={styles.controlButton}
       aria-label="Toggle dark mode"
     >
       {!mounted ? (

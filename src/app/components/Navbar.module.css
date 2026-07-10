@@ -77,13 +77,9 @@
     scroll-snap-align: start;
   }
 
-  .langButton {
+  .controlButton {
     font-size: 11px;
-    padding: 3px 5px;
-  }
-
-  .iconButton {
-    padding: 4px 4px;
+    padding: 0 6px;
   }
 }
 
@@ -180,40 +176,25 @@
   background-color: var(--primary-alpha-strong);
 }
 
-/* 語言切換按鈕 */
-.langButton {
+/* 語言/主題切換按鈕（統一規格） */
+.controlButton {
+  height: 36px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 13px;
   font-weight: 600;
   color: var(--color-muted);
   background-color: transparent;
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-sm);
-  padding: 4px 10px;
-  cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
-  line-height: 1.5;
-}
-
-.langButton:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-  background-color: var(--primary-alpha-weak);
-}
-
-/* Theme toggle 按鈕 */
-.iconButton {
-  font-size: 16px;
-  background: none;
   border: none;
   border-radius: var(--radius-sm);
-  padding: 5px 8px;
   cursor: pointer;
-  color: var(--color-muted);
-  transition: background-color 0.15s ease, color 0.15s ease;
-  line-height: 1.5;
+  transition: background-color var(--motion-duration-fast) var(--ease-out),
+    color var(--motion-duration-fast) var(--ease-out);
 }
 
-.iconButton:hover {
+.controlButton:hover {
   background-color: var(--primary-alpha-weak);
   color: var(--primary-color);
 }
