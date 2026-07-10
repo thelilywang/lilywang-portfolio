@@ -26,7 +26,7 @@
 
   /* ── Border ── */
   --border-default: rgba(0, 0, 0, 0.08);
-  --border-strong: rgba(0, 0, 0, 0.16);
+  --border-strong: rgba(0, 0, 0, 0.42);
 
   /* ── Accent ── */
   --accent-indigo: #6366f1;
@@ -172,7 +172,7 @@
 
   /* ── Border ── */
   --border-default: rgba(255, 255, 255, 0.12);
-  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-strong: rgba(255, 255, 255, 0.38);
 
   /* ── Accent ── */
   --accent-indigo: #a5b4fc;
