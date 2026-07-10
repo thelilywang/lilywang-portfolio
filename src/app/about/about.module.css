@@ -66,6 +66,15 @@
   box-shadow: var(--shadow-card);
   padding: 25px;
   border-radius: var(--radius-lg);
+  transition: transform var(--motion-duration-fast) var(--ease-out),
+    box-shadow var(--motion-duration-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .timelineContent:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 .timelinePeriod {
