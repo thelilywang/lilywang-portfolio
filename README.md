@@ -5,8 +5,8 @@ A modern, responsive personal portfolio website built with Next.js 15 App Router
 ## Tech Stack
 
 - **Framework**: Next.js 15 (App Router, static export)
-- **UI**: React 19, MUI Joy, Lucide React
-- **Styling**: CSS Modules + global tokens (no Tailwind)
+- **UI**: React 19, Lucide React
+- **Styling**: CSS Modules + global tokens (no Tailwind, no MUI)
 - **i18n**: next-intl (English / 繁體中文)
 - **Language**: TypeScript
 - **Package manager**: pnpm
@@ -16,17 +16,22 @@ A modern, responsive personal portfolio website built with Next.js 15 App Router
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout with Navbar
-│   ├── page.tsx            # Home — hero + highlights
-│   ├── about/              # Bio, education, certifications
-│   ├── projects/           # Project cards
-│   ├── contact/            # Contact info
-│   └── components/         # Shared components (Navbar, ThemeToggle, …)
+│   ├── layout.tsx           # Root layout (Navbar, Footer via ClientProviders)
+│   ├── page.tsx              # Home — hero + highlights
+│   ├── about/                # Bio, education, experience/skills/credentials
+│   ├── projects/             # Main + side projects
+│   ├── contact/               # Contact info + form
+│   ├── blog/                  # Blog list + [slug] post pages
+│   └── components/            # Shared components (Navbar, ThemeToggle, …)
 └── data/
-    └── resumeData.ts       # Single source of truth for all content
+    ├── locales/
+    │   ├── en.ts              # English content (source of truth)
+    │   └── zh-TW.ts           # Traditional Chinese content
+    ├── blogData.ts            # Blog posts
+    └── resumeData.ts          # Re-export shim only — don't add content here
 messages/
-├── en.json                 # English strings
-└── zh-TW.json             # Traditional Chinese strings
+├── en.json                  # English UI strings
+└── zh-TW.json              # Traditional Chinese UI strings
 ```
 
 ## Commands
@@ -40,10 +45,10 @@ pnpm lint     # ESLint check
 
 ## Content
 
-All portfolio content lives in `src/data/resumeData.ts`. Edit that file to update any section. Any text visible on the site must also be kept in sync across `messages/en.json` and `messages/zh-TW.json`.
+Portfolio content lives in `src/data/locales/en.ts` and `src/data/locales/zh-TW.ts` (parallel structure) — edit both when changing content. Blog posts live in `src/data/blogData.ts`. Any UI string change must also be kept in sync across `messages/en.json` and `messages/zh-TW.json`.
 
 ## Deployment
 
 - **CI/CD**: GitHub Actions (`.github/workflows/nextjs.yml`) builds on push to `main`
-- **Target**: GitHub Pages (current)
+- **Target**: GitHub Pages (current) — Firebase Hosting planned
 - Static output directory: `./out`
