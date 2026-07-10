@@ -39,7 +39,13 @@ export default function SkillGroup({ heading, skills, badgeLabels = DEFAULT_LABE
         {skills.map((skill, index) => (
           <div className={styles.skillItem} key={index}>
             <span className={`${styles.badge} ${getBadgeClass(skill.level)}`}>
-              {getBadgeLabel(skill.level, badgeLabels)}
+              {/* 隱形疊層：chip 寬度取最長等級文字，三種等級等寬；
+                  固定墊入英文最長詞 Proficient，讓中文 chip 與英文同寬 */}
+              <span className={styles.badgeGhost} aria-hidden="true">Proficient</span>
+              <span className={styles.badgeGhost} aria-hidden="true">{badgeLabels.expert}</span>
+              <span className={styles.badgeGhost} aria-hidden="true">{badgeLabels.proficient}</span>
+              <span className={styles.badgeGhost} aria-hidden="true">{badgeLabels.familiar}</span>
+              <span>{getBadgeLabel(skill.level, badgeLabels)}</span>
             </span>
             <span className={styles.skillName}>{skill.name}</span>
           </div>
