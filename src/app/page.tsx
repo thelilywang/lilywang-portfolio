@@ -129,7 +129,7 @@ export default function Home() {
           )}
         </div>
         <div className={styles.copyright}>
-          © {new Date().getFullYear()} {personalInfo.name} • Built with Next.js + Joy UI
+          © {new Date().getFullYear()} {personalInfo.name} • Built with Next.js
         </div>
       </footer>
     </div>
