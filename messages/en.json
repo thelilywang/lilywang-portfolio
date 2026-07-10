@@ -28,6 +28,8 @@
     "bio_heading": "Biography",
     "education_heading": "Education",
     "certifications_heading": "Certifications",
+    "show_all_certs": "Show all {count} certifications",
+    "show_less_certs": "Show less",
     "interests_heading": "Interests",
     "anchor_intro": "About",
     "anchor_experience": "Experience",

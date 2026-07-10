@@ -28,6 +28,8 @@
     "bio_heading": "個人簡介",
     "education_heading": "教育背景",
     "certifications_heading": "證照與認證",
+    "show_all_certs": "顯示全部 {count} 筆認證",
+    "show_less_certs": "收合",
     "interests_heading": "個人興趣",
     "anchor_intro": "關於我",
     "anchor_experience": "工作經驗",

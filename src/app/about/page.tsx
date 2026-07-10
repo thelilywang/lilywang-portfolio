@@ -5,10 +5,13 @@ import PageHeader from '@/app/components/PageHeader';
 import SkillGroup from '@/app/components/SkillGroup';
 import AnchorNav from '@/app/components/AnchorNav';
 import SectionHeading from '@/app/components/SectionHeading';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocaleContext } from '@/context/LocaleContext';
 import { useScrollFadeIn } from '@/hooks/useScrollFadeIn';
+import { useState } from 'react';
+
+const CERTS_COLLAPSED_COUNT = 6;
 
 const CERT_KEYWORD_RE = /(Google Analytics|Data Analysis|Machine Learning|Generative AI|Agentic AI|Product Management|Infrastructure|Prompt|Python|Agent|LLM|ML|AI)/g;
 
@@ -30,6 +33,7 @@ export default function About() {
   const { aboutData, experienceData, skillsData } = resumeData;
   const timelineFadeRef = useScrollFadeIn<HTMLDivElement>(0.08);
   const fadeRef = useScrollFadeIn<HTMLElement>(0.1);
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
   const badgeLabels = {
     expert: t('skill_expert'),
@@ -143,7 +147,7 @@ export default function About() {
 
         <h3 className={styles.certHeading}>{t('certifications_heading')}</h3>
         <ul className={`${styles.certifications} ${styles.fadeInUp}`} ref={fadeRef}>
-          {aboutData.certifications.map((cert, index) => (
+          {(showAllCerts ? aboutData.certifications : aboutData.certifications.slice(0, CERTS_COLLAPSED_COUNT)).map((cert, index) => (
             <li key={index}>
               <span className={styles.certOrgBadge}>{cert.org}</span>
               <span className={styles.certName}>{highlightCertName(cert.name, styles.certHighlight, cert.highlights)}</span>
@@ -151,6 +155,26 @@ export default function About() {
             </li>
           ))}
         </ul>
+        {aboutData.certifications.length > CERTS_COLLAPSED_COUNT && (
+          <button
+            type="button"
+            className={styles.certToggle}
+            aria-expanded={showAllCerts}
+            onClick={() => setShowAllCerts(prev => !prev)}
+          >
+            {showAllCerts ? (
+              <>
+                {t('show_less_certs')}
+                <ChevronUp size={16} strokeWidth={2} />
+              </>
+            ) : (
+              <>
+                {t('show_all_certs', { count: aboutData.certifications.length })}
+                <ChevronDown size={16} strokeWidth={2} />
+              </>
+            )}
+          </button>
+        )}
       </section>
       </div>
     </>
