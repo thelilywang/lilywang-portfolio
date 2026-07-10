@@ -37,8 +37,8 @@
   --focus-ring: 0 0 0 3px rgba(0, 112, 243, 0.35);
 
   /* ── Typography ── */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-plus-jakarta-sans), var(--font-noto-sans-tc), system-ui, sans-serif;
   --text-xs: 11px;
   --text-sm: 13px;
   --text-base: 16px;
