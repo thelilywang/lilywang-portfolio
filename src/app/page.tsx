@@ -20,7 +20,7 @@ const TAG_CLASS_MAP: Record<string, string> = {
 export default function Home() {
   const t = useTranslations('home');
   const { resumeData } = useLocaleContext();
-  const { personalInfo, highlightsData } = resumeData;
+  const { personalInfo, highlightsData, sideProjectsData } = resumeData;
   const fadeRef = useScrollFadeIn(0.12);
 
   return (
@@ -96,6 +96,39 @@ export default function Home() {
                 );
               })}
             </div>
+          </div>
+        </div>
+
+        <div className={`${styles.sideProjects} ${styles.fadeInUp}`} ref={fadeRef}>
+          <SectionHeading
+            kicker={t('side_projects_label')}
+            title={t('side_projects_heading')}
+            className={styles.sideProjectsHeader}
+          />
+          <div className={styles.sideProjectsGrid}>
+            {sideProjectsData.filter(p => p.href).map((project, index) => (
+              <div className={`${styles.sideProjectCard} ${styles.fadeInUp}`} ref={fadeRef} key={index}>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                {project.tech && (
+                  <div className={styles.sideProjectTech}>
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className={styles.sideProjectChip}>{tech}</span>
+                    ))}
+                  </div>
+                )}
+                {project.href && (
+                  <a href={project.href} target="_blank" rel="noopener noreferrer" className={styles.sideProjectLink}>
+                    {t('side_projects_view')} →
+                  </a>
+                )}
+              </div>
+            ))}
+            <Link href="/projects#side-projects" className={`${styles.sideProjectCard} ${styles.sideProjectMore} ${styles.fadeInUp}`} ref={fadeRef}>
+              <span className={styles.sideProjectMoreIcon} aria-hidden="true">→</span>
+              <span className={styles.sideProjectMoreLabel}>{t('side_projects_more')}</span>
+              <span className={styles.sideProjectMoreSub}>{t('side_projects_more_sub')}</span>
+            </Link>
           </div>
         </div>
 

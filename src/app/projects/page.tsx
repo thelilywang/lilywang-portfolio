@@ -45,12 +45,19 @@ export default function Projects() {
           <SectionHeading as="h2" title={t('side_projects_heading')} />
           <div className={styles.sideGrid}>
             {sideProjectsData.map((project, index) => (
-              <div className={`${styles.sideCard} ${styles.fadeInUp}`} ref={fadeRef} key={index}>
+              <div className={`${styles.sideCard} ${!project.href ? styles.sideCardEmpty : ''} ${styles.fadeInUp}`} ref={fadeRef} key={index}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+                {project.tech && project.tech.length > 0 && (
+                  <div className={styles.sideTech}>
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className={styles.techChip}>{tech}</span>
+                    ))}
+                  </div>
+                )}
                 {project.href && (
                   <a href={project.href} target="_blank" rel="noopener noreferrer" className={styles.sideLink}>
-                    View Project →
+                    {t('side_projects_view')} →
                   </a>
                 )}
               </div>

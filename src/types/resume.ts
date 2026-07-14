@@ -95,6 +95,7 @@ export interface SideProject {
   title: string;
   description: string;
   href: string;
+  tech?: string[];
 }
 
 export type Locale = 'zh-TW' | 'en';

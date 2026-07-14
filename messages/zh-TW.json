@@ -12,6 +12,11 @@
     "cta_portfolio": "查看作品集 →",
     "highlights_label": "專業亮點",
     "highlights_heading": "我能為你帶來什麼",
+    "side_projects_label": "側案作品",
+    "side_projects_heading": "工作之餘，我在做的事",
+    "side_projects_view": "查看專案",
+    "side_projects_more": "更多作品",
+    "side_projects_more_sub": "查看完整作品集",
     "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well."
   },
   "footer": {
@@ -58,7 +63,8 @@
     "anchor_main": "主要專案",
     "anchor_side": "Side Projects",
     "card_expand": "展開",
-    "card_collapse": "收合"
+    "card_collapse": "收合",
+    "side_projects_view": "查看專案"
   },
   "skills": {
     "page_title": "專業技能",

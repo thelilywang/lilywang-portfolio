@@ -371,21 +371,25 @@ export const sideProjectsData: SideProject[] = [
     title: 'Finance AI Assistant',
     description: 'A production-ready local RAG agent for US/TW stock analysis, built with LangGraph, Ollama, and pgvector for 100% data privacy. An automated ETL pipeline pulls, cleans, and vectorizes SEC Edgar filings, TWSE MOPS reports, and Yahoo Finance RSS news into PostgreSQL.',
     href: 'https://github.com/thelilywang/finance-ai-assistant',
+    tech: ['LangGraph', 'Ollama', 'pgvector'],
   },
   {
     title: 'AI PM Machine Learning Project',
     description: 'An AI-focused machine learning project from the Duke AI Product Management course, comparing Linear Regression and Random Forest models to predict real-world power plant energy output.',
     href: 'https://github.com/thelilywang/ai-pm-machine-learning-project',
+    tech: ['Python', 'scikit-learn'],
   },
   {
     title: 'AI Job Matcher',
     description: 'A local Node.js app that scrapes job postings with Playwright and uses OpenAI to score job-resume fit (1-10), surface skill gaps, and draft tailored cover letters.',
     href: 'https://github.com/thelilywang/AI-Job-Matcher',
+    tech: ['Node.js', 'Playwright', 'OpenAI'],
   },
   {
     title: 'Tool Box',
     description: 'A free, multilingual online utility hub offering a collection of productivity tools, supporting 13 languages including English and Traditional Chinese.',
     href: 'https://www.tools-website.com/',
+    tech: ['Next.js', 'i18n'],
   },
   {
     title: 'Coming Soon',

@@ -371,21 +371,25 @@ export const sideProjectsData: SideProject[] = [
     title: 'Finance AI Assistant',
     description: '一個可正式部署的本機端 RAG 代理，用於美股與台股分析，採用 LangGraph、Ollama 與 pgvector 打造，資料 100% 於本機處理。內建自動化 ETL 流程，擷取、清理並向量化 SEC Edgar 申報文件、台灣證交所 MOPS 財報與 Yahoo Finance RSS 新聞，寫入 PostgreSQL。',
     href: 'https://github.com/thelilywang/finance-ai-assistant',
+    tech: ['LangGraph', 'Ollama', 'pgvector'],
   },
   {
     title: 'AI PM Machine Learning Project',
     description: '杜克大學（Duke）AI Product Management 課程中的機器學習專案，比較線性迴歸（Linear Regression）與隨機森林（Random Forest）模型，用於預測真實電廠的能源產出。',
     href: 'https://github.com/thelilywang/ai-pm-machine-learning-project',
+    tech: ['Python', 'scikit-learn'],
   },
   {
     title: 'AI Job Matcher',
     description: '一款本機執行的 Node.js 應用程式，使用 Playwright 爬取職缺內容，並透過 OpenAI 為職缺與履歷的契合度評分（1-10 分），找出技能落差並自動產生客製化求職信草稿。',
     href: 'https://github.com/thelilywang/AI-Job-Matcher',
+    tech: ['Node.js', 'Playwright', 'OpenAI'],
   },
   {
     title: 'Tool Box',
     description: '一個免費的多語系線上工具集，提供多種提升生產力的實用工具，支援包含英文與繁體中文在內的 13 種語言。',
     href: 'https://www.tools-website.com/',
+    tech: ['Next.js', 'i18n'],
   },
   {
     title: 'Coming Soon',

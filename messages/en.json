@@ -12,6 +12,11 @@
     "cta_portfolio": "View Portfolio →",
     "highlights_label": "PROFESSIONAL HIGHLIGHTS",
     "highlights_heading": "What I bring to the table",
+    "side_projects_label": "SIDE PROJECTS",
+    "side_projects_heading": "Things I build for fun",
+    "side_projects_view": "View Project",
+    "side_projects_more": "More Work",
+    "side_projects_more_sub": "See all projects",
     "quote": "Whatever is <highlight>worth doing</highlight> is worth doing well."
   },
   "footer": {
@@ -58,7 +63,8 @@
     "anchor_main": "Main Projects",
     "anchor_side": "Side Projects",
     "card_expand": "Expand",
-    "card_collapse": "Collapse"
+    "card_collapse": "Collapse",
+    "side_projects_view": "View Project"
   },
   "skills": {
     "page_title": "Skills",
