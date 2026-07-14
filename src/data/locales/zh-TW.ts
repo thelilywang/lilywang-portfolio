@@ -373,6 +373,11 @@ export const sideProjectsData: SideProject[] = [
     href: 'https://github.com/thelilywang/finance-ai-assistant',
   },
   {
+    title: 'AI PM Machine Learning Project',
+    description: '杜克大學（Duke）AI Product Management 課程中的機器學習專案，比較線性迴歸（Linear Regression）與隨機森林（Random Forest）模型，用於預測真實電廠的能源產出。',
+    href: 'https://github.com/thelilywang/ai-pm-machine-learning-project',
+  },
+  {
     title: 'AI Job Matcher',
     description: '一款本機執行的 Node.js 應用程式，使用 Playwright 爬取職缺內容，並透過 OpenAI 為職缺與履歷的契合度評分（1-10 分），找出技能落差並自動產生客製化求職信草稿。',
     href: 'https://github.com/thelilywang/AI-Job-Matcher',

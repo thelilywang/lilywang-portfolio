@@ -373,6 +373,11 @@ export const sideProjectsData: SideProject[] = [
     href: 'https://github.com/thelilywang/finance-ai-assistant',
   },
   {
+    title: 'AI PM Machine Learning Project',
+    description: 'An AI-focused machine learning project from the Duke AI Product Management course, comparing Linear Regression and Random Forest models to predict real-world power plant energy output.',
+    href: 'https://github.com/thelilywang/ai-pm-machine-learning-project',
+  },
+  {
     title: 'AI Job Matcher',
     description: 'A local Node.js app that scrapes job postings with Playwright and uses OpenAI to score job-resume fit (1-10), surface skill gaps, and draft tailored cover letters.',
     href: 'https://github.com/thelilywang/AI-Job-Matcher',
