@@ -10,7 +10,7 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
-  title: '產品經理',
+  title: 'AI 產品規劃師',
   intro: '5年以上 B2B/B2C SaaS 及行動應用產品管理經驗，專注於 AI 驅動、以用戶為中心的解決方案。具工程背景，擅長跨部門溝通協調、數據驅動決策，並有完整的從 0 到 1 產品開發及上線經驗。',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',

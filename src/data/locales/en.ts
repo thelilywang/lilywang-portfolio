@@ -10,8 +10,8 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: 'Lily Wang',
-  title: 'Product Manager',
-  intro: 'Product Manager with 5+ years building B2B/B2C SaaS and mobile products, specializing in AI and machine learning–powered, user-centered solutions that drive product impact and operational efficiency.',
+  title: 'AI Product Builder',
+  intro: 'AI Product Builder with 5+ years building B2B/B2C SaaS and mobile products, specializing in AI and machine learning–powered, user-centered solutions that drive product impact and operational efficiency.',
   email: 'yuting.lily.wang@gmail.com',
   phone: '',
   location: 'Taipei, Taiwan',
