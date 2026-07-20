@@ -38,6 +38,11 @@ export const aboutData: AboutData = {
   ],
   certifications: [
     {
+      name: 'Managing Machine Learning Projects',
+      org: 'Duke University (Coursera)',
+      year: '2026-07',
+    },
+    {
       name: 'iPAS AI Application Planner（AI應用規劃師）',
       org: 'iPAS',
       year: '2026-06',
