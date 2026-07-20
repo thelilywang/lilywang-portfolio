@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://lily-portfolio-895d4.web.app';
+const BASE_URL = 'https://lilywang-portfolio.web.app';
 
 export default function robots(): MetadataRoute.Robots {
   return {

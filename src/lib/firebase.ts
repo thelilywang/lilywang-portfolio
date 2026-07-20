@@ -2,13 +2,13 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNUISntntDxq0sgWRrkh6iCrbaQ_MTGV8",
-  authDomain: "lily-portfolio-895d4.firebaseapp.com",
-  projectId: "lily-portfolio-895d4",
-  storageBucket: "lily-portfolio-895d4.firebasestorage.app",
-  messagingSenderId: "355229386040",
-  appId: "1:355229386040:web:6e37c383a403a4ba982dcd",
-  measurementId: "G-XQXK1V3FCS",
+  apiKey: "AIzaSyBIZI_3bjlytLOAKFiscH9SvaRVM7eIDKs",
+  authDomain: "lilywang-portfolio.firebaseapp.com",
+  projectId: "lilywang-portfolio",
+  storageBucket: "lilywang-portfolio.firebasestorage.app",
+  messagingSenderId: "114801239847",
+  appId: "1:114801239847:web:56fde8b257730f3c7f2b02",
+  measurementId: "G-4W9NXDL0SV",
 };
 
 export const firebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);

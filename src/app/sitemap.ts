@@ -3,7 +3,7 @@ import { blogData } from '@/data/blogData';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://lily-portfolio-895d4.web.app';
+const BASE_URL = 'https://lilywang-portfolio.web.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ['', '/about', '/projects', '/contact', '/blog'].map((path) => ({
