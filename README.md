@@ -50,5 +50,5 @@ Portfolio content lives in `src/data/locales/en.ts` and `src/data/locales/zh-TW.
 ## Deployment
 
 - **CI/CD**: GitHub Actions (`.github/workflows/nextjs.yml`) builds on push to `main`
-- **Target**: GitHub Pages (current) — Firebase Hosting planned
+- **Target**: Firebase Hosting (project `lily-portfolio-895d4`)
 - Static output directory: `./out`

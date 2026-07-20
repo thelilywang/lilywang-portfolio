@@ -35,7 +35,7 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const SITE_URL = 'https://thelilywang.github.io/lilywang-portfolio';
+const SITE_URL = 'https://lily-portfolio-895d4.web.app';
 const OG_IMAGE = `${SITE_URL}/ProfilePic.jpg`;
 const TITLE = "Lily Wang | Product Builder";
 const DESCRIPTION = "Portfolio of Lily Wang, a Product Manager with 5+ years building AI/ML-powered SaaS and mobile products. View case studies, work experience, and skills.";

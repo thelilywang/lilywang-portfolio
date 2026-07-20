@@ -15,7 +15,7 @@ No test suite is configured.
 
 ## Architecture
 
-This is a **Next.js 15 App Router** static portfolio site (React 19, TypeScript strict, CSS Modules — no Tailwind). Currently deployed via GitHub Pages CI/CD (`.github/workflows/nextjs.yml`) on push to `main`, with `NEXT_PUBLIC_BASE_PATH=/lilywang-portfolio` (local dev has no basePath). Firebase Hosting is a planned future target. The `output: 'export'` static export (`./out`) is compatible with both.
+This is a **Next.js 15 App Router** static portfolio site (React 19, TypeScript strict, CSS Modules — no Tailwind). Deployed via Firebase Hosting CI/CD (`.github/workflows/nextjs.yml`) on push to `main`. No `basePath` is set — Firebase Hosting serves from the root. The `output: 'export'` static export (`./out`) feeds the deploy.
 
 **Routing** (`src/app/`):
 - `/` — Hero + highlights bento grid (homepage)
@@ -49,4 +49,4 @@ This is a **Next.js 15 App Router** static portfolio site (React 19, TypeScript 
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/nextjs.yml`) builds with `next build` and deploys `./out` to GitHub Pages. Firebase target: run `firebase deploy` after `pnpm build` (not yet wired up).
+GitHub Actions (`.github/workflows/nextjs.yml`) builds with `next build` and deploys `./out` to Firebase Hosting via `FirebaseExtended/action-hosting-deploy@v0` on push to `main`. Project ID is `lily-portfolio-895d4` (`.firebaserc` and the workflow's `projectId`). Requires a `FIREBASE_SERVICE_ACCOUNT` GitHub repo secret, set up manually via `firebase init hosting:github` — not yet wired up.
