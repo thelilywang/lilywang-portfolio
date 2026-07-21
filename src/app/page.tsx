@@ -33,7 +33,7 @@ export default function Home() {
             <p className={styles.intro}>{personalInfo.intro}</p>
             <div className={styles.ctas}>
               <Link href="/projects" className={styles.primary}>{t('cta_portfolio')}</Link>
-              <a href="https://drive.google.com/uc?export=download&id=1tAVqQN55mZnHIf2LO5sdRodr-9_4yTGk" target="_blank" rel="noopener noreferrer" className={styles.secondary}>{t('cta_download')}</a>
+              <Link href="/contact" className={styles.secondary}>{t('cta_contact')}</Link>
             </div>
           </div>
           <div className={styles.heroPhotoWrap}>
